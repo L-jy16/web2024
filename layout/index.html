@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃 연습</title>
+
+    <link href="https://webfontworld.github.io/TheJamsil/TheJamsil.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            color: #006696;
+            font-family: 'TheJamsil';
+            font-weight: 400;
+        }
+        li {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;     /* inherit 부모로 부터 상속 받는다는 뜻*/
+        }
+        #wrap {
+            display: flex;
+        }
+        #nav {
+            width: 300px;
+            padding: 20px;
+        }
+        #nav li a {
+            border: 1px solid #006696;
+            display: block;
+            padding: 10px;
+            margin-bottom: 5px;
+        }
+        #nav .webd{
+            margin-top: 50px;
+        }
+        #nav .webd li {
+            width: 55px;
+            display: inline-block;
+            text-align: center;
+        }
+        #nav li a:hover{
+            background-color: #006696;
+            color: #fff;
+        }
+        #main {
+            width: 100%;
+            min-height: 100vh;
+        }
+        #main iframe{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <nav id="nav">
+            <ul>
+                <li><a href="layout01.html">Layout01</a></li>
+                <li><a href="layout02.html">Layout02</a></li>
+                <li><a href="layout03.html">Layout03</a></li>
+                <li><a href="layout04.html">Layout04</a></li>
+                <li><a href="layout05.html">Layout05</a></li>
+            </ul>
+            <ul class="webd">
+                <li><a href="../webd/webd01.html">A-1</a></li>
+                <li><a href="../webd/webd02.html">A-2</a></li>
+                <li><a href="../webd/webd03.html">A-3</a></li>
+                <li><a href="../webd/webd04.html">A-4</a></li>
+                <li><a href="../webd/webd05.html">B-1</a></li>
+                <li><a href="../webd/webd06.html">B-2</a></li>
+                <li><a href="../webd/webd07.html">B-3</a></li>
+                <li><a href="../webd/webd08.html">B-4</a></li>
+                <li><a href="../webd/webd09.html">C-1</a></li>
+                <li><a href="../webd/webd10.html">C-2</a></li>
+                <li><a href="../webd/webd11.html">C-3</a></li>
+                <li><a href="../webd/webd12.html">C-4</a></li>
+                <li><a href="../webd/webd13.html">D-1</a></li>
+                <li><a href="../webd/webd14.html">D-2</a></li>
+                <li><a href="../webd/webd15.html">D-3</a></li>
+                <li><a href="../webd/webd16.html">D-4</a></li>
+            </ul>
+        </nav>
+        <main id="main">
+            <iframe src="layout01.html" frameborder="0"></iframe>   <!-- iframe은 사이트 갖고 오는 명령어 -->
+        </main>
+
+        <script>
+            document.querySelectorAll("#nav ul li").forEach((li) => {
+                li.addEventListener("click", (event) => {
+                    event.preventDefault();
+                    
+                    const href = li.querySelector("a").getAttribute("href");
+
+                    document.querySelector("#main iframe").src = href;
+                });
+            });
+        </script>
+    </div>
+</body>
+</html>

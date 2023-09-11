@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #E1F5FE;
+        }
+        #wrap {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        #header {
+            width: 100%;
+            height: 100px;
+            background-color: #B3E5FC;
+        }
+        #nav {
+            width: 100%;
+            height: 100px;
+            background-color: #81D4FA;
+        }
+        #main {
+            width: 100%;
+            display: flex;
+        }
+        #aside {
+            width: 30%;
+            height: 780px;
+            background-color: #4FC3F7;
+        }
+        #contents {
+            width: 70%;
+        }
+        #article1 {
+            width: 100%;
+            height: 260px;
+            background: #29B6F6;
+        }
+        #article2 {
+            width: 100%;
+            height: 260px;
+            background: #03A9F4;
+        }
+        #article3 {
+            width: 100%;
+            height: 260px;
+            background: #039BE5;
+        }
+        #footer {
+            width: 100%;
+            height: 100px;
+            background-color: #0288D1;
+        }
+        @media (max-width: 1290px){
+            #wrap {
+                width: 90%;
+            }
+            #contents {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            #article1 {
+                width: 100%;
+                height: 260px;
+            }
+            #article2 {
+                width: 50%;
+                height: 520px;
+            }
+            #article3 {
+                width: 50%;
+                height: 520px;
+            }
+        }
+        @media (max-width: 768px){
+            #wrap {
+                width: 100%;
+            }
+            #article1 {
+                height: 390px;
+            }
+            #article2 {
+                width: 100%;
+                height: 390px;
+            }
+            #article3 {
+                display: none;
+            }
+        }
+        @media (max-width: 600px){
+            #main {
+                flex-wrap: wrap;
+            }
+            #aside {
+                width: 100%;
+                height: 200px;
+            }
+            #contents {
+                width: 100%;
+            }
+            #article1 {
+                height: 430px;
+            }
+            #article2 {
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+        <nav id="nav"></nav>
+        <main id="main">
+            <aside id="aside"></aside>
+            <section id="contents">
+                <article id="article1"></article>
+                <article id="article2"></article>
+                <article id="article3"></article>
+            </section>
+        </main>
+        <footer id="footer"></footer>
+    </div>
+
+    <script>
+        //01. 선언적 함수
+        {
+            function func(){
+                const x =100;
+                console.log(x);
+            }
+            func();
+        }
+        //02. 익명 함수
+        {
+            const func = function(){
+                const x = 200;
+                console.log(x);
+            }
+            func()
+        }
+        //03. 매개변수 함수
+        {
+            function func(x){
+                console.log(x);
+            }
+            func(300);
+        }
+        //04. 리턴값 함수
+        {
+            function func(){
+                const x = 400;
+                return x;
+            }
+            console.log(func());
+        }
+        //05. 매개변수 + 리턴값 함수
+        {
+            function func(x){
+                return x;
+            }
+            console.log(func(500));
+        }
+        //06. 화살표 함수 (선언적함수)
+        {
+            func = () => {
+                const x =600;
+                console.log(x);
+            }
+            func();
+        }
+        //07. 화살표 함수 (익명 함수)
+        {
+            const func = () => {
+                const x = 700;
+                console.log(x);
+            }
+            func()
+        }
+        //08. 화살표 함수 (매개변수 함수)
+        {
+            func = (x) => {
+                console.log(x);
+            }
+            func(800);
+        }
+        //09. 화살표 함수 (리턴값 함수)
+        {
+            func = () => {
+                const x = 900;
+                return x;
+            }
+            console.log(func());
+        }
+        //10. 화살표 함수 (매개변수 + 리턴값 함수)
+        {
+            func = (x) => {
+                return x;
+            }
+            console.log(func(1000));
+        }
+    </script>
+</body>
+</html>
