@@ -349,7 +349,24 @@ body::after {
     color: #006696;
     cursor: pointer;
 }
-
+.quiz__next {
+    background-color: #006696;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    display: block;
+    border: 0;
+    width: 100%;
+    transition: all 0.3s;
+    border: 1px dashed transparent;
+    border-radius: 3px;
+}
+.quiz__next:hover {
+    border: 1px dashed #006696;
+    background-color: transparent;
+    color: #006696;
+    cursor: pointer;
+}
 
 /* footer */
 #footer {
