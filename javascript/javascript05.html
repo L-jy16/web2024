@@ -81,6 +81,25 @@
 
             <div class="main__sample">
 
+                <div id="s25" class="sample">
+                    <h3>25. string.prototype.toLocaleLowerCase()</h3>
+                    <p>toLocaleLowerCase() 메서드는 어떤 지역 특정 대/소문자 매핑에 따른 소문자로 변환된 문자열 값을 반환합니다.</p>
+<pre><code class="language-js">{
+    const dotted = 'İstanbul';
+
+    console.log(`EN-US: ${dotted.toLocaleLowerCase('en-US')}`);
+    // Expected output: "i̇stanbul"
+    
+    console.log(`TR: ${dotted.toLocaleLowerCase('tr')}`);
+    // Expected output: "istanbul"        
+}
+</code></pre>
+                <p class="desc">
+                    toLocaleLowerCase()은 문자열의 모든 문자를 소문자로 변환한 새로운 문자열을 반환합니다. 이 때, 변환은 현재 환경의 로캘 (언어 및 지역 설정)을 고려하여 이루어집니다. 로캘은 언어와 지역에 따라 텍스트의 표현이 다를 수 있기 때문에, 이 메서드는 텍스트를 대소문자 변환할 때 로캘에 맞는 규칙을 적용하여 변환합니다.
+                </p>
+                </div>
+                <!-- //s25 -->
+
                 <div id="s27" class="sample">
                     <h3>27. string.prototype.toLowerCase()</h3>
                     <p>toLowerCase() 메서드는 문자열을 소문자로 변환해 반환합니다.</p>
