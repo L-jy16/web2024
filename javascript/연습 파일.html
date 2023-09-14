@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바 시험 연습</title>
+</head>
+<body>
+    <pre><code class="language-js">{
+        // 데이터 저장하기
+
+        //01. 변수 : 데이터 저장 
+        {
+            var x = 1;
+
+            console.log(x); // 1
+        }
+        //02. 변수 : 데이터 저장 + 데이터 변경
+        {
+            let x = 100;
+            let y = "javascript";
+            
+            x += 200;
+            y = "jquery";
+
+            console.log(x)  //300
+            console.log(y) //jquery
+        }
+        //03. 변수 : 데이터 저장 + 데이터 변경 + 데이터 추가
+        {
+            let x = 100;
+            let y = "javascript";
+            
+            x += 200;
+            y = "jquery";
+
+            console.log(x)  //300
+            console.log(y) //jquery
+        }
+        //04. 상수 : 데이터 저장 + 데이터 변경(x)
+        {
+            const x = 100;
+
+            // x = 200; => error
+            // x += 100; => error
+
+            console.log(x); //100
+        }
+        //05. 배열 : 데이터 저장(여러개) : 표현방법1 : 배열 선언
+        {
+            const arr = new Array();
+            arr[0] = 100;
+            arr[1] = 200;
+            arr[2] = "javascript";
+
+            console.log(arr)            //100, 200, javascript
+            console.log(arr[0]);        //100
+            console.log(arr[1]);        //200
+            console.log(arr[2]);        //javascript
+        }
+        //06. 배열 : 데이터 저장(여러개) : 표현방법2 : 배열 선언과 동시에 초기값 설정
+        {
+            const arr = new Array(100, 200, "java");
+
+            console.log(arr)            //100, 200, 300
+            console.log(arr[0]);        //100
+            console.log(arr[1]);        //200
+            console.log(arr[2]);        //java
+        }
+        //07. 배열 : 데이터 저장(여러개) : 표현방법3 : 리터럴 방식으로 배열 선언
+        {
+            const arr = [];
+            arr[0] = 100;
+            arr[1] = 200;
+            arr[2] = "java";
+
+            console.log(arr)            //100, 200, 300
+            console.log(arr[0]);        //100
+            console.log(arr[1]);        //200
+            console.log(arr[2]);        //java
+        }
+        //08. 배열 : 데이터 저장(여러개) : 표현방법4 : 리터럴 방식으로 배열 선언과 동시에 초기값 설정
+        {
+            const arr = [100, 200, "java"];
+
+            console.log(arr)            //100, 200, 300
+            console.log(arr[0]);        //100
+            console.log(arr[1]);        //200
+            console.log(arr[2]);        //java
+        }
+        //09. 배열 : 데이터 저장(여러개) : 표현방법5 : 2차 배열
+        {
+            const arr = [100, [200, 300], ["java", "jq"]];
+
+            console.log(arr);           // 100, Array(2), Array(3)
+            console.log(arr[0]);        // 100
+            console.log(arr[1]);        // 200, 300
+            console.log(arr[1][0]);     // 200
+            console.log(arr[1][1]);     // 300
+            console.log(arr[2]);        // java, jq
+            console.log(arr[2][0]);     // java
+            console.log(arr[2][1]);     // jq
+            console.log(arr[0]+arr[1][1])   // 400
+            console.log(arr[0]+arr[2][1])   // 100jq (숫자가 문자열로 전환되어 문자열로 반환됩니다.)
+        }
+        //10. 배열 : 데이터 저장(여러개) : 표현방법6 : 배열 구조 분해 할당
+        {
+            const arr = [100, 200, "java"];
+
+            const [a,b,c] = arr;
+
+            console.log(a);     //100
+            console.log(b);     //200
+            console.log(c);     //300
+        }
+        //11. 배열 : 데이터 저장(여러개) : 표현방법7 : 배열 펼침연산자
+        {
+            const arr = [100, 200, "java"];
+            const arr2 = [...arr, 400];
+            const arr3 = [...arr, ...arr2];
+
+            console.log(arr);       //100,200,java
+            console.log(arr2);      //100,200,java,400
+            console.log(...arr2);      //100200java400
+            console.log(arr2[0]);       //100
+            console.log(arr2[1]);       //200
+            console.log(arr2[2]);       //java
+            console.log(arr2[3]);       //400
+            console.log(arr3);          // 100, 200, java, 100, 200, java, 400
+            console.log(...arr3);       // 100 200 java 100 200 java 400
+        }
+        //12. 객체 : 데이터 저장(키와값) : 표현방법1 : 객체 선언 후 배열 방식으로 데이터 입력
+        {
+            const obj = new Object();
+
+                obj[0] = 100;
+                obj[1] = 200;
+                obj[2] = "java";
+
+                console.log(obj[0]);        //100
+                console.log(obj[1]);        //200
+                console.log(obj[2]);        //java
+        }
+        //13. 객체 : 데이터 저장(키와값) : 표현방법2 : 객체 선언 후 객체 방식으로 데이터 입력
+        {
+            const obj = new Object();
+
+            obj.a = 100;
+            obj.b = 200;
+            obj.c = "java";
+
+            console.log(obj.a);        //100
+            console.log(obj.b);        //200
+            console.log(obj.c);        //java
+            }
+        //14. 객체 : 데이터 저장(키와값) : 표현방법3 : 리터럴 방식으로 객체 선언
+        {
+            const obj = {};
+
+            obj.a = 100;
+            obj.b = 200;
+            obj.c = "java";
+
+            console.log(obj.a);        //100
+            console.log(obj.b);        //200
+            console.log(obj.c);        //java
+        }
+        //15. 객체 : 데이터 저장(키와값) : 표현방법4 : 리터럴 방식으로 객체 선언과 동시에 초기값 설정
+        {
+            const obj = {a: 100, b: 200, c: "java"};
+
+            console.log(obj.a);        //100
+            console.log(obj.b);        //200
+            console.log(obj.c);        //java
+        }
+        //16. 객체 : 데이터 저장(키와값) : 표현방법5 : 배열 안에 객체가 있는 방식
+        {
+            const obj = [
+                {
+                    a: 100,
+                    b: 200,
+                    c: "java",
+                },
+                {
+                    a: 300,
+                    b: 400,
+                    c: "jquery",
+                }
+            ];
+            console.log(obj);       //0: {a: 100, b: 200, c: 'java'} 1: {a: 300, b: 400, c: 'jquery'}
+            console.log(obj[0]);    //a: 100, b: 200, c: 'java'
+            console.log(obj[0].a);  //100
+            console.log(obj[0].b);  //200
+            console.log(obj[0].c);  //java
+            console.log(obj[0].b+obj[1].b)  //600
+        }
+        //17. 객체 : 데이터 저장(키와값) : 표현방법6 : 객체 안에 배열가 있는 방식
+        {
+            const obj = {
+                a: 100,
+                b: [200, 300],
+                c: "java",
+                d: {x:200, y: [300, 400]},
+            };
+
+            console.log(obj.a);     //100
+            console.log(obj.b);     //200, 300
+            console.log(obj.b[0]);  //200
+            console.log(obj.b[1]);  //300
+            console.log(obj.c);     //java
+            console.log(obj.d);     //x:200 y:[300,400]
+            console.log(obj.d.x);   //200
+            console.log(obj.d.y);   //300, 400
+            console.log(obj.d.y[0]);    //300
+            console.log(obj.d.y[1]);    //400
+            console.log(obj.b[1]+obj.d.y[1])    //700
+        }
+        //18. 객체 : 데이터 저장(키와값) : 표현방법7 : 객체 안에 객체가 있는 방식
+        {
+            const obj = {
+                a: 100,
+                b: {x: 200, y: { d: 300, e: { f: 400, g: 500}}},
+                c: "java",
+            };
+
+            console.log(obj.a);             //100
+            console.log(obj.b.x);           //200
+            console.log(obj.b.y.d);         //300
+            console.log(obj.b.y.e.f);       //400
+            console.log(obj.b.y.e.g);       //500
+            console.log(obj.c);             //java
+        }
+        //19. 객체 : 데이터 저장(키와값) : 표현방법8 : 객체 + 함수가 있는 방식
+        {
+            const obj = {
+                a: 100,
+                b: [200, 300],
+                c: {x: 400, y: 500},
+                d: "java",
+                e: function(){
+                    console.log("java");
+                },
+                f: function(){
+                    console.log(obj.d);
+                },
+                g: function(){
+                    console.log(this.d);    //this는 자기자신을 표현할 때 사용
+                }
+            };
+
+            console.log(obj.a);     //100
+            console.log(obj.b[0]);  //200
+            console.log(obj.b[1]);  //300
+            console.log(obj.c.x);   //400
+            console.log(obj.c.y);   //500
+            console.log(obj.d);     //java
+            obj.e();    //java
+            obj.f();    //java
+            obj.g();    //java
+        }
+        //20. 객체 : 데이터 저장(키와값) : 표현방법9 : 객체 구조 분해 할당
+        {
+            const obj = {
+                a: 100,
+                b: {x: 200, y: 300},
+                c: "java"
+            };
+
+            const {a, b:{x, y}, c} = obj;
+
+            console.log(a);     //100
+            // console.log(b); => 에러
+            console.log(x);     //200
+            console.log(y);     //300
+            console.log(c);     //java
+        }
+        //21. 객체 : 데이터 저장(키와값) : 표현방법10 : 객체 펼침연산자
+        {
+            const obj1 = { a: 100, b: 200, c: "javascrtipt" };
+            const obj2 = { ...obj1, d: "jquery"};
+            const obj3 = { ...obj1, ...obj2};
+
+            console.log(obj1);      //a: 100, b: 200, c: javascript
+            console.log(obj2);      //a: 100, b: 200, c: javascript, d: jquery
+            console.log(obj2.a);    //100
+            console.log(obj2.b);    //200
+            console.log(obj2.c);    //javascript
+            console.log(obj2.d);    //jquery
+            console.log(obj3);      //a: 100, b: 200, c: javascript, d: jquery
+        }
+
+        // 1번 끝 //
+
+        // 2번 시작//
+
+        //01. 변수 : 데이터 불러오기
+        {
+            let x = 100, y = 200, z = "java";
+
+            console.log(x, y, z);   //100, 200, java
+        }
+        //02. 상수 : 데이터 불러오기
+        {
+            const x = 100, y = 200, z = "java";
+
+            console.log(x, y, z);   //100, 200, java
+        }
+        //03. 배열 : 데이터 불러오기
+        {
+            const arr = [100, 200, "java"];
+
+            console.log(arr);   //100, 200, java
+        }
+        //04. 배열 : 데이터  갯수 불러오기
+        {
+            const arr = [100, 200, "java"];
+
+            console.log(arr.length);   // 3
+        }
+        //05. 배열 : 데이터 불러오기 : for()
+        {
+            const arr = [100, 200, "java"];
+            
+            for(let i=0; i<arr.length; i++){
+                console.log(arr[i]);    
+            }
+            //100
+            //200
+            //java
+        }
+        //06. 배열 : 데이터 불러오기 : forEach()
+        {
+            const arr = [100, 200, "java"];
+
+            arr.forEach((el, i, arr) => {
+                console.log(el + "+" + i + "+" + arr);
+            });
+            //100+0+100,200,java
+            //200+1+100,200,java
+            //java+2+100,200,java
+        }
+        //07. 배열 : 데이터 불러오기 : for of
+        {
+            const arr = [100, 200, "java"];
+            
+            for(let el of arr){
+                console.log(el);
+            };
+            //100
+            //200
+            //java
+        }
+        //08. 배열 : 데이터 불러오기 : for in
+        {
+            const arr = [100, 200, "java"];
+            
+            for(let el in arr){
+                console.log(el);
+            };
+            //0
+            //1
+            //2
+        }
+        //09. 배열 : 데이터 불러오기 : map()
+        {
+            const arr = [100, 200, "javascript"];
+
+            arr.map(function(el, index, array){
+                console.log("09 : " + el + " : " + index + " : " + array);
+            });
+
+            const arrNum = arr.map((el) => {
+                return el;
+            });
+
+            console.log("09 : " + arrNum);
+            //09 : 100 : 0 : 100,200,javascript
+            //09 : 200 : 1 : 100,200,javascript
+            //09 : javascript : 2 : 100,200,javascript
+            //09 : 100,200,javascrip
+        }
+        //10. 배열 : 데이터 불러오기 : filter()
+        {
+            const arr = [100, 200, "javascript"];
+
+            arr.filter(function(el, index, array){
+                console.log("10 : " + el + " : " + index + " : " + array + "<br>");
+            }); 
+
+            const arrNum = arr.filter((el) => {
+                return el > 150;
+            });
+            
+            const arrNum2 = arr.filter(el => {
+                return el > 150;
+            });
+            const arrNum3 = arr.filter(el => el > 150);
+
+            console.log(arrNum3); //[200]
+
+            //10 : 100 : 0 : 100,200,javascript
+            //10 : 200 : 1 : 100,200,javascript
+            //10 : javascript : 2 : 100,200,javascript
+            //200
+        }
+        //11. 배열 : 데이터 불러오기 : 배열 펼침 연산자
+        {
+            // 배열 펼침 연산
+            const arr1 = [100, 200, 300];
+            const arr2 = [400, 500, 600];
+
+            console.log(arr1); // 100,200,300
+            console.log(...arr1); // 100 200 300
+            console.log(arr1 + arr2); // 100,200,300400,500,600
+            console.log(...arr1, ...arr2); // 100 200 300 400 500 600   --- concat()
+            console.log(...arr1, 400); //100 200 300 400    --- push()
+            console.log(...arr1.slice(0,2)); //100 200    --- slice()
+
+            // 함수 호출시 인수 전달
+            function addNum(a, b, c){
+                return a + b + c
+            };
+            const num = [100, 200, 300];
+            const sum = addNum(...num);
+            console.log(sum) //600
+        }
+        //12. 배열 : 데이터 불러오기 : 배열 구조 분해 할당
+        {
+            const num = [100, 200, 300, 400, 500];
+            const [num1, num2, ...rest] = num;
+            
+            console.log(num1);  //100
+            console.log(num2);  //200
+            console.log(rest);  //300, 400, 500
+            console.log(...rest);  //300 400 500
+        }
+        //13. 객체 : 데이터 불러오기
+        {
+            const obj = {
+                a: 100,
+                b: 200,
+                c: "javascript"
+            };
+            // 점 표기법으로 객체 속성에 접근하여 출력
+            console.log(obj.a);     //100
+            console.log(obj.b);     //200
+            console.log(obj.c);     //javascript
+
+            // 대괄호 표기법으로 객체 속성에 접근하여 출력
+            console.log(obj["a"]);  //100
+            console.log(obj["b"]);  //200
+            console.log(obj["c"]);  //javascript
+        }
+        //14. 객체 : 데이터 불러오기 : Object.keys()
+        {
+            const obj = {
+                a: 100,
+                b: 200,
+                c: "javascript"
+            };
+
+            console.log(Object.keys(obj)); //z, b, c
+        }
+        //15. 객체 : 데이터 불러오기 : Object.values()
+        {
+            const obj = {
+                a: 100,
+                b: 200,
+                c: "javascript"
+            };
+
+            console.log(Object.values(obj)); // 100, 200 ,300
+        }
+        //16. 객체 : 데이터 불러오기 : Object.entries()
+        {
+            const obj = {
+                a: 100,
+                b: 200,
+                c: "javascript"
+            };
+
+            console.log(Object.entries(obj));  
+            //a,100,b,200,c,javascript
+        }
+        //17. 객체 : 데이터 불러오기 : Object.assign()
+        {
+            const obj1 = {a: 100, b: 200, c: "javascript"};
+            const obj2 = {c: 300, d: 400, e: "jquery"};
+
+            const obj3 = Object.assign(obj1, obj2);
+
+            console.log(obj3);  //{a:100, b:200,c:300, d:400, e:jquery}
+        }
+        //18. 객체 : 데이터 불러오기 : hasOwnProperty()
+        {
+            const obj = {
+                a: 100,
+                b: 200,
+                c: "javascript"
+            };
+
+            console.log(obj.hasOwnProperty("a"));   //true
+            console.log(obj.hasOwnProperty("b"));   //true
+            console.log(obj.hasOwnProperty("d"));   //false
+
+            console.log("a" in obj);    //true
+            console.log("b" in obj);    //true
+            console.log("d" in obj);    //false
+        }
+        //19. 객체 : 데이터 불러오기 : for in
+        {
+            const obj = {
+            a: 100,
+                b: 200,
+                c: "javascript"
+            };
+
+            for(let el in obj){
+                console.log(el + " : " + obj[el]);    
+            };
+            //a : 100
+            //b : 200
+            //c : javascript
+        }
+        //20. 객체 : 데이터 불러오기 : 객체 펼침 연산자
+        {
+            const obj1 = {
+                a: 100,
+                b: 200,
+                c: "javascript"
+            };
+            const obj2 = {
+                d: 300,
+                e: 400,
+                f: "jquery"
+            };
+            const obj3 = {...obj1, ...obj2};
+            const obj4 = {...obj1, d: "jquery"};
+            const obj5 = {...obj1, b: 300};
+
+            console.log(obj1);      //a: 100, b: 200, c: javascript
+            console.log(obj2);      //d: 300, e: 400, f: jquery
+            console.log(obj3);      //a: 100, b: 200, c: javascript, d: 300, e: 400, f: jquery
+            console.log(obj4);      //a: 100, b: 200, c: javascript, d: jquery
+            console.log(obj5);      //a: 100, b: 300, c: javascript
+        }
+        //21. 객체 : 데이터 불러오기 : 객체 구조 분해 할당
+        {
+            const obj1 = {
+                a: 100,
+                b: 200,
+                c: "javascript"
+            };
+            const {a, b, c} = obj1;
+
+            console.log(a); //100
+            console.log(b); //200
+            console.log(c); //javascript
+
+            const { a: x, b: y, c: z}  = obj1;  //키값을 변경한 것
+
+            console.log(x); //100
+            console.log(y); //200
+            console.log(z); //javascript
+
+            const obj2 = {
+                d: 100,
+                e: 200,
+                f: "javascript"
+            };
+
+            const {d, e, f, g = "jquery"} = obj2;
+
+            console.log(g); // jquery
+
+            console.log(obj2);  // {d: 100, e: 200, f: javascript}
+
+
+            const obj3 = {
+                x1: 100,
+                y1: {a1: 100, b1: 200},
+                z1: "javascript"
+            }
+            const {x1, y1: {a1, b1}, z1} = obj3;
+
+            console.log(x1);    //100
+            console.log(a1);    //100
+            console.log(b1);    //200
+            console.log(z1);    //javascript
+        }
+    </code></pre>
+</body>
+</html>
