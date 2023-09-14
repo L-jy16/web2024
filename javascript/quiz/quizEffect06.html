@@ -70,7 +70,7 @@
                 .then(res => res.json())
                 .then(items => {
                     console.log(items[0].question);
-                    quizInfo[0] = items[0].question;
+                    quizInfo[0] = items[0].question, items[0].desc;
                     console.log(quizInfo)
 
             
@@ -88,6 +88,8 @@
                     <div class="quiz__main">
                         <div class="quiz__question">${quizInfo}</div>
                     </div>
+
+                    <div class="quiz__desc">${quizInfo}</div>
                 </div>
             `;
 
