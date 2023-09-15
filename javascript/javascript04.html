@@ -553,147 +553,147 @@
         <script>hljs.highlightAll();</script>
 
         <script>
-            // 01. if문 (false 다섯가지 외우기 그거 외는 전부 true)
-            {
-                // true : true, "문자열", 1, 2, "1", "2", [], {}
-                // false : false, 0, null, undefined, ""(빈문자열)
+            // // 01. if문 (false 다섯가지 외우기 그거 외는 전부 true)
+            // {
+            //     // true : true, "문자열", 1, 2, "1", "2", [], {}
+            //     // false : false, 0, null, undefined, ""(빈문자열)
 
-                if(0){
-                    document.write("실행되었습니다.(true)");
-                } else {
-                    document.write("실행되었습니다.(false)");
-                }
-            }
-            // 02. 다중 if문
-            {
-                const num = 100;
+            //     if(0){
+            //         document.write("실행되었습니다.(true)");
+            //     } else {
+            //         document.write("실행되었습니다.(false)");
+            //     }
+            // }
+            // // 02. 다중 if문
+            // {
+            //     const num = 100;
 
-                if(num == 90){
-                    document.write("실행되었습니다.(num = 90)");
-                } else if(num == 95){
-                    document.write("실행되었습니다.(num = 95)");
-                } else if(num == 100){
-                    document.write("실행되었습니다.(num = 100)");
-                } else if(num == 105){
-                    document.write("실행되었습니다.(num = 105)");
-                } else {
-                    document.write("실행되었습니다.");
-                }
-            }
+            //     if(num == 90){
+            //         document.write("실행되었습니다.(num = 90)");
+            //     } else if(num == 95){
+            //         document.write("실행되었습니다.(num = 95)");
+            //     } else if(num == 100){
+            //         document.write("실행되었습니다.(num = 100)");
+            //     } else if(num == 105){
+            //         document.write("실행되었습니다.(num = 105)");
+            //     } else {
+            //         document.write("실행되었습니다.");
+            //     }
+            // }
 
-            // 03. 중첩 if문
-            {
-                const num = 100;
+            // // 03. 중첩 if문
+            // {
+            //     const num = 100;
                 
-                if(num == 100){
-                    document.write("실행되었습니다.1");
-                    if(num == 100){
-                        document.write("실행되었습니다.2");
-                        if(num == 100){
-                            document.write("실행되었습니다.3");
-                        }
-                    }
-                } else {
-                    document.write("실행되었습니다.4");
-                }
-            }
-            // 04. if문 생략(둘 다 읽음) & 삼항 연산자(조건에 맞는 것만 읽음)
-            {
-                const num = 100;
+            //     if(num == 100){
+            //         document.write("실행되었습니다.1");
+            //         if(num == 100){
+            //             document.write("실행되었습니다.2");
+            //             if(num == 100){
+            //                 document.write("실행되었습니다.3");
+            //             }
+            //         }
+            //     } else {
+            //         document.write("실행되었습니다.4");
+            //     }
+            // }
+            // // 04. if문 생략(둘 다 읽음) & 삼항 연산자(조건에 맞는 것만 읽음)
+            // {
+            //     const num = 100;
 
-                if(num == 100){
-                    document.write("실행되었습니다.(true)");
-                }
+            //     if(num == 100){
+            //         document.write("실행되었습니다.(true)");
+            //     }
 
-                if(num == 100) document.write("실행되었습니다.(true)");
+            //     if(num == 100) document.write("실행되었습니다.(true)");
 
-                if(num == 100){
-                    document.write("실행되었습니다.(true)");
-                } else {
-                    document.write("실행되었습니다.(false)");
-                }
+            //     if(num == 100){
+            //         document.write("실행되었습니다.(true)");
+            //     } else {
+            //         document.write("실행되었습니다.(false)");
+            //     }
 
-                if(num == 100) document.write("실행되었습니다.(true)");
-                else document.write("실행되었습니다.(false)");
+            //     if(num == 100) document.write("실행되었습니다.(true)");
+            //     else document.write("실행되었습니다.(false)");
 
-                // 삼항 연산자(조건 연산자) 기본 문법 (조건식) ? 출력문 : 출력문 -> 가장 많이 사용됨
+            //     // 삼항 연산자(조건 연산자) 기본 문법 (조건식) ? 출력문 : 출력문 -> 가장 많이 사용됨
 
-                (num == 100) ? document.write("true") : document.write("false")
-            }
+            //     (num == 100) ? document.write("true") : document.write("false")
+            // }
 
-            // 05. switch문(break를 꼭 써줘야함 안그러면 무한에 빠짐)
-            {
-                const num = 100;
-                switch(num){
-                    case 90:
-                        document.write("실행되었습니다.(90)");
-                        break;
-                    case 95:
-                        document.write("실행되었습니다.(95)");
-                        break;
-                    case 100:
-                        document.write("실행되었습니다.(100)");
-                        break;
-                    case 105:
-                        document.write("실행되었습니다.(105)");
-                        break;
-                    default:
-                        document.write("실행되었습니다.");
-                }
-            }
+            // // 05. switch문(break를 꼭 써줘야함 안그러면 무한에 빠짐)
+            // {
+            //     const num = 100;
+            //     switch(num){
+            //         case 90:
+            //             document.write("실행되었습니다.(90)");
+            //             break;
+            //         case 95:
+            //             document.write("실행되었습니다.(95)");
+            //             break;
+            //         case 100:
+            //             document.write("실행되었습니다.(100)");
+            //             break;
+            //         case 105:
+            //             document.write("실행되었습니다.(105)");
+            //             break;
+            //         default:
+            //             document.write("실행되었습니다.");
+            //     }
+            // }
 
-            // 06. while문(자바스크립트에서는 죽은 문법(정처기에서 많이나오는 문제))
-            {
+            // // 06. while문(자바스크립트에서는 죽은 문법(정처기에서 많이나오는 문제))
+            // {
                 
-                let num = 1;
-                while(num<=10){
-                    document.write(num);
-                    num++;
-                }
-            }
+            //     let num = 1;
+            //     while(num<=10){
+            //         document.write(num);
+            //         num++;
+            //     }
+            // }
 
-            // 07. do while문(자바스크립트에서는 죽은 문법(정처기에서 많이나오는 문제))
-            // while문과 다르게 조건이 안 맞아도 한번은 출력된다.
-            {
-                let num = 1;
-                do{
-                    document.write(num);
-                    num++;
-                 } while(num<=10);
-            }
+            // // 07. do while문(자바스크립트에서는 죽은 문법(정처기에서 많이나오는 문제))
+            // // while문과 다르게 조건이 안 맞아도 한번은 출력된다.
+            // {
+            //     let num = 1;
+            //     do{
+            //         document.write(num);
+            //         num++;
+            //      } while(num<=10);
+            // }
 
-            // 08. for문
-            {
-                for(let i=1; i<=10; i++){
-                    document.write(i);  //12345678910
-                }
-            }
+            // // 08. for문
+            // {
+            //     for(let i=1; i<=10; i++){
+            //         document.write(i);  //12345678910
+            //     }
+            // }
 
-            document.write("<br><br><br><br>");
+            // document.write("<br><br><br><br>");
 
-            // 09. break문(자바스크립트에서는 죽은 문법(정처기에서 많이나오는 문제))
-            {
-                // 1부터 50까지 짝수 출력
-                for(let i=1; i<10; i++){
-                    if( i == 5){
-                        break;
-                    }
-                    document.write(i); //1234
-                }
-            }
+            // // 09. break문(자바스크립트에서는 죽은 문법(정처기에서 많이나오는 문제))
+            // {
+            //     // 1부터 50까지 짝수 출력
+            //     for(let i=1; i<10; i++){
+            //         if( i == 5){
+            //             break;
+            //         }
+            //         document.write(i); //1234
+            //     }
+            // }
 
-            document.write("<br><br>");
-            // 10. continue문(자바스크립트에서는 죽은 문법(정처기에서 많이나오는 문제))
+            // document.write("<br><br>");
+            // // 10. continue문(자바스크립트에서는 죽은 문법(정처기에서 많이나오는 문제))
 
-            {
-                // 1부터 50까지 짝수 출력
-                for(let i=1; i<10; i++){
-                    if( i == 5){
-                        continue;
-                    }
-                    document.write(i);  //12346789
-                }
-            }
+            // {
+            //     // 1부터 50까지 짝수 출력
+            //     for(let i=1; i<10; i++){
+            //         if( i == 5){
+            //             continue;
+            //         }
+            //         document.write(i);  //12346789
+            //     }
+            // }
 
         </script>
     </div>
