@@ -47,6 +47,8 @@ select,
 table,
 textarea {
     font-family: "nanumSquareNeo", "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", Arial, Helvetica, sans-serif;
+    font-style: 16px;
+    line-height: 1.5;
 }
 
 /* 링크 초기화 */

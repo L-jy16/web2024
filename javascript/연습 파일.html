@@ -1,203 +1,134 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>웹표준 사이트</title>
+
+    <!-- META -->
+    <meta name="description" content="피그마로 디자인 작업하고 웹 표준 코딩을 완성한 현대백화점 포인트 클론 사이트입니다." />
+    <meta name="keywords" content="웹표준, 피그마, 제플린, 코딩, 사이트, 클론 사이트, 따라하기, 사이트 제가" />
+    <meta name="author" content="l-jy16" />
+    <meta name="robots" content="all" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assete/css/fonts.css" />
+    <link rel="stylesheet" href="assete/css/reset.css" />
+    <link rel="stylesheet" href="assete/css/common.css" />
+    <link rel="stylesheet" href="assete/css/style.css" />
 </head>
+
 <body>
-    <script>
-        {
-            const arr1 = [100,200,300];
-            const arr2 = [400,500,600];
+    <div id="skip">
+        <a href="#header">헤더 영역 바로가기</a>
+        <a href="#slider">슬라이드 영역 바로가기</a>
+    </div>
+    <!-- //skip -->
 
-            console.log(arr1);
-            console.log(...arr1);
-            console.log(arr1+arr2);
-            console.log(...arr1,...arr2);
-            console.log(...arr1,400);
-            console.log(...arr1.slice(0,2));
-        }
-        {
-            function addNum(a,b,c){
-                return a+b+c;
-            };
-            const num = [100,250,350];
-            const sum = addNum(...num);
-            console.log(sum)
-        }
-        {
-            const [x,y,z]=[100,200,300];
+    <header id="header" role="banner">
+        <div class="header__inner">
+            <h1>
+                <a href="header__logo">
+                    <img src="../site/assete/img/W.Point.svg" alt="W.Point">
+                </a>
+            </h1>
+            <nav class="header__nav" role="navigation" aria-label="Main">
+                <ul>
+                    <li class="active"><a href="#">소개</a></li>
+                    <li><a href="#">쌓기</a></li>
+                    <li><a href="#">쓰기</a></li>
+                    <li><a href="#">혜택</a></li>
+                    <li><a href="#">클럽</a></li>
+                    <li><a href="#">고객센터</a></li>
+                </ul>
+            </nav>
+            <div class="header__ham">
+                <a href="#">
+                    <span></span>
+                </a>
+            </div>
+        </div>
+    </header>
+    <!-- //header -->
 
-            console.log(x)
-            console.log(y);
-            console.log(z);
-        }
-        {
-            const arr = [100,200,300];
-            const [x,y,z]=arr;
+    <main id="main" role="main">
+        <section id="sliderWrap">
+            <div class="slider__inner">
+                <div class="slider">
+                    <div class="slider__text">
+                        <h3>지영백화점그룹의<br /><em>다양한 제휴사</em>를 만나보세요!</h3>
+                        <p>다양한 브랜드에서 적립하고 사용하는<br />즐거운 일상의 포인트 제도 </p>
+                    </div>
+                    <div class="slider__dot">
+                        <a href="#" class="dot active"><span class="ir">첫번째 슬라이드</span></a>
+                        <a href="#" class="dot"><span class="ir">두번째 슬라이드</span></a>
+                        <a href="#" class="dot"><span class="ir">세번째 슬라이드</span></a>
+                        <a href="#" class="play"><span class="ir">플레이</span></a>
+                        <a href="#" class="stop"><span class="ir">정지</span></a>
+                    </div>
+                    <div class="slider__arrow">
+                        <a href="#" class="left"><span class="ir">이전이미지</span></a>
+                        <a href="#" class="right"><span class="ir">다음이미지</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- //sliderWrap -->
 
-            console.log(x)
-            console.log(y);
-            console.log(z);
-        }
-        {
-            const num = [100,200,300,400,500,600];
-            const[num1,num2,...rest] = num;
+        <section id="introWrap">
+            <div class="intro__inner">
+                <div class="container">
+                    <div class="intro__img">
+                        <div class="img1">
+                            <img src="../site/assete/img/intro03.png" alt="멤버십1" aria-hidden="true">
+                        </div>
+                        <div class="img2">
+                            <img src="../site/assete/img/intro02.png" alt="멤버십2" aria-hidden="true">
+                        </div>
+                        <div class="img3">
+                            <img src="../site/assete/img/intro01.png" alt="멤버십3" aria-hidden="true">
+                        </div>
+                    </div>
+                    <div class="intro__text">
+                        <h3>머물수록<br />즐거움이 쌓이는<br /><em>현대백화점</em> 포인트</h3>
+                        <p>현대백화점그룹 라이프스타일 멤버십<br />H.Point로쌓고 즐기고 나누는 새로운 일상</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- //introWrap -->
+        
+        <section id="pointUse">
+            <div class="use__inner">
+                <div class="container">
+                    <div class="use__title">
+                        <div class="use__text">
+                            <h3>포인트 <em>쓰기</em> <span>의미있게 사용하는 가치있는 소비생활</span></h3>
+                        </div>
+                        <div class="use__img">
+                            <div>
+                                <img src="../site/assete/img/point01.png" alt="">
+                            </div>
+                            <div>
 
-            console.log(num1);
-            console.log(num2);
-            console.log(...rest);
-            console.log(rest);
-        }
-        {
-            const obj = {
-                a:100,
-                b:200,
-                c:"javascript"
-            };
+                            </div>
+                            <div>
 
-            console.log(obj.a);
-            console.log(obj.b);
-            console.log(obj.c);
-        }
-        {
-            const obj = {
-                a: 100,
-                b: 200,
-                c:"javascript"
-            };
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-            console.log(Object.keys(obj));
-            console.log(Object.values(obj));
-            console.log(Object.entries(obj));
-            document.write(Object.entries(obj));
-        }
-        {
-            const obj1 = { 
-                a: 100, 
-                b: 200, 
-                c: "javascript" 
-            };
-            const obj2 = { 
-                d: 300, 
-                e: 400, 
-                f: "jquery" 
-            };
+        </section>
 
-            const obj3 = Object.assign(obj1,obj2);
+    </main>
+    <!-- //main -->
 
-            console.log(obj3)
-        }
-        {
-            const obj1 = { 
-                a: 100, 
-                b: 200, 
-                c: "javascript" 
-            };
-            const obj2 = { 
-                d: 300, 
-                e: 400, 
-                f: "jquery" 
-            };
-            const obj3 = Object.assign(obj1,obj2);
-
-            console.log(obj3);
-        }
-        {
-            const obj = {
-                a: 100,
-                b: 200,
-                c:"javascript"
-            };
-
-            console.log(obj.hasOwnProperty("a"));
-            console.log(obj.hasOwnProperty("b"));
-            console.log(obj.hasOwnProperty("c"));
-            console.log(obj.hasOwnProperty("d"));
-        }
-        {
-            const obj = {
-                a: 100,
-                b: 200,
-                c:"javascript"
-            };
-
-            console.log("a" in obj);
-            console.log("b" in obj);
-            console.log("c" in obj);
-            console.log("d" in obj);
-        }
-        {
-            const obj = {
-                a: 100,
-                b: 200,
-                c: "javascript"
-            }
-            for(let el in obj){
-                console.log(el+":"+obj[el]);
-            }
-        }
-        {
-            const obj1 = {
-                a: 100,
-                b: 200,
-                c: "javascript",
-            };
-            const obj2 = {
-                d: 300,
-                e: 400,
-                f: "jquery",
-            };
-            const obj3 = {...obj1, ...obj2};
-            const obj4 = {...obj1, d: "jquery"};
-            const obj5 = {...obj1, b: 300};
-
-            console.log(obj3);
-            document.write(obj3);
-            console.log(obj4);
-            console.log(obj5);
-        }
-        {
-            const obj1 = {
-                a: 100,
-                b: 200,
-                c: "javascript",
-            };
-            const {a,b,c}=obj1;
-
-            console.log(a);
-            console.log(b);
-            console.log(c);
-
-            const {a:x, b:y, c:z} = obj1;
-
-            console.log(x);
-            console.log(y);
-            console.log(z);
-
-            const obj2 = {
-                d: 100,
-                e: 200,
-                f: "javascript",
-            };
-
-            const {d, e, f, g="jquery"} = obj2;
-
-            console.log(g);
-
-            const obj3 = {
-                x1: 100,
-                y1: {a1: 100, b1: 200},
-                z1: "javascript",
-            };
-            const { x1, y1: {a1, b1}, z1} = obj3;
-
-            console.log(x1);
-            console.log(a1);
-            console.log(b1);
-            console.log(z1);
-        }
-    </script>
+    <footer id="footer" role="contentinfo">
+        <h2>푸터</h2>
+    </footer>
+    <!-- //footer -->
 </body>
 </html>

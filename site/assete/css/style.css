@@ -324,6 +324,7 @@
 }
 .use__title h3 {
     font-size: 45px;
+    line-height: 1;
     font-weight: 800;
 }
 .use__title h3 em {
@@ -341,6 +342,7 @@
 .use__img > div {
     width: 32%;
     text-align: center;
+    position: relative;
 }
 .use__img > div figure {
     width: 100%;
@@ -387,4 +389,49 @@
     padding: 10px;
     color: #6d6d6d;
     font-size: 16px;
+}
+
+@media (max-width: 800px){
+    .use__inner {
+        padding: 80px 0;
+    }
+    .use__title h3 {
+        font-size: 34px;
+        text-align: center;
+    }
+    .use__title h3 span {
+        display: block;
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+    .use__img {
+        flex-direction: column;
+    }
+    .use__img > div {
+        width: 60%;
+        margin: 0 auto 40px auto;
+    }
+    .use__img > div>:last-child{
+        margin-bottom: 0;
+    }
+    .use__img > div figure:hover::after {
+        opacity: 0;
+    }
+    .use__img > div figcaption {
+        position: relative;
+        color: #000;
+        opacity: 1;
+        margin-top: 25px;
+        font-size: 18px;
+        font-weight: 500;
+    }
+    .use__img > div p {
+        padding: 0;
+        margin-top: -10px;
+    }
+}
+@media (max-width: 600px){
+    .use__img > div {
+        width: 100%;
+    }
 }
