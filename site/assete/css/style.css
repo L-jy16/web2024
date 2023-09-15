@@ -402,7 +402,7 @@
     .use__title h3 span {
         display: block;
         font-size: 16px;
-        margin-bottom: 15px;
+        margin-top: 15px;
     }
     .use__img {
         flex-direction: column;
@@ -411,7 +411,7 @@
         width: 60%;
         margin: 0 auto 40px auto;
     }
-    .use__img > div>:last-child{
+    .use__img > div:last-child {
         margin-bottom: 0;
     }
     .use__img > div figure:hover::after {
@@ -422,10 +422,10 @@
         color: #000;
         opacity: 1;
         margin-top: 25px;
-        font-size: 18px;
+        font-size: 18px;    
         font-weight: 500;
     }
-    .use__img > div p {
+    .use__img > div p { 
         padding: 0;
         margin-top: -10px;
     }
