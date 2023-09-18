@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>타이머 인물 퀴즈</title>
+    <style>
+        #timer {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <h1>타이머 인물 퀴즈</h1>
+    <div id="quiz">
+        <h2 id="question">질문 1: 누구인가요?</h2>
+        <ul id="choices">
+            <li><input type="radio" name="answer" value="1"> 인물 1</li>
+            <li><input type="radio" name="answer" value="2"> 인물 2</li>
+            <li><input type="radio" name="answer" value="3"> 인물 3</li>
+        </ul>
+        <button id="submit">제출</button>
+    </div>
+    <div id="timer">남은 시간: <span id="time">10</span>초</div>
+
+    <script>
+        const quiz = document.getElementById('quiz');
+        const questionDisplay = document.getElementById('question');
+        const choicesList = document.getElementById('choices');
+        const timer = document.getElementById('timer');
+        const timeDisplay = document.getElementById('time');
+        const submitButton = document.getElementById('submit');
+
+        const quizData = [
+            {
+                question: '질문 1: 누구인가요?',
+                choices: ['인물 1', '인물 2', '인물 3'],
+                correctAnswer: '1'
+            },
+            {
+                question: '질문 2: 누구인가요?',
+                choices: ['인물 4', '인물 5', '인물 6'],
+                correctAnswer: '2'
+            },
+            {
+                question: '질문 3: 누구인가요?',
+                choices: ['인물 7', '인물 8', '인물 9'],
+                correctAnswer: '3'
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let timeLeft = 10; // 초기 시간 설정 (초 단위)
+        let timerInterval;
+
+        // 타이머 업데이트 함수
+        function updateTimer() {
+            timeDisplay.textContent = timeLeft;
+            if (timeLeft === 0) {
+                alert('시간이 초과되었습니다.');
+                clearInterval(timerInterval);
+                nextQuestion();
+            } else {
+                timeLeft--;
+            }
+        }
+
+        // 다음 질문 표시 함수
+        function nextQuestion() {
+            if (currentQuestionIndex < quizData.length - 1) {
+                currentQuestionIndex++;
+                showQuestion();
+                clearInterval(timerInterval);
+                startTimer();
+            } else {
+                alert('모든 퀴즈가 끝났습니다.');
+            }
+        }
+
+        // 질문 표시 함수
+        function showQuestion() {
+            const currentQuestion = quizData[currentQuestionIndex];
+            questionDisplay.textContent = currentQuestion.question;
+
+            choicesList.innerHTML = '';
+            currentQuestion.choices.forEach((choice, index) => {
+                const li = document.createElement('li');
+                li.innerHTML = `<input type="radio" name="answer" value="${index + 1}"> ${choice}`;
+                choicesList.appendChild(li);
+            });
+
+            submitButton.disabled = false;
+        }
+
+        // 타이머 시작 함수
+        function startTimer() {
+            timeLeft = 10; // 각 질문당 초기 시간 설정
+            timerInterval = setInterval(updateTimer, 1000);
+        }
+
+        // 초기 화면 설정
+        showQuestion();
+        startTimer();
+
+        // 제출 버튼 클릭 이벤트 처리
+        submitButton.addEventListener('click', () => {
+            const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+            if (selectedAnswer) {
+                clearInterval(timerInterval);
+                const userAnswer = selectedAnswer.value;
+                const correctAnswer = quizData[currentQuestionIndex].correctAnswer;
+                if (userAnswer === correctAnswer) {
+                    alert('정답입니다!');
+                } else {
+                    alert(`틀렸습니다. 정답은 ${correctAnswer} 입니다.`);
+                }
+                nextQuestion();
+            } else {
+                alert('답을 선택하세요.');
+            }
+        });
+    </script>
+</body>
+</html>

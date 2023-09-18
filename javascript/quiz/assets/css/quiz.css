@@ -488,6 +488,26 @@ body::after {
     background-color: #006696;
     transform: rotate(45deg);
 }
+.quiz__check {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    background-color: #006696;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 1px dashed transparent;
+}
+.quiz__check:hover {
+    background-color: #d4edfa;
+    border: 1px dashed #006696;
+    color: #006696;
+}
 
 /* footer */
 #footer {
