@@ -515,7 +515,7 @@ body::after {
     font-size: 14px;
 }
 #footer a {
-    display: block;
+    display: inline-block;
     color: #fff;
     padding: 40px;
 }
