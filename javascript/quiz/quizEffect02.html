@@ -7,6 +7,8 @@
 
     <link rel="stylesheet" href="assets/css/quiz.css">
     <link rel="stylesheet" href="assets/css/ani.css">
+    <link rel="stylesheet" href="../../assets/css/default.min.css">
+    <link rel="stylesheet" href="assets/css/quizmodal.css">
 
 </head>
 <body>
@@ -174,8 +176,175 @@
 
     <footer id="footer">
         <a href="mailto:lee.jiyoung492@gmail.com">lee.jiyoung492@gmail.com</a>
+
+        <div class="modal__wrap">
+            <div class="modal__btn">소스 보기</div>
+            <div class="modal__cont">
+                <div class="modal__box">
+                    <div class="title">
+                        <span class="dot" aria-label="true"></span>
+                        <div class="tabs">
+                            <div class="active">
+                                <span class="favicon" aria-label="true">
+                                    <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
+                                        <circle cx="9" cy="9" r="9" fill="#fff"></circle>
+                                        <path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="orange"></path>
+                                        <path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="yellow"></path>
+                                    </svg>
+                                </span>
+                                <em>Javascript</em>
+                                <span class="close">
+                                    <svg width="18" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                        <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="cont">
+                        <div class="active">
+<pre><code class="language-js">// 선택자
+const quizWrap = document.querySelector(".quiz__wrap");
+const quizDate = quizWrap.querySelectorAll(".quiz__date");
+const quizType = quizWrap.querySelectorAll(".quiz__type");
+const quizNum = quizWrap.querySelectorAll(".quiz__question em");
+const quizQuestion = quizWrap.querySelectorAll(".quiz__question span");
+const quizAnswer = quizWrap.querySelectorAll(".quiz__answer");
+const quizDesc = quizWrap.querySelectorAll(".quiz__desc");
+const quizConfirm = quizWrap.querySelectorAll(".quiz__confirm");
+const quizInput = quizWrap.querySelectorAll(".quiz__input input");
+const quizAnimation = quizWrap.querySelectorAll(".quiz__animation");
+
+// 문제 정보
+const quizInfo = [
+    {
+        infoDate: "20년 4회",
+        infoType: "정보처리 기능사",
+        infoNum: "01.",
+        infoQuestion: "반가산기(Half-Adder)의 논리 회로도에서 자리올림이 발생하는 회로는?",
+        infoAnswer: "AND",
+        infoDesc: "반가산기는 2진수 1자리(1bit)의 a와 b를 더한 합과 자리올림수를 얻는 회로입니다."
+    }, 
+    {
+        infoDate: "21년 2회",
+        infoType: "정보처리 기능사",
+        infoNum: "02.",
+        infoQuestion: "SQL의 SELECT문에서 특정열의  값을 기준으로 정렬할 때 사용하는 절은?",
+        infoAnswer: "ORDER BY 절",
+        infoDesc: "ORDER BY는 검색 결과에 대한 정렬을 수행합니다."
+    }, 
+    {
+        infoDate: "20년 4회",
+        infoType: "정보처리 기능사",
+        infoNum: "03.",
+        infoQuestion: "주소 지정 방식 중 기억 장치에 접근할 피연산자가 없는 것으로 산술에 필요한 명령어는 스택 구조 형태에서 처리하도록 하는 것은?",
+        infoAnswer: "0-주소 형식",
+        infoDesc: "0-주소 형식(=스택 구조)은 명령어에 오퍼랜드부가 없이 데이터가 명령어 자체에 있는 방식입니다. 컴퓨어에서 사용하며 연산 속도가 가장 빠릅니다."
+    }
+];
+
+// 문제 출력(innterText = textContent 같은 기능)
+// quizDate[0].textContent = quizInfo[0].infoDate;
+// quizDate[1].textContent = quizInfo[1].infoDate;
+// quizDate[2].textContent = quizInfo[2].infoDate;
+
+// quizType[0].textContent = quizInfo[0].infoType;
+// quizType[1].textContent = quizInfo[1].infoType;
+// quizType[2].textContent = quizInfo[2].infoType;
+
+// quizNum[0].textContent = quizInfo[0].infoNum;
+// quizNum[1].textContent = quizInfo[1].infoNum;
+// quizNum[2].textContent = quizInfo[2].infoNum;
+
+// quizQuestion[0].textContent = quizInfo[0].infoQuestion;
+// quizQuestion[1].textContent = quizInfo[1].infoQuestion;
+// quizQuestion[2].textContent = quizInfo[2].infoQuestion;
+
+// quizAnswer[0].textContent = quizInfo[0].infoAnswer;
+// quizAnswer[1].textContent = quizInfo[1].infoAnswer;
+// quizAnswer[2].textContent = quizInfo[2].infoAnswer;
+
+// quizDesc[0].textContent = quizInfo[0].infoDesc;
+// quizDesc[1].textContent = quizInfo[1].infoDesc;
+// quizDesc[2].textContent = quizInfo[2].infoDesc;
+
+// for()
+// for(let i=0; i&lt;=quizInfo.length; i++){
+//     quizDate[i].textContent = quizInfo[i].infoDate;
+//     quizType[i].textContent = quizInfo[i].infoType;
+//     quizNum[i].textContent = quizInfo[i].infoNum;
+//     quizQuestion[i].textContent = quizInfo[i].infoQuestion;
+//     quizAnswer[i].textContent = quizInfo[i].infoAnswer;
+//     quizDesc[i].textContent = quizInfo[i].infoDesc;
+// };
+
+// forEach
+quizInfo.forEach((el, i) =&gt; {
+    quizDate[i].textContent = quizInfo[i].infoDate;
+    quizType[i].textContent = quizInfo[i].infoType;
+    quizNum[i].textContent = quizInfo[i].infoNum;
+    quizQuestion[i].textContent = quizInfo[i].infoQuestion;
+    quizAnswer[i].textContent = quizInfo[i].infoAnswer;
+    quizDesc[i].textContent = quizInfo[i].infoDesc;
+});
+
+// 정답 해설 숨기기
+// quizAnswer[0].style.display = "none";
+// quizAnswer[1].style.display = "none";
+// quizAnswer[2].style.display = "none";
+
+// quizDesc[0].style.display = "none";
+// quizDesc[1].style.display = "none";
+// quizDesc[2].style.display = "none";
+
+// for()문
+// for(let i=0; i&lt;quizInfo.length; i++){
+//     quizAnswer[i].style.display = "none";
+//     quizDesc[i].style.display = "none";
+// };
+
+// forEach()문
+quizInfo.forEach((el, i) =&gt; {
+    quizAnswer[i].style.display = "none";
+    quizDesc[i].style.display = "none";
+});
+
+// 정답확인
+quizConfirm.forEach(function(btn, num,){
+    btn.addEventListener("click", function(){
+        const userAnswer = quizInput[num].value.trim().toLowerCase();
+        const correctAnswer = quizInfo[num].infoAnswer.trim().toLocaleLowerCase();
+        
+        if(userAnswer == correctAnswer){
+            quizAnimation[num].classList.add("like");
+        } else {
+            quizAnimation[num].classList.add("dislike");
+        }
+
+        quizAnswer[num].style.display = "block";
+        quizDesc[num].style.display = "block";
+        quizConfirm[num].style.display = "none";
+        quizInput[num].style.display = "none";
+    });
+});</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal__close">
+                    <svg width="18" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                        <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
     </footer>
     <!-- //footer -->
+
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="../slider/js/common.js"></script>
 
     <script>
 

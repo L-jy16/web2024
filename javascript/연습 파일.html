@@ -1,134 +1,109 @@
-<!DOCTYPE html>
-<html lang="ko">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>웹표준 사이트</title>
-
-    <!-- META -->
-    <meta name="description" content="피그마로 디자인 작업하고 웹 표준 코딩을 완성한 현대백화점 포인트 클론 사이트입니다." />
-    <meta name="keywords" content="웹표준, 피그마, 제플린, 코딩, 사이트, 클론 사이트, 따라하기, 사이트 제가" />
-    <meta name="author" content="l-jy16" />
-    <meta name="robots" content="all" />
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="assete/css/fonts.css" />
-    <link rel="stylesheet" href="assete/css/reset.css" />
-    <link rel="stylesheet" href="assete/css/common.css" />
-    <link rel="stylesheet" href="assete/css/style.css" />
-</head>
-
-<body>
-    <div id="skip">
-        <a href="#header">헤더 영역 바로가기</a>
-        <a href="#slider">슬라이드 영역 바로가기</a>
-    </div>
-    <!-- //skip -->
-
-    <header id="header" role="banner">
-        <div class="header__inner">
-            <h1>
-                <a href="header__logo">
-                    <img src="../site/assete/img/W.Point.svg" alt="W.Point">
-                </a>
-            </h1>
-            <nav class="header__nav" role="navigation" aria-label="Main">
-                <ul>
-                    <li class="active"><a href="#">소개</a></li>
-                    <li><a href="#">쌓기</a></li>
-                    <li><a href="#">쓰기</a></li>
-                    <li><a href="#">혜택</a></li>
-                    <li><a href="#">클럽</a></li>
-                    <li><a href="#">고객센터</a></li>
-                </ul>
-            </nav>
-            <div class="header__ham">
-                <a href="#">
-                    <span></span>
-                </a>
-            </div>
-        </div>
-    </header>
-    <!-- //header -->
-
-    <main id="main" role="main">
-        <section id="sliderWrap">
-            <div class="slider__inner">
-                <div class="slider">
-                    <div class="slider__text">
-                        <h3>지영백화점그룹의<br /><em>다양한 제휴사</em>를 만나보세요!</h3>
-                        <p>다양한 브랜드에서 적립하고 사용하는<br />즐거운 일상의 포인트 제도 </p>
-                    </div>
-                    <div class="slider__dot">
-                        <a href="#" class="dot active"><span class="ir">첫번째 슬라이드</span></a>
-                        <a href="#" class="dot"><span class="ir">두번째 슬라이드</span></a>
-                        <a href="#" class="dot"><span class="ir">세번째 슬라이드</span></a>
-                        <a href="#" class="play"><span class="ir">플레이</span></a>
-                        <a href="#" class="stop"><span class="ir">정지</span></a>
-                    </div>
-                    <div class="slider__arrow">
-                        <a href="#" class="left"><span class="ir">이전이미지</span></a>
-                        <a href="#" class="right"><span class="ir">다음이미지</span></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- //sliderWrap -->
-
-        <section id="introWrap">
-            <div class="intro__inner">
-                <div class="container">
-                    <div class="intro__img">
-                        <div class="img1">
-                            <img src="../site/assete/img/intro03.png" alt="멤버십1" aria-hidden="true">
-                        </div>
-                        <div class="img2">
-                            <img src="../site/assete/img/intro02.png" alt="멤버십2" aria-hidden="true">
-                        </div>
-                        <div class="img3">
-                            <img src="../site/assete/img/intro01.png" alt="멤버십3" aria-hidden="true">
-                        </div>
-                    </div>
-                    <div class="intro__text">
-                        <h3>머물수록<br />즐거움이 쌓이는<br /><em>현대백화점</em> 포인트</h3>
-                        <p>현대백화점그룹 라이프스타일 멤버십<br />H.Point로쌓고 즐기고 나누는 새로운 일상</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- //introWrap -->
-        
-        <section id="pointUse">
-            <div class="use__inner">
-                <div class="container">
-                    <div class="use__title">
-                        <div class="use__text">
-                            <h3>포인트 <em>쓰기</em> <span>의미있게 사용하는 가치있는 소비생활</span></h3>
-                        </div>
-                        <div class="use__img">
-                            <div>
-                                <img src="../site/assete/img/point01.png" alt="">
-                            </div>
-                            <div>
-
-                            </div>
-                            <div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-    </main>
-    <!-- //main -->
-
-    <footer id="footer" role="contentinfo">
-        <h2>푸터</h2>
-    </footer>
-    <!-- //footer -->
-</body>
-</html>
+<div class="table">
+    <table>
+        <caption>제이쿼리 이벤트 등록 메서드의 종류</caption>
+        <colgroup>
+            <col style="width: 15%;" />
+            <col style="width: 15%;" />
+            <col style="width: 70%;" />
+        </colgroup>
+        <thead>
+            <th>구분</th>
+            <th>종류</th>
+            <th>설명</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="3">로딩 이벤트</td>        
+                <td class="left">load()</td>
+                <td class="left">선택한 이미지 또는 프레임 요소에 연동된 소스의 로딩이 완료된 후 이벤트가 발생합니다.</td>
+            </tr>
+            <tr>
+                <td class="left">ready()</td>
+                <td class="left">지정한 HTML 문서 객체의 로딩이 완료된 후 이벤트가 발생합니다.</td>
+            </tr>
+            <tr>
+                <td class="left">error()</td>
+                <td class="left">이벤트 대상 요소에서 오류가 발생하면 이벤트가 발생합니다.</td>
+            </tr>
+            <tr>
+                <td rowspan="11">마우스 이벤트</td>        
+                <td class="left">click()</td>
+                <td class="left">선택한 요소를 클릭했을 때 이벤트가 발생합니다.</td>
+            </tr>
+            <tr>        
+                <td class="left">dblclick()</td>
+                <td class="left">선택한 요소를 연속해서 두 번 클릭했을 때 이벤트가 발생합니다.</td>
+            </tr>
+            <tr>        
+                <td class="left">mouseout()</td>
+                <td class="left">선택한 요소의 영역에서 마우스 포인터가 벗어났을 때 이벤트가 발생합니다. 이때 하위 요소의 영향을 받습니다.</td>
+            </tr>
+            <tr>        
+                <td class="left">mouseover()</td>
+                <td class="left">선택한 요소의 영역에 마우스 포인터를 올렸을 때 이벤트가 발생합니다.</td>
+            </tr>
+            <tr>        
+                <td class="left">hover()</td>
+                <td class="left">선택한 요소에 마우스 포인터를 올렸을 때와 벗어났을 때 각각 이벤트가 발생합니다.</td>
+            </tr>
+            <tr>        
+                <td class="left">mousedown()</td>
+                <td class="left">선택한 요소에서 마우스 버튼을 눌렀을 때 이벤트가 발생합니다.</td>
+            </tr>
+            <tr>        
+                <td class="left">mouseup</td>
+                <td class="left">선택한 요소에 마우스 버튼을 눌렀다 떼었을 때 이벤트가 발생합니다.</td>
+            </tr>
+            <tr>        
+                <td class="left">mouseenter()</td>
+                <td class="left">선택한 요소 범위에 마우스 포인터를 올렸을 때 이벤트가 발생합니다.</td>
+            </tr>
+            <tr>        
+                <td class="left">mouseleave</td>
+                <td class="left">선택한 요소 범위에서 마우스 포인터가 벗어났을 때 이벤트가 발생합니다.</td>
+            </tr>
+            <tr>        
+                <td class="left">mousemove()</td>
+                <td class="left">선택한 요소 범위에서 마우스 포인터를 움직였을 때 이벤트가 발생합니다.</td>
+            </tr>
+            <tr>        
+                <td class="left">scroll</td>
+                <td class="left">가로, 세로 스크롤바를 움직일 때마다 이벤트가 발생합니다.</td>
+            </tr>
+            <tr>
+                <td rowspan="5">포커스 이벤트</td>        
+                <td class="left">focus()</td>
+                <td class="left">선택한 요소에 포커스가 생성되었을 때 이벤트를 발생하거나 선택한 요소에 강제로 포커스를 생성합니다.</td>
+            </tr>
+            <tr>     
+                <td class="left">focusin()</td>
+                <td class="left">선택한 요소에 포커스가 생성되었을 때 이벤트가 발생합니다.</td>
+            </tr>
+            <tr>     
+                <td class="left">focusout()</td>
+                <td class="left">포커스가 선택한 요소에서 다른 요소로 이동되었을 때 이벤트가 발생합니다.</td>
+            </tr>
+            <tr>     
+                <td class="left">blur()</td>
+                <td class="left">포커스가 선택한 요소에서 다른 요소로 이동되었을 때 이벤트가 발생하거나 선택한 요소의 포커스가 강제로 사라지도록 합니다.</td>
+            </tr>
+            <tr>     
+                <td class="left">change()</td>
+                <td class="left">이벤트 대상의 입력 요소의 값이 변경되고, 포커스가 이동하면 이벤트가 발생합니다. 그리고 강제로 change 이벤트를 발생시킬 때도 사용합니다.</td>
+            </tr>
+            <tr>
+                <td rowspan="3">키보드 이벤트</td>     
+                <td class="left">keypress()</td>
+                <td class="left">선택한 요소에서 키보드를 눌렀을 때 이벤트가 발생합니다. 그리고 문자 키를 제외한 키의 코드값을 반환합니다.</td>
+            </tr>
+            <tr>     
+                <td class="left">keydown()</td>
+                <td class="left">선택한 요소에서 키보드를 눌렀을 때 이벤트가 발생합니다. 키보드의 모든 키의 코드값을 반환합니다.</td>
+            </tr>
+            <tr>     
+                <td class="left">keyup()</td>
+                <td class="left">선택한 요소에서 키보드에서 손을 떼었을 때 이벤트가 발생합니다.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
