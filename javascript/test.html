@@ -1,70 +1,63 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>퀴즈 이벤트</title>
+
+    <link rel="stylesheet" href="css/project.css">
+
+
 </head>
+
 <body>
+    <div id="header">
+        <a href="quizproject.html">
+            <h1>Quiz</h1>
+        </a>
+    </div>
+    <!-- //header -->
+
+    <div id="main">
+        <div class="quiz__wrap">
+            <div class="quiz">
+                <div class="quiz__header"><span>캐릭터 퀴즈</span></div>
+                <div class="quiz__main">
+                    <div class="quiz_img">
+                        <img src="" alt="이미지">
+                        <div class="footer__desc">위 문제는 애니메이션 캐릭터가 나오는 문제입니다.</div>
+                    </div>
+                    <div class="quiz__box">
+                        <div class="quiz__question"></div>
+                        <div class="quiz__footer">
+                            <input type="text" name="text" id="text">
+                            <div class="quiz__answer none"></div>
+                        </div>
+                        <div class="box__footer">
+                            <button class="quiz__confirm">정답 확인</button>
+                            <button class="quiz__Next">다음</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //main -->
+
     <script>
-        //
-        const aaa = [10, 20, 30, 40, 50, 60, 70, 80, 90];
+        // 선택자
+        const quizWrap = document.querySelector(".quiz__wrap")
 
-        {
-            let sum = 0;
-            
-                for(let i=0; i<aaa.length; i++){
-                sum += aaa[i];
-            }
-            console.log(sum);
+        // 문제 정보
+        const fetchQuiz = () => {
+            fetch("quizinfo.json")
+            .then(res => res.json())
         }
 
-        {
-            let sum = 0;
+       
 
-            aaa.forEach((el, i, arr) => {
-                sum += el;
-            });
-            console.log(sum);
-        }
-
-        {
-            let sum = 0;
-
-            for(let el of aaa){
-                sum += el;
-            };
-            console.log(sum);
-        }
-
-        {
-            let sum = 0;
-
-            for(let el in aaa){
-                sum += aaa[el];
-            };
-            console.log(sum);
-        }
-
-        {
-            let sum = 0;
-
-            aaa.map(el => {
-                sum += el;
-            });
-
-            console.log(sum);
-        }
-
-        {
-            let sum = 0
-
-            aaa.filter(el => {
-                sum += el
-            });
-
-            console.log(sum)
-        }
     </script>
 </body>
+
 </html>
