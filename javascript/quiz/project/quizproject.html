@@ -4,9 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>퀴즈 이벤트</title>
+    <style>
+        body {
+            background-image: url(img/배경.png) !important;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+        }
+
+        @media (max-width: 1800px){
+            body {
+                background-size: auto;
+            }
+        }
+    </style>
 
     <link rel="stylesheet" href="css/project.css">
-
 
 </head>
 <body>
@@ -17,7 +33,11 @@
 
     <div id="main">
         <div class="quiz__wrap">
-            <div class="quiz">
+            <div class="header">
+                <span>캐릭터 퀴즈</span>
+            </div>
+            <div class="start"><a href="quizproject02.html">START</a></div>
+            <!-- <div class="quiz">
                 <div class="quiz__header"><span>캐릭터 퀴즈</span></div>
                 <div class="quiz__main">
                     <div class="quiz_img">
@@ -30,7 +50,7 @@
                     </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
     <!-- //main -->

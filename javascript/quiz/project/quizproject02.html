@@ -22,7 +22,7 @@
     <div id="main">
         <div class="quiz__wrap">
             <div class="quiz">
-                <div class="quiz__header"><span>캐릭터 퀴즈</span></div>
+                <div class="quiz__header"><span>😊캐릭터 이름을 맞춰봐😊</span></div>
                 <div class="quiz__main">
                     <div class="quiz_img">
                         <img src="" alt="">
@@ -529,6 +529,12 @@
                 // alert("정답입니다.");
                 score++;
                 document.getElementById("score").textContent = score;
+                feedbackDiv.textContent = "정답입니다";
+                feedbackDiv.classList.add("feedback2");
+                document.querySelector(".quiz__box").appendChild(feedbackDiv);
+                setTimeout(function () {
+                    feedbackDiv.remove();
+                }, 500); // 0.5초 후에 제거 및 다음 문제로 이동
             } else {
                 // 오답일 때 여기에 추가 동작을 구현할 수 있습니다.
                 feedbackDiv.textContent = "땡! 정답은 " + quizData[currentQuizIndex].answer + " 입니다.";

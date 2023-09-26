@@ -9,35 +9,10 @@
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body class="mint">
-    <div id="skip">
-        <a href="#header">헤더 영역 바로가기</a>
-        <a href="#main">콘텐츠 영역 바로가기</a>
-        <a href="#footer">푸터 영역 바로가기</a>
-    </div>
+    <?php "../include/skip.php" ?>
+    <!-- //skip -->
     
-    <header id="header" role="banner">
-        <div class="header__inner container">
-            <div class="left">
-                <a href="/">
-                    <span class="blind">메인으로</span>
-                </a>
-            </div>
-            <div class="logo">
-                <a href="main.html">Developer Blog</a>
-            </div>
-            <div class="right">
-                <li><a href="join.html">회원가입</a></li>
-            </div>
-        </div>
-        <nav class="nav__inner">
-            <ul>
-                <li><a href="#">회원가입</a></li>
-                <li><a href="#">로그인</a></li>
-                <li><a href="#">게시판</a></li>
-                <li><a href="#">블로그</a></li>
-            </ul>
-        </nav>
-    </header>
+    <?php include "../include/header.php" ?>
     <!-- //header -->
 
     <main id="main" role="main">
@@ -54,7 +29,7 @@
         <section class="join__inner container">
             <h2>회원가입</h2>
             <div class="join__from">
-                <form action="#" name="#" method="post">
+                <form action="joinSave.php" name="join" method="post">
                     <fieldset>
                         <legend class="blind">회원가입 영역</legend>
                         <div>
@@ -62,7 +37,7 @@
                             <input type="email" id="youEmail" name="youEmail" placeholder="이메일을 적어주세요!" class="input__style" required>
                         </div>
                         <div>
-                            <label for="youEmail" class="required">이름</label>
+                            <label for="youName" class="required">이름</label>
                             <input type="text" id="youName" name="youName" placeholder="이름을 적어주세요!" class="input__style" required>
                         </div>
                         <div>
@@ -86,12 +61,7 @@
     </main>
     <!-- //main -->
 
-    <footer id="footer" role="contentinfo">
-        <div class="footer__inner container btStyle">
-            <div>Copyright 2023 ljy16 </div>
-            <div>blog by webs</div>
-        </div>
-    </footer>
+    <?php include "../include/footer.php" ?>
     <!-- //footer -->
 </body>
 </html>
