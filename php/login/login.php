@@ -3,49 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>로그인 페이지</title>
+    <title>PHP 블로그 만들기</title>
 
-    <!-- CSS -->
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
+
 <body class="mint">
-    <div id="skip">
-        <a href="#header">헤더 영역 바로가기</a>
-        <a href="#main">콘텐츠 영역 바로가기</a>
-        <a href="#footer">푸터 영역 바로가기</a>
-    </div>
+    <?php include "../include/skip.php" ?>
+    <!-- //skip -->
     
-    <header id="header" role="banner">
-        <div class="header__inner container">
-            <div class="left">
-                <a href="/">
-                    <span class="blind">메인으로</span>
-                </a>
-            </div>
-            <div class="logo">
-                <a href="main.html">Developer Blog</a>
-            </div>
-            <div class="right">
-                <li><a href="join.html">회원가입</a></li>
-            </div>
-        </div>
-        <nav class="nav__inner">
-            <ul>
-                <li><a href="#">회원가입</a></li>
-                <li><a href="#">로그인</a></li>
-                <li><a href="#">게시판</a></li>
-                <li><a href="#">블로그</a></li>
-            </ul>
-        </nav>
-    </header>
+    <?php include "../include/header.php" ?>
     <!-- //header -->
+
 
     <main id="main" role="main">
         <section class="login__inner container">
             <h2>로그인</h2>
             <p>로그인을 하시면 게시글 및 댓글 작성이 가능합니다.</p>
             <div class="login__from btStyle bmStyle">
-                <form action="#" name="#" method="post">
+                <form action="loginSave.php" name="#" method="post">
                     <fieldset>
                         <legend class="blind">로그인 영역</legend>
                         <div>
@@ -71,12 +47,7 @@
     </main>
     <!-- //main -->
 
-    <footer id="footer" role="contentinfo">
-        <div class="footer__inner container btStyle">
-            <div>Copyright 2023 ljy16 </div>
-            <div>blog by webs</div>
-        </div>
-    </footer>
+    <?php include "../include/footer.php" ?>
     <!-- //footer -->
 </body>
 </html>
