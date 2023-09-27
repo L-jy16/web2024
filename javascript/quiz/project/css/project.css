@@ -490,18 +490,25 @@ body {
     }
 }
 @media(max-width: 890px){
+    #header a h1 {
+        font-size: 35px;
+    }
     .header span {
         font-size: 100px;
         word-break: keep-all;
     }
     .start a {
-        font-size: 80px;
+        font-size: 70px;
         margin: 0 auto;
         text-align: center;
         justify-content: center;
     }
+    .start a:hover {
+        font-size: 80px;
+        margin-left: -50px;
+        justify-content: center;
+    }
     .quiz__question {
         font-size: 50px;
-
     }
 }
