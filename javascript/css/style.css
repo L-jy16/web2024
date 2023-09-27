@@ -68,6 +68,13 @@ li {
     padding: 40px;
     border-bottom: 1px dashed #dcdcdc;
 }
+.main__menu h3 {
+    font-weight: 500;
+    font-size: 30px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    color: #006696;
+}
 .main__menu ul {
     margin-bottom: 10px;
 }
