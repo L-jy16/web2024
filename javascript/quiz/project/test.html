@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 이벤트</title>
+
+    <link rel="stylesheet" href="/javascript/quiz/project/css/project.css">
+
+
+</head>
+
+<body>
+    <div id="header">
+        <a href="/javascript/quiz/project/quizproject.html">
+            <h1>Quiz</h1>
+        </a>
+    </div>
+    <!-- //header -->
+
+    <div id="main">
+        <div class="quiz__wrap">
+            <div class="quiz">
+                <div class="quiz__header"><span>캐릭터 퀴즈</span></div>
+                <div class="quiz__main">
+                    <div class="quiz_img">
+                        <img src="" alt="이미지">
+                        <div class="footer__desc">위 문제는 애니메이션 캐릭터가 나오는 문제입니다.</div>
+                    </div>
+                    <div class="quiz__box">
+                        <div class="quiz__question"></div>
+                        <div class="quiz__footer">
+                            <input type="text" name="text" id="text">
+                            <div class="quiz__answer none"></div>
+                        </div>
+                        <div class="box__footer">
+                            <button class="quiz__confirm">정답 확인</button>
+                            <button class="quiz__Next">다음</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //main -->
+
+    <script>
+        // 선택자
+        const quizWrap = document.querySelector(".quiz__wrap")
+        const quiz = document.querySelector(".quiz")
+        const quizImg = document.querySelector(".quiz_img img[src]");
+        const quizQuestion = document.querySelector(".quiz__question");
+        const quizAnswer = document.querySelector(".quiz__answer");
+        const quizConfirm = document.querySelector(".quiz__confirm");
+        const quiznext = document.querySelector(".quiz__Next");
+        const quizInput = document.querySelectorAll(".quiz__input input");
+
+        // 문제 정보
+        let currentIndex = 0;   // 현재 문제
+        let quizInfo = [];
+
+        const fetchQuiz = () => {
+            fetch("https://l-jy16.github.io/webs2024/javascript/quiz/project/quizinfo.json")
+            .then(res => res.json())
+                .then(items => {
+                    quizInfo = items;
+                    updateQuiz();
+                });
+        };
+
+        // 문제 출력
+        const updateQuiz = () => {
+            quizImg.src = quizInfo[currentIndex].imageURL;
+            quizQuestion.innerText = quizInfo[currentIndex].question;
+            quizAnswer.innerText = "";
+            quizInput.value = "";
+        }
+        
+         
+        // 문제 정답 확인
+        quizConfirm.forEach((btn, num) => {
+            quizConfirm.addEventListener("click", function(){
+                const userAnswer = quizInput[currentIndex].value.trim();
+                const correctAnswer = quizInfo[currentIndex].answer.value.trim();
+
+                if(userAnswer == correctAnswer){
+                    alert("정답입니다.");
+                } else {
+                    alert("틀렸습니다.")
+                }
+            })
+        });
+
+        // 다음 문제 넘어가기
+        quizNext.addEventListener("click", function () {
+            currentIndex++; // 다음 문제 인덱스로 이동
+            if (currentIndex < quizInfo.length) {
+                updateQuiz();
+            } else {
+                alert("모든 문제를 풀었습니다."); // 마지막 문제 후 알림
+            }
+        });
+
+        // 페이지가 로드된 후 실행
+        document.addEventListener("DOMContentLoaded", () => {
+            fetchQuiz();
+        })
+    </script>
+</body>
+
+</html>

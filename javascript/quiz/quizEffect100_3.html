@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정보처리 기능사 100문제</title>
+
+    <link rel="stylesheet" href="assets/css/quiz.css">
+    <link rel="stylesheet" href="assets/css/ani.css">
+    <style>
+        .quiz__score {
+            position: fixed;
+            left: 20px;
+            bottom: 20px;
+            width: 70px;
+            height: 50px;
+            border-radius: 10px;
+            background-color: #047bb3;
+            color: #fff;
+            text-align: center;
+            line-height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h1>
+            <a href="../index.html">Quiz</a>
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="quizEffect100.html">1</a></li>
+                <li><a href="quizEffect100_1.html">2</a></li>
+                <li><a href="quizEffect100_2.html">3</a></li>
+                <li class="active"><a href="quizEffect100_3.html">4</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="quiz__wrap">
+            <!-- <div class="quiz">
+                <div class="quiz__header">
+                    <span class="quiz__date"></span>
+                </div>
+                <div class="quiz__main">
+                    <div class="quiz__question">
+                        <em></em>. 
+                        <span></span>
+                    </div>
+                    <div class="quiz__input">
+                        <input type="text" placeholder="정답을 입력해주세요!">
+                    </div>
+                    <div class="quiz__answer">
+
+                    </div>
+                    <div class="quiz__desc">
+
+                    </div>
+                </div>
+                <div class="quiz__footer">
+                    <button class="quiz__confirm">정답 확인하기</button>
+                </div>
+            </div> -->
+        </div>
+        <div class="quiz__score">0</div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:lee.jiyoung492@gmail.com">lee.jiyoung492@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script>
+        // 선택자
+        const quizWrap = document.querySelector(".quiz__wrap");
+        // const quizDate = quizWrap.querySelectorAll(".quiz__date");
+        // const quizNum = quizWrap.querySelectorAll(".quiz__question em");
+        // const quizQuestion = quizWrap.querySelectorAll(".quiz__question span");
+        // const quizAnswer = quizWrap.querySelectorAll(".quiz__answer");
+        // const quizDesc = quizWrap.querySelectorAll(".quiz__desc");
+        // const quizConfirm = quizWrap.querySelectorAll(".quiz__confirm");
+        // const quizInput = quizWrap.querySelectorAll(".quiz__input input");
+
+        // 문제 정보
+        let quizInfo = [];
+        let quizScore = 0;
+
+        // 문제 가져오기
+        const fetchQuiz = () => {
+            // fetch("https://github.com/webstoryboy/webstoryboy/blob/main/w_json/gineungsaShort.json")
+            fetch("gineungsaShort.json")
+                .then(res => res.json())
+                .then(items => {
+                    quizInfo = items.map((item, index) => {
+                        const formattedQuiz = {
+                            infoDate: item.time,
+                            infoQuestion: item.question,
+                            infoAnswer: item.correct_answer,
+                            infoDesc: item.question_desc
+                        }
+                        formattedQuiz.infoChoice = choices;
+                        return formattedQuiz;
+                    });
+                    onsole.log(quizInfo)
+                    updataQuiz();
+                })
+        }
+
+        // 문제 출력
+        const updataQuiz = () => {
+            const quizArray = [];
+
+            quizInfo.forEach(() => {
+                quizArray.push(`
+                <div class="quiz">
+                    <div class="quiz__header">
+                        <span class="quiz__date">${quiz.infoDate}</span>
+                    </div>
+                    <div class="quiz__main">
+                        <div class="quiz__question">
+                            ${number + 1}. ${quiz.infoQuestion}
+                        </div>
+                        <div class="quiz__input">
+                            <input type="text" placeholder="정답을 입력해주세요!">
+                        </div>
+                        <div class="quiz__answer">${quiz.infoAnswer}</div>
+                        <div class="quiz__desc">${quiz.infoDesc}</div>
+                    </div>
+                    <div class="quiz__footer">
+                        <button class="quiz__confirm">정답 확인하기</button>
+                    </div>
+                </div>
+                `);
+            });
+        };
+
+        // 페이지가 로드된 후 실행
+        document.addEventListener("DOMContentLoaded", () => {
+            fetchQuiz();
+        })
+    </script>
+</body>
+</html>

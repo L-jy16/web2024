@@ -22,10 +22,10 @@
     <div id="main">
         <div class="quiz__wrap">
             <div class="quiz">
-                <div class="quiz__header"><span>캐릭터 퀴즈</span></div>
+                <div class="quiz__header"><span>😊캐릭터 이름을 맞춰봐😊</span></div>
                 <div class="quiz__main">
                     <div class="quiz_img">
-                        <img src="" alt="이미지">
+                        <img src="" alt="">
                         <div class="footer__desc">위 문제는 애니메이션 캐릭터가 나오는 문제입니다.</div>
                     </div>
                     <div class="quiz__box">
@@ -36,7 +36,8 @@
                         </div>
                         <div class="box__footer">
                             <button class="quiz__confirm">정답 확인</button>
-                            <button class="quiz__Next">다음</button>
+                            <button class="quiz__Next none">다음</button>
+                            <div>점수: <span id="score">0</span></div>
                         </div>
                     </div>
                 </div>
@@ -45,27 +46,524 @@
     </div>
     <!-- //main -->
 
+
     <script>
         const quizData = [
             {
-                question: "내가 누구게요~?",
-                answer: "도널드덕",
-                imageURL: "img/img1-min.png"
+                "question": "내가 누구게요~?",
+                "answer": "도널드덕",
+                "imageURL": "img/img1-min.png"
             },
             {
-                question: "내가 누구게요~?",
-                answer: "말레피센트",
-                imageURL: "img/img2-min.png"
+                "question": "내가 누구게요~?",
+                "answer": "말레피센트",
+                "imageURL": "img/img2-min.png"
             },
             {
-                question: "내가 누구게요~?",
-                answer: "뮬란",
-                imageURL: "img/img3-min.png"
+                "question": "내가 누구게요~?",
+                "answer": "뮬란",
+                "imageURL": "img/img3-min.png"
             },
-            // 다른 퀴즈 데이터들 추가
+            {
+                "question": "내가 누구게요~?",
+                "answer": "미키마우스",
+                "imageURL": "img/img4-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "버즈",
+                "imageURL": "img/img5-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "버럭이",
+                "imageURL": "img/img6-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "스티치",
+                "imageURL": "img/img7-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "슬픔이",
+                "imageURL": "img/img8-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "지니",
+                "imageURL": "img/img9-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "엘사",
+                "imageURL": "img/img10-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "우슬라",
+                "imageURL": "img/img11-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "크루엘라",
+                "imageURL": "img/img12-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "티몬",
+                "imageURL": "img/img13-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "비비",
+                "imageURL": "img/img14-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "포키",
+                "imageURL": "img/img15-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "품바",
+                "imageURL": "img/img16-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "패트와 매트",
+                "imageURL": "img/img17-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "네즈코",
+                "imageURL": "img/img18-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "고죠 사토루",
+                "imageURL": "img/img19-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "핑구",
+                "imageURL": "img/img20-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "스폰지밥",
+                "imageURL": "img/img21-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "훈이",
+                "imageURL": "img/img22-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "세일러문",
+                "imageURL": "img/img23-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "코스모",
+                "imageURL": "img/img24-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "보스 베이비",
+                "imageURL": "img/img25-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "할리퀸",
+                "imageURL": "img/img26-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "버블",
+                "imageURL": "img/img27-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "스파이더맨",
+                "imageURL": "img/img28-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "아이스베어",
+                "imageURL": "img/img29-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "브레드",
+                "imageURL": "img/img30-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "플랑크톤",
+                "imageURL": "img/img31-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "플래시",
+                "imageURL": "img/img32-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "티미",
+                "imageURL": "img/img33-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "덱스터",
+                "imageURL": "img/img34-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "보우",
+                "imageURL": "img/img35-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "엄마상어",
+                "imageURL": "img/img36-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "콩순이",
+                "imageURL": "img/img37-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "윌크",
+                "imageURL": "img/img38-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "완다",
+                "imageURL": "img/img39-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "닥터 스트레인저",
+                "imageURL": "img/img40-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "아냐",
+                "imageURL": "img/img41-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "다크시니",
+                "imageURL": "img/img42-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "레드후드",
+                "imageURL": "img/img43-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "한자와",
+                "imageURL": "img/img44-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "가오나시",
+                "imageURL": "img/img45-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "내퍼",
+                "imageURL": "img/img46-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "노지코",
+                "imageURL": "img/img47-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "도도리아",
+                "imageURL": "img/img48-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "라데츠",
+                "imageURL": "img/img49-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "레일리",
+                "imageURL": "img/img50-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "루피",
+                "imageURL": "img/img51-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "빅맘",
+                "imageURL": "img/img52-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "오룡",
+                "imageURL": "img/img53-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "오타마",
+                "imageURL": "img/img54-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "유바바",
+                "imageURL": "img/img55-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "자봉",
+                "imageURL": "img/img56-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "츠루",
+                "imageURL": "img/img57-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "코비",
+                "imageURL": "img/img58-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "크리링",
+                "imageURL": "img/img59-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "타시기",
+                "imageURL": "img/img60-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "푸알",
+                "imageURL": "img/img61-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "프랑키",
+                "imageURL": "img/img62-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "하쿠",
+                "imageURL": "img/img63-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "아구몬",
+                "imageURL": "img/img64-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "미소",
+                "imageURL": "img/img65-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "뿌까",
+                "imageURL": "img/img66-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "햄토리",
+                "imageURL": "img/img67-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "단비",
+                "imageURL": "img/img68-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "톰과 제리",
+                "imageURL": "img/img69-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "하울",
+                "imageURL": "img/img70-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "피카츄",
+                "imageURL": "img/img71-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "케로로",
+                "imageURL": "img/img72-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "체리",
+                "imageURL": "img/img73-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "또치",
+                "imageURL": "img/img74-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "모아나",
+                "imageURL": "img/img75-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "엠버",
+                "imageURL": "img/img76-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "코코",
+                "imageURL": "img/img77-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "옐로우",
+                "imageURL": "img/img78-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "루피",
+                "imageURL": "img/img79-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "토마스",
+                "imageURL": "img/img80-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "동동이",
+                "imageURL": "img/img81-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "바론",
+                "imageURL": "img/img82-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "레미",
+                "imageURL": "img/img83-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "청명",
+                "imageURL": "img/img84-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "커리지",
+                "imageURL": "img/img85-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "사스케",
+                "imageURL": "img/img86-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "사이타마",
+                "imageURL": "img/img87-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "타츠마키",
+                "imageURL": "img/img88-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "제노스",
+                "imageURL": "img/img89-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "가로우",
+                "imageURL": "img/img90-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "킹",
+                "imageURL": "img/img91-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "번견맨",
+                "imageURL": "img/img92-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "카카시",
+                "imageURL": "img/img93-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "거북왕",
+                "imageURL": "img/img94-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "짱구",
+                "imageURL": "img/img95-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "호빵맨",
+                "imageURL": "img/img96-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "지라이야",
+                "imageURL": "img/img97-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "츠나데",
+                "imageURL": "img/img98-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "오로치마루",
+                "imageURL": "img/img99-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "데이다라",
+                "imageURL": "img/img100-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "페인",
+                "imageURL": "img/img101-min.png"
+            },
+            {
+                "question": "내가 누구게요~?",
+                "answer": "엘리자베스",
+                "imageURL": "img/img102-min.png"
+            }
+
         ];
 
         let currentQuizIndex = 0; // 현재 퀴즈 인덱스
+        let score = 0;
 
         // DOM 요소를 가져옵니다.
         const quizHeader = document.querySelector(".quiz__header span");
@@ -75,7 +573,6 @@
         const quizConfirmButton = document.querySelector(".quiz__confirm");
         const quizNextButton = document.querySelector(".quiz__Next");
         const quizAnswer = document.querySelector(".quiz__answer")
-        const quizElement = document.querySelector(".quiz__wrap")
 
         // 초기 퀴즈 데이터를 표시합니다.
         displayQuizData();
@@ -86,30 +583,64 @@
         // 다음 버튼 클릭 이벤트 핸들러를 등록합니다.
         quizNextButton.addEventListener("click", nextQuestion);
 
+        // 정답 입력 필드에서 Enter 키를 눌렀을 때도 정답 확인 함수를 호출합니다.
+        quizAnswerInput.addEventListener("keyup", function (event) {
+            if (event.key === "Enter") {
+                checkAnswer();
+            }
+        });
+
+        // 퀴즈 데이터를 랜덤으로 섞습니다.
+        function shuffleQuizData() {
+            for (let i = quizData.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [quizData[i], quizData[j]] = [quizData[j], quizData[i]];
+            }
+        }
+        // 초기화 함수를 호출하여 퀴즈 데이터를 섞고 첫 번째 퀴즈를 표시합니다.
+        function initializeQuiz() {
+            shuffleQuizData(); // 퀴즈 데이터를 섞음
+            currentQuizIndex = 0; // 현재 퀴즈 인덱스 초기화
+            displayQuizData(); // 첫 번째 퀴즈를 표시
+        }
+        initializeQuiz();
+
         // 정답 확인 함수를 정의합니다.
         function checkAnswer() {
-            const userAnswer = quizAnswerInput.value.toLowerCase(); // 입력한 답을 소문자로 변환
-            const correctAnswer = quizData[currentQuizIndex].answer.toLowerCase(); // 정답을 소문자로 변환
-
+            const userAnswer = quizAnswerInput.value.trim().toLowerCase(); // 입력한 답을 소문자로 변환
+            const correctAnswer = quizData[currentQuizIndex].answer.replace(/\s/g, "").toLowerCase(); // 정답을 소문자로 변환
+            const feedbackDiv = document.createElement("div");
             if (userAnswer === correctAnswer) {
                 // 정답을 맞췄을 때
-                // 여기서는 다음 화면으로 넘어가도록 구현하고, 사진을 변경합니다.
-                currentQuizIndex++; // 다음 퀴즈로 이동
-                if (currentQuizIndex < quizData.length) {
-                    displayQuizData(); // 새로운 퀴즈 데이터 표시
-                } else {
-                    // 마지막 퀴즈를 마쳤을 때 추가 동작 구현
-                    alert("퀴즈가 종료되었습니다.");
-                    // 원하는 추가 동작을 수행할 수 있습니다.
-                }
+                // alert("정답입니다.");
+                score++;
+                document.getElementById("score").textContent = score;
+                feedbackDiv.textContent = "정답입니다";
+                feedbackDiv.classList.add("feedback2");
+                document.querySelector(".quiz__box").appendChild(feedbackDiv);
+                setTimeout(function () {
+                    feedbackDiv.remove();
+                }, 500); // 0.5초 후에 제거 및 다음 문제로 이동
             } else {
                 // 오답일 때 여기에 추가 동작을 구현할 수 있습니다.
-                alert("틀렸습니다");
-                quizElement.classList.add("bad");
+                feedbackDiv.textContent = "땡! 정답은 " + quizData[currentQuizIndex].answer + " 입니다.";
+                feedbackDiv.classList.add("feedback");
+                document.querySelector(".quiz__box").appendChild(feedbackDiv);
+                setTimeout(function () {
+                    feedbackDiv.remove();
+                    nextQuestion(); // 일정 시간 후에 다음 문제로 자동으로 넘어감
+                }, 2500); // 2초 후에 제거 및 다음 문제로 이동
+                return; // 오답 처리 후 함수 종료
             }
-
+            currentQuizIndex++; // 다음 퀴즈로 이동
+            if (currentQuizIndex < quizData.length) {
+                displayQuizData(); // 새로운 퀴즈 데이터 표시
+            } else {
+                alert("퀴즈가 종료되었습니다.");
+            }
             // 입력 필드 초기화
             quizAnswerInput.value = "";
+            quizAnswerInput.classList.remove("correct");
         }
 
         // 다음 문제로 이동하는 함수를 정의합니다.
@@ -119,9 +650,7 @@
                 displayQuizData(); // 새로운 퀴즈 데이터 표시
             } else {
                 alert("퀴즈가 종료되었습니다.");
-                // 원하는 추가 동작을 수행할 수 있습니다.
             }
-
             // 입력 필드 초기화
             quizAnswerInput.value = "";
         }
@@ -129,7 +658,7 @@
         // 퀴즈 데이터를 화면에 표시하는 함수를 정의합니다.
         function displayQuizData() {
             const currentQuiz = quizData[currentQuizIndex];
-            quizHeader.textContent = currentQuiz.question;
+            // quizHeader.textContent = currentQuiz.question;
             quizImage.src = currentQuiz.imageURL;
             quizQuestion.textContent = currentQuiz.question;
         }

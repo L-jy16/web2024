@@ -1,0 +1,108 @@
+<div class="main__sample">
+    <div id="sample01" class="sample">
+        <h3 style='color: rgb(182, 182, 182);'>script 명령어 부분입니다.</h3>
+<pre class="line-numbers"><code class="language-js">{
+// 문제 정보
+const infoDate= "21년 10월";
+const infoType = "정보처리 기능사";
+const infoNum = "1";
+const infoQuestion = "CPU의 정보처리 속도 단위 중 초당 100만 개의 연산을 수행한다는 의미의 단위는?";
+const infoAnswer = "MIPS";
+const infoDesc = "LIPS는 초당 1개, KIPS는 초당 1000개, MIPS는 초당 1000000의 연산을 수행하는 것을 의미합니다.";
+
+// 선택자
+const quizWrap = document.querySelector(".quiz__wrap");
+const quizDate = quizWrap.querySelector(".quiz__date");
+const quizType = quizWrap.querySelector(".quiz__type");
+const quizNum = quizWrap.querySelector(".quiz__question em");
+const quizQuestion = quizWrap.querySelector(".quiz__question span");
+const quizAnswer = quizWrap.querySelector(".quiz__answer");
+const quizDesc = quizWrap.querySelector(".quiz__desc");
+const quizConfirm = quizWrap.querySelector(".quiz__confirm");
+const quizInput = quizWrap.querySelector(".quiz__input input");
+const quizAnimation = quizWrap.querySelector(".quiz__animation");
+
+// 문제 출력
+quizDate.innerText = infoDate;
+quizType.innerText = infoType;
+quizNum.innerText = infoNum;
+quizQuestion.innerText = infoQuestion;
+quizAnswer.innerText = infoAnswer;
+quizDesc.innerText = infoDesc;
+
+// 정답 해설 숨기기
+quizAnswer.classList.add("none");           
+quizDesc.classList.add("none");
+
+// 정답 확인하기
+quizConfirm.addEventListener("click", () => {
+const userAnswer = quizInput.value;
+
+if(infoAnswer == userAnswer){
+quizAnimation.classList.add("like");
+} else {
+quizAnimation.classList.add("dislike");
+}
+quizAnswer.classList.remove("none");    
+quizDesc.classList.remove("none");
+quizConfirm.classList.add("none");
+quizInput.classList.add("none");
+});
+}</code></pre>
+        <p class="desc">
+            <span style="font-weight: bold;">문제 정보<br></span>
+            3줄: 변수를 선언하여 날짜 관련 퀴즈 정보를 저장합니다.<br>
+            4줄: 변수를 선언하여 유형 관련 퀴즈 정보를 저장합니다.<br>
+            5줄: 변수를 선언하여 번호 관련 퀴즈 정보를 저장합니다.<br>
+            6줄: 변수를 선언하여 질문 관련 퀴즈 정보를 저장합니다.<br>
+            7줄: 변수를 선언하여 정답 관련 퀴즈 정보를 저장합니다.<br>
+            8줄: 변수를 선언하여 해설 관련 퀴즈 정보를 저장합니다.
+        </p>
+        <p class="desc">
+            <span style="font-weight: bold;">선택자<br></span>
+            11줄: HTML문서에서 클래스가 quiz__wrap인 요소를 찾아서 저장합니다. 이 요소는 퀴즈를 감싸는 부모 요소입니다.<br>
+            12줄: quizWrap 요소 내에서 특정 클래스를 가진 하위 요소들 입니다. 이 변수는 quizWrap 내에서 quiz__date인 요소를 찾아서 할당합니다.<br>
+            13줄: quizWrap 요소 내에서 특정 클래스를 가진 하위 요소들 입니다. 이 변수는 quizWrap 내에서 quiz__type인 요소를 찾아서 할당합니다.<br>
+            14줄: quizWrap 요소 내에서 특정 클래스를 가진 하위 요소들 입니다. 이 변수는 quizWrap 내에서 quiz__question em인 요소를 찾아서 할당합니다.<br>
+            15줄: quizWrap 요소 내에서 특정 클래스를 가진 하위 요소들 입니다. 이 변수는 quizWrap 내에서 quiz__question span인 요소를 찾아서 할당합니다.<br>
+            16줄: quizWrap 요소 내에서 특정 클래스를 가진 하위 요소들 입니다. 이 변수는 quizWrap 내에서 .quiz__answer인 요소를 찾아서 할당합니다.<br>
+            17줄: quizWrap 요소 내에서 특정 클래스를 가진 하위 요소들 입니다. 이 변수는 quizWrap 내에서 quiz__desc인 요소를 찾아서 할당합니다.<br>
+            18줄: quizWrap 요소 내에서 특정 클래스를 가진 하위 요소들 입니다. 이 변수는 quizWrap 내에서 quiz__confirm인 요소를 찾아서 할당합니다.<br>
+            19줄: quizWrap 요소 내에서 특정 클래스를 가진 하위 요소들 입니다. 이 변수는 quizWrap 내에서 quiz__input input인 요소를 찾아서 할당합니다.<br>
+            20줄: quizWrap 요소 내에서 특정 클래스를 가진 하위 요소들 입니다. 이 변수는 quizWrap 내에서 quiz__animation인 요소를 찾아서 할당합니다.<br><br>
+            *.querySelector은 HTML 문서 내에서 지정된 선택자에 일치하는 첫 번째 요소를 찾아서 반환하는 메서드입니다. 찾고자 하는 요소에 따라 적절한 선택자를 사용하여 .querySelector를 호출하면 해당 요소를 변수로 저장할 수 있습니다. 이후에 변수를 사용하여 해당 요소를 조작하거나 정보를 읽을 수 있습니다. *
+        </p>
+        <p class="desc">
+            <span style="font-weight: bold;">문제 출력<br></span>
+            23줄: innerText 속성을 사용하여 infoDate 변수들의 값을 설정하여 퀴즈 정보를 표시합니다.<br>
+            24줄: innerText 속성을 사용하여 infoType 변수들의 값을 설정하여 퀴즈 정보를 표시합니다.<br>
+            25줄: innerText 속성을 사용하여 infoNum 변수들의 값을 설정하여 퀴즈 정보를 표시합니다.<br>
+            26줄: innerText 속성을 사용하여 infoQuestion 변수들의 값을 설정하여 퀴즈 정보를 표시합니다.<br>
+            27줄: innerText 속성을 사용하여 infoAnswer 변수들의 값을 설정하여 퀴즈 정보를 표시합니다.<br>
+            28줄: innerText 속성을 사용하여 infoDesc  변수들의 값을 설정하여 퀴즈 정보를 표시합니다.<br><br>
+            *변수.innerText은 요소의 내용을 변경하거나 클릭 이벤트를 추가하거나, CSS클래스를 조작하는등의 작업을 수행할 수 있습니다.*
+        </p>
+        <p class="desc">
+            <span style="font-weight: bold;">정답 해설 숨기기<br></span>
+            31줄: classList.add("none")를 사용하여 처음에는 정답 화면을 숨깁니다. none 클래스를 추가하여 숨긴 처리합니다.<br>
+            32줄: classList.add("none")를 사용하여 처음에는 정답 해설 화면을 숨깁니다. none 클래스를 추가하여 숨긴 처리합니다.<br><br>
+            *classList은 HTML 요소의 클래스를 목록을 나타내는 속성입니다. 클래스 목록은 해당 요소에 할당된 모든 클래스 이름을 포함합니다.*<br>
+            *classList.add("none")는 add는 클래스 목록에 새로운 클래스를 추가하는 역할을 합니다. none은 추가할 클래스 이름을 나타냅니다.*
+        </p>
+        <p class="desc">
+            <span style="font-weight: bold;">정답 확인하기<br></span>
+            35줄: quizConfirm에 이벤트 리스너를 추가하여 사용자가 확인 버튼을 클릭하면 아래 동작이 실행됩니다.<br>
+            36줄: 사용자가 입력한 답을 quizInput 요소에서 가져와서 userAnswer 변수에 저장합니다. quizInput.value는 사용자가 입력한 내용을 나타냅니다.<br>
+            38줄: 사용자가 입력한 답과 정답을 비교합니다. <br>
+            39줄: 두 값이 일치하면 (정답인 경우) quizAnimation에 like 클래스를 추가하여 애니메이션을 활성화합니다 <br>
+            40-41줄: 두 값이 불일치하면(오답인 경우) else 블록이 실행되어 quizAnimation에 dislike를 추가하여 애니메이션을 활성화합니다 <br>
+            43줄: 정답을 표시하는 요소인 quizAnswer에서 none 클래스를 제거하여 정답을 화면에 표시합니다.<br>
+            44줄: 정답 해설을 표시하는 요소인 quizDesc에서도 none 클래스를 제거하여 정답 해설을 화면에 표시합니다.<br>
+            45줄: 확인 버튼을 화면에서 숨기기 위해 quizConfirm 요소에 none 클래스를 추가합니다.<br>
+            46줄: 사용자 입력 필드인 quizInput 요소도 화면에서 숨기기 위해 none 클래스를 추가합니다.<br><br>
+            *.addEventListener는 JavaScript에서 이벤트를 처리하는 메서드 중 하나로, HTML 요소에 이벤트 리스너를 등록하여 해당 이벤트가 발생했을 때 실행할 함수를 지정할 수 있습니다.*<br>
+            *classList.remove("클래스이름") remove는 클래스 목록에서 특정 클래스를 제거합니다. 클래스이름에 해당하는 클래스를 제거합니다.*
+        </p>
+    </div>
+</div>
+<!-- //sample01 -->
