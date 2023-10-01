@@ -273,9 +273,17 @@ body {
     border: 3px dashed #d9d9d9;
     border-radius: 20px;
 }
+
+/* box_footer */
 .box__footer {
     margin-top: 50px;
     /* margin-bottom: 50px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 수평 가운데 정렬 */
+    justify-content: center; /* 수직 가운데 정렬 */
+    text-align: center;
+
 }
 .box__footer div {
     margin: 0 auto;
@@ -294,19 +302,49 @@ body {
     color: #d9d9d9;
     cursor: pointer;
 }
+.box__footer a {
+    font-weight: bold;
+    color: #fff;
+    border: 1px solid #d9d9d9;
+    background-color: #d9d9d9;
+    border-radius: 50px;
+}
+.box__footer a:hover {
+    background-color: #fff;
+    color: #d9d9d9;
+    cursor: pointer;
+}
 .box__footer button.quiz__confirm {
     width: 254px;
     height: 50px;
     font-size: 30px;
-    margin-right: 20px;
     transition: all 0.5s;
 }
-.box__footer button.quiz__Next {
-    width: 148px;
-    height: 50px;
+.box__footer a.quiz__Next {
+    width: 254px !important;
+    height: 50px !important;
     font-size: 30px;
-    margin-left: 20px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+    padding: 10px 0;
 }
+.box__footer a.quiz__reset {
+    width: 254px !important;
+    height: 50px !important;
+    font-size: 30px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+    padding: 10px 0;
+}
+
+
+
 #score {
     font-size: 30px;
     margin: 0 auto;
@@ -486,7 +524,8 @@ body {
         margin-bottom: 10px;
         margin: 0 auto;
     }
-    .box__footer button.quiz__confirm {
+    .box__footer button.quiz__confirm,
+    .box__footer a.quiz__Next {
         margin-top: 20px;
     }
 }
@@ -522,7 +561,8 @@ body {
     .quiz__question {
         font-size: 40px;;
     }
-    .box__footer button.quiz__confirm {
+    .box__footer button.quiz__confirm,
+    .box__footer a.quiz__Next {
         margin-top: 10px;
         font-size: 20px;
     }
@@ -560,6 +600,6 @@ body {
         justify-content: center;
     }
     .quiz__question {
-        font-size: 50px;
+        font-size: 40px;
     }
 }
