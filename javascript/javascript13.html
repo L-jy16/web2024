@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="https://webfontworld.github.io/gmarket/GmarketSans.css">
     <link rel="stylesheet" href="https://websfont.github.io/nanumSquareNeo/nanumSquareNeo.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="../assets/css/default.min.css">
+    <link rel="stylesheet" href="../assets/css/prism.css">
+    <!-- <link rel="stylesheet" href="../assets/css/default.min.css"> -->
 </head>
 <body>
     <div id="wrap">
@@ -42,75 +43,153 @@
         <main id="main">
             <div class="main__menu">
                 <ul>
-                    <li><a href="#desc01">01. 슬라이드 이펙트 - 트랜지션 효과</a></li>
-                    <li><a href="#desc02">02.슬라이드 이펙트 - 좌로 움직이기</a></li>
-                    <li><a href="#desc03">03. 슬라이드 이펙트 - 좌로 움직이기(연속적으로)</a></li>
-                    <li><a href="#desc04">04. </a></li>
+                    <li><a href="#desc01">01. 마우스 이펙트 - 마우스 따라다니기</a></li>
+                    <li><a href="#desc02">02.마우스 이펙트 - 마우스 따라다니기(GSAP)</a></li>
+                    <li><a href="#desc03">03. 마우스 이펙트 - 돋보기 효과</a></li>
+                    <!-- <li><a href="#desc04">04. </a></li>
                     <li><a href="#desc05">05. </a></li>
-                    <li><a href="#desc06">06. </a></li>
+                    <li><a href="#desc06">06. </a></li> -->
                 </ul>
             </div>
             <!-- //main__menu -->
 
             <div class="main__desc">
                 <div class="desc01">
-                    <h2>01. 슬라이드 이펙트 - 트랜지션 효과</h2>
-                    <p>이미지가 반복적으로 변하는 효과입니다.</p>
+                    <h2>01. 마우스 이펙트 - 마우스 따라다니기</h2>
+                    <p>마우스가 따라다니는 효과입니다.</p>
                     <ul>
                         <li>javascript</li>
 <pre><code class="language-js">{
-}</code></pre>
-                        <li>jquery</li>
-<pre><code class="language-js">{
+    window.addEventListener("mousemove", (event) => {
+        document.querySelector(".clientX").innerHTML = event.clientX;
+        document.querySelector(".clientY").innerHTML = event.clientY;
+        document.querySelector(".offsetX").innerHTML = event.offsetX;
+        document.querySelector(".offsetY").innerHTML = event.offsetY;
+        document.querySelector(".pageX").innerHTML = event.pageX;
+        document.querySelector(".pageY").innerHTML = event.pageY;
+        document.querySelector(".screenX").innerHTML = event.screenX;
+        document.querySelector(".screenY").innerHTML = event.screenY;
+    })
+
+    // 선택자
+    const mouseCursor = document.querySelector(".mouse__cursor");
+
+    // 마우스 좌표 값을 커서 할당
+    window.addEventListener("mousemove", (e) => {
+        mouseCursor.style.left = e.clientX - 25 + "px";
+        mouseCursor.style.top = e.clientY - 25 + "px";
+    })
+
+    // for문
+    // for(let i=1; i<=8; i++){
+    //     document.querySelector(".s"+i).addEventListener("mouseover", () => {
+    //     mouseCursor.classList.add("s"+i);
+    //     })
+    //     document.querySelector(".s"+i).addEventListener("mouseout", () => {
+    //         mouseCursor.classList.remove("s"+i);
+    //     })
+    // }
+
+    // forEach문
+    document.querySelectorAll(".mouse__text span").forEach((span, num) => {
+        span.addEventListener("mouseover", () => {
+            mouseCursor.classList.add("s" + (num + 1));
+        });
+        span.addEventListener("mouseout", () => {
+            mouseCursor.classList.remove("s" + (num + 1));
+        });
+    });
 }</code></pre>
                     </ul>
-                    <a href="slider/slider01.html">확인하기</a>
+                    <a href="mouse/mouse01.html">확인하기</a>
                 </div>
 
                 <div class="desc02">
-                    <h2>02.슬라이드 이펙트 - 좌로 움직이기</h2>
-                    <p>이미지가 좌로 움직이면서 튕기는 효과를 넣어준 것입니다.</p>
+                    <h2>>02.마우스 이펙트 - 마우스 따라다니기(GSAP)</h2>
+                    <p>GSAP를 이용한 마우스 따라다니는 효과입니다..</p>
                     <ul>
-                        <li>선택자와 변수 설정</li>
-<pre><code class="language-js">{
-}</code></pre>
                         <li>javascript</li>
 <pre><code class="language-js">{
-    sliderInner.style.transition = "all 0.6s";
+    // 선택자
+    const mouseCursor = document.querySelector(".mouse__cursor");
+    const mouseCursor2 = document.querySelector(".mouse__cursor2");
 
-    setInterval(() => {
-        currentIndex = (currentIndex + 1) % sliderCount;
-        sliderInner.style.transform = "translateX("+ -800 * currentIndex + "px)";
-    }, sliderInterval);
+    window.addEventListener("mousemove", (e) => {
+        mouseCursor.style.left = e.pageX + "px";
+        mouseCursor.style.top = e.pageY + "px";
+        mouseCursor2.style.left = e.pageX + "px";
+        mouseCursor2.style.top = e.pageY + "px";
+    });
+
+    document.querySelectorAll(".mouse__text span").forEach(span => {
+        span.addEventListener("mouseenter", () => {
+            mouseCursor.classList.add("active");
+            mouseCursor2.classList.add("active");
+        })
+        span.addEventListener("mouseleave", () => {
+            mouseCursor.classList.remove("active");
+            mouseCursor2.classList.remove("active");
+        })
+    })
 }</code></pre>
                         <li>gsap</li>
 <pre><code class="language-js">{
-}</code></pre>
-                        <li>jquery</li>
-<pre><code class="language-js">{
+    // 선택자
+    const mouseCursor = document.querySelector(".mouse__cursor");
+    const mouseCursor2 = document.querySelector(".mouse__cursor2");
+
+    window.addEventListener("mousemove", (e) => {
+        gsap.to(mouseCursor, {duration: 0.3, left: e.pageX-5, top: e.pageY-5});
+        gsap.to(mouseCursor2, {duration: 0.8, left: e.pageX-20, top: e.pageY-20});
+    });
+
+    document.querySelectorAll(".mouse__text span").forEach(span => {
+        span.addEventListener("mouseenter", () => {
+            mouseCursor.classList.add("active");
+            mouseCursor2.classList.add("active");
+        })
+        span.addEventListener("mouseleave", () => {
+            mouseCursor.classList.remove("active");
+            mouseCursor2.classList.remove("active");
+        })
+    })
 }</code></pre>
                     </ul>
-                    <a href="slider/slider02.html">확인하기</a>
+                    <a href="mouse/mouse02.html">확인하기</a>
                 </div>
 
                 <div class="desc03">
-                    <h2>03. 슬라이드 이펙트 - 좌로 움직이기(연속적으로)</h2>
-                    <p>이미지가 좌로 연속적으로 움직이는 효과입니다.</p>
+                    <h2>03. 마우스 이펙트 - 돋보기 효과</h2>
+                    <p>마우스 돋보기 효과입니다.</p>
                     <ul>
-                        <li>선택자와 변수 설정</li>
+                        <li>JAVASCRIPT_CLIENTWIDTH</li>
 <pre><code class="language-js">{
+    const mouseCursor = document.querySelector(".mouse__cursor");
+    const rect = mouseCursor.getBoundingClientRect();
+
+    window.addEventListener("mousemove", e => {
+        gsap.to(".mouse__cursor", {
+            duration: 0.5,
+            left: e.pageX - mouseCursor.clientWidth/2,
+            top: e.pageY - mouseCursor.clientHeight/2
+        })
+    })
 }</code></pre>
-                        <li>javascript</li>
+                        <li>AVASCRIPT_GETBOUNDINGCLIENTRECT</li>
 <pre><code class="language-js">{
-}</code></pre>
-                        <li>gsap</li>
-<pre><code class="language-js">{
-}</code></pre>
-                        <li>jquery</li>
-<pre><code class="language-js">{
+    const mouseCursor = document.querySelector(".mouse__cursor");
+    const rect = mouseCursor.getBoundingClientRect();
+
+    window.addEventListener("mousemove", e => {
+        gsap.to(".mouse__cursor", {
+            duration: 0.5,
+            left: e.pageX - rect.width/2,
+            top: e.pageY - rect.height/2
+        })
+    })
 }</code></pre>
                     </ul>
-                    <a href="slider/slider03.html">확인하기</a>
+                    <a href="mouse/mouse03.html">확인하기</a>
                 </div>
             </div>
 
@@ -126,9 +205,10 @@
         <!-- //footer -->
     </div>
 
-    <!-- script -->
-    <script src="../assets/js/highlight.min.js"></script>
-    <script>hljs.highlightAll();</script>
+     <!-- script -->
+     <script src="../assets/js/prism.js"></script>
+     <!-- <script src="../assets/js/highlight.min.js"></script> -->
+     <script>hljs.highlightAll();</script>
 
     <script>
 
