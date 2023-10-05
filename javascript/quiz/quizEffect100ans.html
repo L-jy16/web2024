@@ -97,6 +97,8 @@
         let quizScore = 0;
         let currentIndex = 0; // 현재 문제
 
+        
+
         // 문제 출력
         const updataQuiz = (number) => {
             let quizWrapTag = `
@@ -126,6 +128,24 @@
             // 선택자
             const quizConfirm = quizWrap.querySelector(".quiz__confirm");
             const quizNext = quizWrap.querySelector(".quiz__next");
+            const quizInput = quizWrap.querySelector(".quiz__input input");
+
+            // quizInput.addEventListener("keyup", (event) => {
+            //     if (event.key === "Enter") {
+            //         quizConfirm.click(); // 정답 확인 버튼을 클릭
+            //     }
+            // });
+
+            quizInput.addEventListener("keyup", (event) => {
+                if (event.key === "Enter") {
+                    if (!quizConfirm.classList.contains("none")) {
+                        quizConfirm.click(); // 정답 확인 버튼을 클릭
+                    } else if (!quizNext.classList.contains("none")) {
+                        quizNext.click(); // 다음 문제 버튼을 클릭
+                    }
+                }
+            });
+            
 
             // 정답 확인 버튼
             quizConfirm.addEventListener("click", () => {
@@ -147,6 +167,7 @@
             });
         };
 
+
         // 정답 확인
         const checkAnswer = () => {
             const quizElement = quizWrap.querySelector(".quiz")
@@ -154,8 +175,8 @@
             const quizNext = quizWrap.querySelector(".quiz__next");
             const quizInput = quizWrap.querySelector(".quiz__input input");
             const quizAnswer = quizWrap.querySelector(".quiz__answer");
-            const userAnswer = quizInput.value;
-            const correctAnswer = quizInfo[currentIndex].infoAnswer;
+            const userAnswer = quizInput.value.trim().toLowerCase();
+            const correctAnswer = quizInfo[currentIndex].infoAnswer.trim().toLocaleLowerCase();
 
             if(userAnswer === correctAnswer){
                 quizElement.classList.add("good");

@@ -41,9 +41,10 @@
     overflow: hidden;
 }
 .intron__img.small {
+    max-width: 300px;
     min-width: 200px;
-    height: 100px;
-    border-radius: 50px;
+    /* height: 100px; */
+    border-radius: 50%;
 }
 .intro__text {
     font-size: 1.4rem;
