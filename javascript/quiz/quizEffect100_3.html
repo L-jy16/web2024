@@ -162,8 +162,8 @@
             const quizNext = quizWrap.querySelector(".quiz__next");
             const quizInput = quizWrap.querySelector(".quiz__input input");
             const quizAnswer = quizWrap.querySelector(".quiz__answer");
-            const userAnswer = quizInput.value.trim().toLowerCase();
-            const correctAnswer = quizInfo[currentIndex].infoAnswer.trim().toLocaleLowerCase();
+            const userAnswer = quizInput.value.trim().toLowerCase().replace(/\s+/g, '');;
+            const correctAnswer = quizInfo[currentIndex].infoAnswer.trim().toLocaleLowerCase().replace(/\s+/g, '');;
 
             if(userAnswer === correctAnswer){
                 quizElement.classList.add("good");

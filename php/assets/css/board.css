@@ -100,6 +100,10 @@
     border-bottom: 1px solid var(--black400);
     white-space: pre-line;
 }
+.board__view table tr:last-child td {
+    height: 500px;
+    vertical-align: top;
+}
 
 @media (max-width: 960px){
     .board__search {

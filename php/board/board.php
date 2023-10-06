@@ -116,7 +116,7 @@
 
                 echo "<tr>";
                 echo "<td>".$info['boardID']."</td>";
-                echo "<td>".$info['boardTitle']."</td>";
+                echo "<td><a href='boardView.php?boardID={$info['boardID']}'>".$info['boardTitle']."</a></td>";
                 echo "<td>".$info['youName']."</td>";
                 echo "<td>".date('Y-m-d', $info['regTime'])."</td>";
                 echo "<td>".$info['boardView']."</td>";
@@ -153,41 +153,64 @@
     if($endPage >= $boardTotalCount) $endPage = $boardTotalCount;
 
     // 페이지 이동(선생님이 알려준 방식)
-    if ($page >= 1) {
+
+    //선생님 방식(처음으로/이전)
+    if($Page != 1){
+        $prevPage = $page - 1;
         echo "<li class='first'><a href='board.php?page=1'>처음으로</a></li>";
+        echo "<li class='prev'><a href='board.php?page={$prevPage}'>이전</a></li>";
     }
 
-    // "이전" 버튼
-    if ($page > 1) {
-        $prevPage = $page - 1;
-        echo "<li class='prev'><a href='board.php?page={$prevPage}'>이전</a></li>";
-    } else {
-        // 현재 페이지가 1일 때 "이전" 버튼은 비활성화되어 누를 수 없으며, 현재 페이지를 나타내는 스타일을 부여합니다.
-        echo "<li class='prev'><a class='active' href='#'>이전</a></li>";
-    }
-    
     for($i=$startPage; $i<=$endPage; $i++){
         $active = "";
         if($i == $page) $active = "active";
 
         echo "<li class='{$active}'><a href='board.php?page={$i}'>${i}</a></li>";
     }
-
-    // "다음" 버튼
-    if ($page < $boardTotalCount) {
+    
+    // 선생님 방식(마지막/다음)
+    if($Page != $boardTotalCount){
         $nextPage = $page + 1;
         echo "<li class='next'><a href='board.php?page={$nextPage}'>다음</a></li>";
-    } else {
-        // 현재 페이지가 30일 때 "다음" 버튼은 비활성화되어 누를 수 없으며, 현재 페이지를 나타내는 스타일을 부여합니다.
-        echo "<li class='next'><a class='active' href='#'>다음</a></li>";
+        echo "<li class='last'><a href='board.php?page=$boardTotalCount'>마지막으로</a></li>";
     }
 
-    // "마지막으로" 버튼
-    if ($endPage <= $boardTotalCount) {
-        echo "<li class='last'><a href='board.php?page={$boardTotalCount}'>마지막으로</a></li>";
-    } 
 
-    // 내가 생각한 정답
+    // // 내 방식
+    // // "처음" 버튼
+    // if ($page >= 1) {
+    //     echo "<li class='first'><a href='board.php?page=1'>처음으로</a></li>";
+    // }
+
+    // // "이전" 버튼
+    // if ($page > 1) {
+    //     $prevPage = $page - 1;
+    //     echo "<li class='prev'><a href='board.php?page={$prevPage}'>이전</a></li>";
+    // } else {
+    //     echo "<li class='prev'><a class='active' href='#'>이전</a></li>";
+    // }
+    
+    // for($i=$startPage; $i<=$endPage; $i++){
+    //     $active = "";
+    //     if($i == $page) $active = "active";
+
+    //     echo "<li class='{$active}'><a href='board.php?page={$i}'>${i}</a></li>";
+    // }
+
+    // // "다음" 버튼
+    // if ($page < $boardTotalCount) {
+    //     $nextPage = $page + 1;
+    //     echo "<li class='next'><a href='board.php?page={$nextPage}'>다음</a></li>";
+    // } else {
+    //     echo "<li class='next'><a class='active' href='#'>다음</a></li>";
+    // }
+
+    // // "마지막으로" 버튼
+    // if ($endPage <= $boardTotalCount) {
+    //     echo "<li class='last'><a href='board.php?page={$boardTotalCount}'>마지막으로</a></li>";
+    // } 
+
+    // 내가 생각한 정답(for문)
     // for($i=$startPage; $i<=$endPage; $i++){
     //     if($i == $page){
     //         echo "<li class='active'><a href='#'>${i}</a></li>";
@@ -196,17 +219,6 @@
     //     }
     // }
 ?>
-                    <!-- <li class="first"><a href="#">처음으로</a></li>
-                    <li class="prev"><a href="#">이전</a></li>
-                    <li class="active"><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">6</a></li>
-                    <li><a href="#">7</a></li>
-                    <li class="next"><a href="#">다음</a></li>
-                    <li class="last"><a href="#">마지막으로</a></li> -->
                 </ul>
             </div>
             <!-- //board__pages -->
