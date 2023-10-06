@@ -7,7 +7,6 @@
     <title>퀴즈 이펙트07</title>
 
     <link rel="stylesheet" href="assets/css/quiz.css">
-    <link rel="stylesheet" href="assets/css/ani.css">
     <link rel="stylesheet" href="../../assets/css/default.min.css">
     <link rel="stylesheet" href="assets/css/quizmodal.css">
 
@@ -33,7 +32,7 @@
     <!-- //header -->
 
     <main id="main">
-        <div class="cbt__box">
+        <div class="cbt__box none">
             <h2>기능사 시험</h2>
             <select id="cbtSelect1">
                 <option value="gineungsaJC2005_02">정보처리기능사 2005년 2회</option>
@@ -94,38 +93,58 @@
         </div>
 
         <div class="cbt__wrap">
-            <div class="cbt__header">
+            <!-- <div class="cbt__header">
                 <h1 class="cbt__title">2020년 1회 정보처리기사 기출문제</h1>
                 <div class="cbt__time">남은 시간: <span>60분 00초</span></div>
-            </div>
+            </div> -->
             <!-- //cbt__header -->
 
             <div class="cbt__conts">
                 <div class="cbt__quiz">
-                    <div class="cbt">
+                    <!-- <div class="cbt">
                         <div class="cbt__question">1. GoF(Gang of Four)의 디자인 패턴에서 행위 패턴에 속하는 것은?</div>
                         <div class="cbt__choices">
                             <input type="radio" id="choice1">
-                            <label for="choice1"><span class="choice"></span></label>
+                            <label for="choice1"><span class="choice">visitor</span></label>
                             <input type="radio" id="choice2">
-                            <label for="choice1"><span class="choice"></span></label>
-                            <input type="radio" id="choice2">
-                            <label for="choice1"><span class="choice"></span></label>
-                            <input type="radio" id="choice2">
-                            <label for="choice1"><span class="choice"></span></label>
+                            <label for="choice1"><span class="choice">Bulider</span></label>
+                            <input type="radio" id="choice3">
+                            <label for="choice1"><span class="choice">prototype</span></label>
+                            <input type="radio" id="choice4">
+                            <label for="choice1"><span class="choice">Bridge</span></label>
                         </div>
                         <div class="cbt__desc">
                             객체지향 구성 요소에는 클래스(Class), 객체(Object), 인스턴스(Instance), 메시지(Message), 메소드(Method)가 있습니다.
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <!-- //cbt__conts -->
 
             <div class="cbt__aside">
                 <div class="cbt__name">수험자 : 이지영</div>
-                <div class="submit">답안지 제출하기</div>
-                <div class="cbt__omr"></div>
+                <div class="cbt__submit">답안지 제출하기</div>
+                <div class="cbt__omr">
+                    <!-- <div class="omr">
+                        <strong>1</strong>
+                        <input type="radio" name="omr1" id="omr1">
+                        <label for="omr1">
+                            <span class="label-inner">1</span>
+                        </label>
+                        <input type="radio" name="omr2" id="omr2">
+                        <label for="omr2">
+                            <span class="label-inner">2</span>
+                        </label>
+                        <input type="radio" name="omr3" id="omr3">
+                        <label for="omr3">
+                            <span class="label-inner">3</span>
+                        </label>
+                        <input type="radio" name="omr4" id="omr4">
+                        <label for="omr4">
+                            <span class="label-inner">4</span>
+                        </label>
+                    </div> -->
+                </div>
             </div>
             <!-- //cbt__aside -->
         </div>
@@ -133,19 +152,110 @@
     </main>
     <!-- //main -->
 
-    <footer id="footer">
+    <!-- <footer id="footer">
         <a href="mailto:lee.jiyoung492@gmail.com">lee.jiyoung492@gmail.com</a>
-    </footer>
+    </footer> -->
     <!-- //footer -->
 
     <script>
         // 선택자
-        const cbtBox = document.querySelector(".cbt__box");
-        const cbtBoxStart = document.querySelector(".cbt__box__start");
+        const cbtWrap = document.querySelector(".cbt__wrap");
 
-        cbtBoxStart.addEventListener("click", () => {
-            cbtBox.style.display = "none";
+        //문제 정보
+        let quizInfo = [];  // 모든 퀴즈 정보
+
+        let quizScore = 0       // 퀴즈 점수
+        let quizCorrect = 0     // 퀴즈 맞은 갯수
+
+
+        // 문제 가져오기
+        const fetchQuiz = () => {
+            fetch("https://l-jy16.github.io/webs2024/json/gineungsaJC2011_05.json")
+                .then(res => res.json())
+                .then(items => {
+                    console.log(items);
+                    quizInfo = items.map((item, index) => {
+                        const formattedQuiz = {
+                            infoDate : "2011년 5회",
+                            infoType : item.subject,
+                            infoQuestion : item.question,
+                            infoDesc : item.desc,
+                            infoAnswer : item.correct_answer
+                        }
+                        return formattedQuiz;
+                    });
+                    console.log(quizInfo);
+                    updataQuiz(0);
+                })
+        }
+
+        const updataQuiz = (number) => {
+            let quizWrapTag = `
+                <div class="cbt__header">
+                    <h1 class="cbt__title">${quizInfo[number].infoDate} 정보처리기사 기출문제</h1>
+                    <div class="cbt__time">남은 시간: <span>60분 00초</span></div>
+                </div>
+                <!-- //cbt__header -->
+
+                <div class="cbt__conts">
+                    <div class="cbt__quiz">
+                        <div class="cbt">
+                            <div class="cbt__question">${number+1}. ${quizInfo[number].infoQuestion}</div>
+                            <div class="cbt__choices">
+                                <input type="radio" id="choice1">
+                                <label for="choice1"><span class="choice"></span></label>
+                                <input type="radio" id="choice2">
+                                <label for="choice2"><span class="choice"></span></label>
+                                <input type="radio" id="choice3">
+                                <label for="choice3"><span class="choice"></span></label>
+                                <input type="radio" id="choice4">
+                                <label for="choice4"><span class="choice"></span></label>
+                            </div>
+                            <div class="cbt__desc">
+                                ${quizInfo[number].infoDesc}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //cbt__conts -->
+
+                <div class="cbt__aside">
+                    <div class="cbt__name">수험자 : 이지영</div>
+                    <div class="cbt__submit">답안지 제출하기</div>
+                    <div class="cbt__omr">
+                        <div class="omr">
+                            <strong>1</strong>
+                            <input type="radio" name="omr1" id="omr1">
+                            <label for="omr1">
+                                <span class="label-inner">1</span>
+                            </label>
+                            <input type="radio" name="omr2" id="omr2">
+                            <label for="omr2">
+                                <span class="label-inner">2</span>
+                            </label>
+                            <input type="radio" name="omr3" id="omr3">
+                            <label for="omr3">
+                                <span class="label-inner">3</span>
+                            </label>
+                            <input type="radio" name="omr4" id="omr4">
+                            <label for="omr4">
+                                <span class="label-inner">4</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            <!-- //cbt__aside -->
+            
+            `;
+            cbtWrap.innerHTML = quizWrapTag;
+        }
+
+
+        // 페이지가 로드된 후 실행
+        document.addEventListener("DOMContentLoaded", () => {
+            fetchQuiz();
         })
+
     </script>
 </body>
 </html>
