@@ -89,7 +89,7 @@
                         }
                         return formattedQuiz;
                     });
-                console.log(quizInfo)
+                // console.log(quizInfo)
                 updataQuiz(0);
             });
         };
@@ -100,24 +100,24 @@
         
 
         // 문제 출력
-        const updataQuiz = (number) => {
-            // const number = Math.floor(Math.random() * quizInfo.length);
-            // const selectedQuestion = quizInfo[number];
+        const updataQuiz = (index) => {
+            currentIndex = Math.floor(Math.random() * quizInfo.length);
+            const selectedQuestion = quizInfo[currentIndex];
             
             let quizWrapTag = `
-                <div class="quiz">
+            <div class="quiz">
                     <div class="quiz__header">
-                        <span class="quiz__date">정보처리 ${quizInfo[number].infoDate}</span>
+                        <span class="quiz__date">정보처리 ${selectedQuestion.infoDate}</span>
                     </div>
                     <div class="quiz__main">
                         <div class="quiz__question">
-                            ${number + 1}. ${quizInfo[number].infoQuestion}
-                            ${quizInfo[number].infoDesc ? `<div class="quiz__desc2">${quizInfo[number].infoDesc}</div>` : ''}
+                            ${currentIndex+1}. ${selectedQuestion.infoQuestion}
+                            ${selectedQuestion.infoDesc ? `<div class="quiz__desc2">${selectedQuestion.infoDesc}</div>` : ''}
                         </div>
                         <div class="quiz__input">
                             <input type="text" id="quizInput" placeholder="정답을 입력해주세요!">
                         </div>
-                        <div class="quiz__answer">${quizInfo[number].infoAnswer}</div>
+                        <div class="quiz__answer">${selectedQuestion.infoAnswer}</div>
                         
                     </div>
                     <div class="quiz__footer">
@@ -126,18 +126,13 @@
                     </div>
                 </div>
             `;
+
             quizWrap.innerHTML = quizWrapTag;
 
             // 선택자
             const quizConfirm = quizWrap.querySelector(".quiz__confirm");
             const quizNext = quizWrap.querySelector(".quiz__next");
             const quizInput = quizWrap.querySelector(".quiz__input input");
-
-            // quizInput.addEventListener("keyup", (event) => {
-            //     if (event.key === "Enter") {
-            //         quizConfirm.click(); // 정답 확인 버튼을 클릭
-            //     }
-            // });
 
             quizInput.addEventListener("keyup", (event) => {
                 if (event.key === "Enter") {
@@ -148,7 +143,6 @@
                     }
                 }
             });
-            
 
             // 정답 확인 버튼
             quizConfirm.addEventListener("click", () => {
@@ -162,7 +156,6 @@
                 if(currentIndex < quizInfo.length -1){
                     quizNext.classList.add("none");            // 다음 버튼 삭제
                     quizConfirm.classList.remove("none");      // 정답 버튼 추가
-                    currentIndex++;                            //문제 번호 추가
                     updataQuiz(currentIndex);                   //퀴즈반영
                 } else {
                     alert("퀴즈가 종료되었습니다.");
@@ -179,28 +172,19 @@
             const quizInput = quizWrap.querySelector(".quiz__input input");
             const quizAnswer = quizWrap.querySelector(".quiz__answer");
             const userAnswer = quizInput.value.trim().toLowerCase().replace(/\s+/g, '');
+
             const correctAnswer = quizInfo[currentIndex].infoAnswer.trim().toLowerCase().replace(/\s+/g, '');
 
             console.log(userAnswer);
             console.log(correctAnswer);
 
-
             if(userAnswer === correctAnswer){
                 quizElement.classList.add("good");
-                // quizAnswer.classList.remove("none");
-                // quizConfirm.classList.add("none");
-                // quizInput.classList.add("none");
-                // quizNext.classList.remove("none");
                 quizScore++;
                 updateScore()
             } else {
                 quizElement.classList.add("bad");
-                // quizAnswer.classList.remove("none");
-                // quizConfirm.classList.add("none");
-                // quizInput.classList.add("none");
-                // quizNext.classList.remove("none");
             }
-
         }
 
         // 점수 업데이트
