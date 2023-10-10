@@ -101,6 +101,9 @@
 
         // 문제 출력
         const updataQuiz = (number) => {
+            // const number = Math.floor(Math.random() * quizInfo.length);
+            // const selectedQuestion = quizInfo[number];
+            
             let quizWrapTag = `
                 <div class="quiz">
                     <div class="quiz__header">
@@ -175,8 +178,12 @@
             const quizNext = quizWrap.querySelector(".quiz__next");
             const quizInput = quizWrap.querySelector(".quiz__input input");
             const quizAnswer = quizWrap.querySelector(".quiz__answer");
-            const userAnswer = quizInput.value.trim().toLowerCase().replace(/\s+/g, '');;
-            const correctAnswer = quizInfo[currentIndex].infoAnswer.trim().toLocaleLowerCase().replace(/\s+/g, '');;
+            const userAnswer = quizInput.value.trim().toLowerCase().replace(/\s+/g, '');
+            const correctAnswer = quizInfo[currentIndex].infoAnswer.trim().toLowerCase().replace(/\s+/g, '');
+
+            console.log(userAnswer);
+            console.log(correctAnswer);
+
 
             if(userAnswer === correctAnswer){
                 quizElement.classList.add("good");

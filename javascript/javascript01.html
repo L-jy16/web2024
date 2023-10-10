@@ -63,6 +63,7 @@
                     <li><a href="#sample19">19. 객체 : 데이터 저장(키와값) : 표현방법8 : 객체 + 함수가 있는 방식</a></li>
                     <li><a href="#sample20">20. 객체 : 데이터 저장(키와값) : 표현방법9 : 객체 구조 분해 할당</a></li>
                     <li><a href="#sample21">21. 객체 : 데이터 저장(키와값) : 표현방법10 : 객체 펼침연산자</a></li>
+                    <li><a href="#sample22">22. 파일 : 데이터 교환(JSON)</a></li>
                 </ul>
                 <ul>
                     <li><a href="#sample23">++ 지역변수/전역변수</a></li>
@@ -762,6 +763,56 @@ console.log(obj1[1].c); //jquery
                 </div>
                 <!-- //sample21 -->
 
+                <div id="sample22" class="sample">
+                    <h3>22. 파일 : 데이터 교환(JSON)</h3>
+                    <p>json 데이터를 객체로 변환시킬 수 있으며 객체르 json 데이터로 변환 할 수 있습니다. 데이터 교환(JSON)은 JavaScript Object Notation의 약자로, 데이터를 효과적으로 교환하고 저장하기 위한 경량의 데이터 형식입니다</p>
+<pre><code class="language-js">{
+    // json 데이터를 객체로 변환
+
+    const jsonString = '{"name": "webs", "age": "30"}';
+    const jsonObject = JSON.parse(jsonString);
+    console.log(jsonObject.name);   //webs
+
+    // 객체를 json 데이터로 변환
+    const person = {name: "webs", age: 30};
+    const jsonPerson = JSON.stringify(person);
+    console.log(jsonPerson);    //'{"name": "webs", "age": "30"}'
+}
+</code></pre>
+                    <p class="desc">
+                        JSON 문자열 형태는 const 변수 = '{"속성": "값"}' 입니다.<br><br>
+                        JSON 문자열을 객체로 변환(JSON.parse)<br>
+                        JSON.parse()는 JSON 형식의 문자열을 JavaScript 객체로 변환하는 JavaScript의 내장 함수입니다. 이 함수는 JSON 데이터를 파싱하고 객체로 변환하여 사용자가 쉽게 데이터를 조작하고 처리할 수 있도록 합니다.<br>
+                        JSON.parse() 함수에 JSON 형식의 문자열을 인자로 전달하면, 해당 문자열을 분석하여 JavaScript 객체나 배열 등 JSON 데이터가 포함된 구조를 반환합니다. 이 함수를 사용하면 웹 애플리케이션에서 서버로부터 받은 JSON 데이터를 JavaScript에서 사용 가능한 형식으로 변환할 수 있습니다. JSON 문자열을 파싱하는 동안 유효한 JSON 형식이어야 하며, 문법 오류가 있는 경우 예외를 발생시킵니다.<br><br>
+                        객체를 JSON 문자열로 변환 (JSON.stringify)<br>
+                        JSON.stringify()는 JavaScript 객체를 JSON 형식의 문자열로 변환하는 JavaScript의 내장 함수입니다. 이 함수를 사용하면 JavaScript 객체나 배열과 같은 데이터를 JSON 형식으로 직렬화(serialize)하여 문자열로 만들 수 있습니다.<br>
+                        JSON.stringify() 함수에 JavaScript 객체나 배열을 인자로 전달하면 해당 객체를 JSON 형식의 문자열로 변환하고 반환합니다. 이렇게 생성된 JSON 문자열은 다른 시스템 또는 서버로 전송하거나 저장할 때 주로 사용됩니다. JSON.stringify() 함수는 두 개의 선택적 매개변수를 가질 수 있습니다<br>
+                        SON.stringify() 함수는 주로 데이터 교환 및 저장 시에 JavaScript 데이터를 JSON 형식으로 변환하는 데 사용되며, 반대로 JSON.parse() 함수를 사용하여 JSON 문자열을 JavaScript 객체로 파싱할 수 있습니다.
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                <script>
+                                    {
+                                        // json 데이터를 객체로 변환
+
+                                        const jsonString = '{"name": "webs", "age": "30"}';
+                                        const jsonObject = JSON.parse(jsonString);
+                                        document.write(jsonObject.name + "<br>");   //webs
+
+                                        // 객체를 json 데이터로 변호나
+                                        const person = {name: "webs", age: 30};
+                                        const jsonPerson = JSON.stringify(person);
+                                        document.write(jsonPerson);    //'{"name": "webs", "age": "30"}'
+                                    }
+                                </script>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample22 -->
+
 
                 <!-- ++지역변수/전역변수 -->
                 <div id="sample23" class="sample">
@@ -987,10 +1038,10 @@ console.log(obj1[1].c); //jquery
 
     console.log(a == 7);     // true  (a의 값이 7과 같다)
     console.log(a != 10);    // true  (a의 값이 10과 다르다)
-    console.log(a < 15);     // true 
+    console.log(a &lt; 15);     // true 
     console.log(b > 9);      // false
     console.log(b >= 5);     // true
-    console.log(a <= 10);    // true
+    console.log(a &lt;= 10);    // true
     console.log(a === 7);    // true  (a의 값이 7와 데이터 형식과 값이 같다)
     console.log(a !== 9);    // true  (a의 값이 9와 데이터 형식과 값이 다르다.)
     console.log(d == 8);     // true
@@ -1025,8 +1076,8 @@ console.log(obj1[1].c); //jquery
     let x = 5;
     let y = 10;
 
-    console.log(x > 0 && y < 20);   //true
-    console.log(x > 0 || y < 20);   //true
+    console.log(x > 0 && y &lt; 20);   //true
+    console.log(x > 0 || y &lt; 20);   //true
     console.log(!(x > 0));          //false
 }
 </code></pre>
@@ -1051,11 +1102,11 @@ console.log(obj1[1].c); //jquery
     let x = 3;
     let y = 4;
 
-    console.log(2*(x+4) && y<=5);   //true
+    console.log(2*(x+4) && y&lt;=5);   //true
     console.log(2*(x+4));           //14
 }
 </code></pre>
-                    <p class="desc">연산자 우선 순위는 () -> 단항 연산자(--, ++, !) -> 산술 연산자(*, /, %, +, -) -> 비교 연산자(>, >=, <, <=, == , ===, !=, !===) -> 논리 연산자(&&, ||) -> 대입(복합대입) 연산자 순으로 계산이 됩니다.</p>
+                    <p class="desc">연산자 우선 순위는 () -> 단항 연산자(--, ++, !) -> 산술 연산자(*, /, %, +, -) -> 비교 연산자(>, >=, &lt;, &lt;=, == , ===, !=, !===) -> 논리 연산자(&&, ||) -> 대입(복합대입) 연산자 순으로 계산이 됩니다.</p>
                     <div class="result">
                         <details>
                             <summary>결과 확인하기</summary>
@@ -1697,7 +1748,20 @@ console.log(obj1[1].c); //jquery
         console.log(obj2.b);    //200
         console.log(obj2.c);    //javascript
         console.log(obj2.d);    //jquery
-        console.log(obj3);      //a: 100, b: 200, c: javascript, d: jquery
+        console.log(obj3);      //a: 100, b: 200, c: javascript, d: jquery 
+    }
+    {
+        //22
+        // json 데이터를 객체로 변환
+
+        const jsonString = '{"name": "webs", "age": "30"}';
+        const jsonObject = JSON.parse(jsonString);
+        console.log(jsonObject.name);   //webs
+
+        // 객체를 json 데이터로 변호나
+        const person = {name: "webs", age: 30};
+        const jsonPerson = JSON.stringify(person);
+        console.log(jsonPerson);    //'{"name": "webs", "age": "30"}'
     }
     </script>
 </body>
