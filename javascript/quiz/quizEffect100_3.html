@@ -129,9 +129,18 @@
             const quizInput = quizWrap.querySelector(".quiz__input input");
             
             // 엔터키 누르면 정답확인 누르기
+            // quizInput.addEventListener("keyup", (event) => {
+            //     if (event.key === "Enter") {
+            //         quizConfirm.click(); // 정답 확인 버튼을 클릭
+            //     }
+            // });
             quizInput.addEventListener("keyup", (event) => {
                 if (event.key === "Enter") {
-                    quizConfirm.click(); // 정답 확인 버튼을 클릭
+                    if (!quizConfirm.classList.contains("none")) {
+                        quizConfirm.click(); // 정답 확인 버튼을 클릭
+                    } else if (!quizNext.classList.contains("none")) {
+                        quizNext.click(); // 다음 문제 버튼을 클릭
+                    }
                 }
             });
 
@@ -169,7 +178,7 @@
                 quizElement.classList.add("good");
                 quizAnswer.classList.remove("none");
                 quizConfirm.classList.add("none");
-                quizInput.classList.add("none");
+                // quizInput.classList.add("none");
                 quizNext.classList.remove("none");
                 quizScore++;
                 updateScore()

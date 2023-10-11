@@ -111,7 +111,7 @@
                     </div>
                     <div class="quiz__main">
                         <div class="quiz__question">
-                            ${currentIndex+1}. ${selectedQuestion.infoQuestion}
+                            ${currentIndex}. ${selectedQuestion.infoQuestion}
                             ${selectedQuestion.infoDesc ? `<div class="quiz__desc2">${selectedQuestion.infoDesc}</div>` : ''}
                         </div>
                         <div class="quiz__input">
@@ -126,7 +126,7 @@
                     </div>
                 </div>
             `;
-
+            
             quizWrap.innerHTML = quizWrapTag;
 
             // 선택자

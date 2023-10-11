@@ -228,7 +228,7 @@ body::after {
 .quiz__type {
     color: #696969;
 }
-.quiz__main {}
+
 .quiz__question {
     margin-bottom: 20px;
     font-size: 24px;
@@ -408,7 +408,7 @@ body::after {
 .quiz__desc::before {
     content: "😃 설명 : ";
 }
-.quiz__footer {}
+
 .quiz__confirm {
     background-color: #006696;
     color: #fff;
@@ -843,7 +843,7 @@ body::after {
     margin-bottom: 10px;
 }
 .cbt__submit {
-    background-color: #004b6e;
+    background-color: #195977;
     color: #fff;
     padding: 10px 20px;
     border-radius: 40px;
@@ -853,6 +853,14 @@ body::after {
 }
 
 .cbt__giveup {
+    background-color: #004b6e;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 40px;
+    text-align: center;
+    cursor: pointer;
+}
+.cbt__again {
     background-color: #004b6e;
     color: #fff;
     padding: 10px 20px;
