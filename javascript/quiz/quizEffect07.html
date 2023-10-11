@@ -148,7 +148,6 @@
                                     </svg>
                                 </span>
                             </div>
-
                         </div>
                     </div>
                     <div class="cont">
@@ -214,7 +213,7 @@
 
                 // 문제에 대한 이미지가 있다면
                 if(item.hasOwnProperty("question_img")){
-                    const src = "<img src='https://l-jy16.github.io/webs2024/json/img/"
+                    const src = "&lt;img src='https://l-jy16.github.io/webs2024/json/img/"
                     formattedQuiz.infoQuestionImg = src + item.question_img + ".jpg' alt='정보치리가능사' />"
                 }
 
@@ -237,37 +236,37 @@
 
         quizInfo.forEach((question, number) => {
             exam.push(`
-                <div class="cbt">
-                    <div class="cbt__question">${question.infoNum}. ${question.inforQuestion}</div>
-                    ${question.infoQuestionDesc ? `<div class="cbt__question__desc">${question.infoQuestionDesc}</div>` : ""}
-                    ${question.infoQuestionImg ? `<div class="cbt__question__imgc">${question.infoQuestionImg}</div>` : ""}
-                    <div class="cbt__choices">
-                        <input type="radio" id="select${number}_1" name="select${number}" value="${number}_1" onclick="answerSelect(this)">
-                        <label for="select${number}_1"><span>${question.infoChoices[0]}</span></label>
-                        <input type="radio" id="select${number}_2" name="select${number}" value="${number}_2" onclick="answerSelect(this)">
-                        <label for="select${number}_2"><span>${question.infoChoices[1]}</span></label>
-                        <input type="radio" id="select${number}_3" name="select${number}" value="${number}_3" onclick="answerSelect(this)">
-                        <label for="select${number}_3"><span>${question.infoChoices[2]}</span></label>
-                        <input type="radio" id="select${number}_4" name="select${number}" value="${number}_4" onclick="answerSelect(this)">
-                        <label for="select${number}_4"><span>${question.infoChoices[3]}</span></label>
-                    </div>
-                    <div class="cbt__answer none">${question.infoAnswer}</div>
-                    <div class="cbt__desc none">${question.infoDesc}</div>
-                </div>
+                &lt;div class="cbt">
+                    &lt;div class="cbt__question">${question.infoNum}. ${question.inforQuestion}&lt;/div>
+                    ${question.infoQuestionDesc ? `&lt;div class="cbt__question__desc">${question.infoQuestionDesc}&lt;/div>` : ""}
+                    ${question.infoQuestionImg ? `&lt;div class="cbt__question__imgc">${question.infoQuestionImg}&lt;/div>` : ""}
+                    &lt;div class="cbt__choices">
+                        &lt;input type="radio" id="select${number}_1" name="select${number}" value="${number}_1" onclick="answerSelect(this)">
+                        &lt;label for="select${number}_1">&lt;span>${question.infoChoices[0]}&lt;/span>&lt;/label>
+                        &lt;input type="radio" id="select${number}_2" name="select${number}" value="${number}_2" onclick="answerSelect(this)">
+                        &lt;label for="select${number}_2">&lt;span>${question.infoChoices[1]}&lt;/span>&lt;/label>
+                        &lt;input type="radio" id="select${number}_3" name="select${number}" value="${number}_3" onclick="answerSelect(this)">
+                        &lt;label for="select${number}_3">&lt;span>${question.infoChoices[2]}&lt;/span>&lt;/label>
+                        &lt;input type="radio" id="select${number}_4" name="select${number}" value="${number}_4" onclick="answerSelect(this)">
+                        &lt;label for="select${number}_4">&lt;span>${question.infoChoices[3]}&lt;/span>&lt;/label>
+                    &lt;/div>
+                    &lt;div class="cbt__answer none">${question.infoAnswer}&lt;/div>
+                    &lt;div class="cbt__desc none">${question.infoDesc}&lt;/div>
+                &lt;/div>
             `);
 
             omr.push(`
-                <div class="omr">
-                    <strong>${question.infoNum}</strong>
-                    <input type="radio" name="omr${number}" id="omr${number}_1" value="${number}_1" onclick="answerSelect2(this)">
-                    <label for="omr${number}_1"><span class="label-inner">1</span></label>
-                    <input type="radio" name="omr${number}" id="omr${number}_2" value="${number}_2" onclick="answerSelect2(this)">
-                    <label for="omr${number}_2"><span class="label-inner">2</span></label>
-                    <input type="radio" name="omr${number}" id="omr${number}_3" value="${number}_3" onclick="answerSelect2(this)">
-                    <label for="omr${number}_3"><span class="label-inner">3</span></label>
-                    <input type="radio" name="omr${number}" id="omr${number}_4" value="${number}_4" onclick="answerSelect2(this)">
-                    <label for="omr${number}_4"><span class="label-inner">4</span></label>
-                </div>
+                &lt;div class="omr">
+                    &lt;strong>${question.infoNum}&lt;/strong>
+                    &lt;input type="radio" name="omr${number}" id="omr${number}_1" value="${number}_1" onclick="answerSelect2(this)">
+                    &lt;label for="omr${number}_1">&lt;span class="label-inner">1&lt;/span>&lt;/label>
+                    &lt;input type="radio" name="omr${number}" id="omr${number}_2" value="${number}_2" onclick="answerSelect2(this)">
+                    &lt;label for="omr${number}_2">&lt;span class="label-inner">2&lt;/span>&lt;/label>
+                    &lt;input type="radio" name="omr${number}" id="omr${number}_3" value="${number}_3" onclick="answerSelect2(this)">
+                    &lt;label for="omr${number}_3">&lt;span class="label-inner">3&lt;/span>&lt;/label>
+                    &lt;input type="radio" name="omr${number}" id="omr${number}_4" value="${number}_4" onclick="answerSelect2(this)">
+                    &lt;label for="omr${number}_4">&lt;span class="label-inner">4&lt;/span>&lt;/label>
+                &lt;/div>
             `);
         })
         cbtQuiz.innerHTML = exam.join('');
@@ -278,7 +277,7 @@
     const displayTime = () => {
         const minutes = Math.floor(remainingTime / 60);
         const seconds = remainingTime % 60;
-        const formattedSeconds = seconds < 10 ? `0${seconds}` : seconds;
+        const formattedSeconds = seconds &lt; 10 ? `0${seconds}` : seconds;
 
         cbtTime.textContent = `${minutes}분 ${formattedSeconds}초`;
     }
@@ -293,7 +292,7 @@
                 displayTime();
 
                 // 내 정답
-                // if(seconds<10){
+                // if(seconds&lt;10){
                 //     cbtTime.textContent = `${minutes}분 0${seconds}초`;
                 // } else {
                 //     cbtTime.textContent = `${minutes}분 ${seconds}초`;
@@ -482,7 +481,7 @@
         });
     });
 }</code>;</pre>
-                        </div>
+>                        </div>
                     </div>
                 </div>
                 <div class="modal__close">
@@ -497,6 +496,9 @@
         </div>
     </footer>
     <!-- //footer -->
+
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="../slider/js/common.js"></script>
 
     <script>
         // 선택자
