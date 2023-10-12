@@ -167,6 +167,17 @@ pre code.hljs {
     }
 }
 
+@media (max-width: 500px){
+    .modal__btn {
+        padding: 5px 10px;
+        font-size: 12px;
+        position: absolute;
+        left: 15px;
+        bottom: 35px;
+    }
+}
+
+
 /* 모달 애니메이션 */
 .modal__cont.show {
     animation: foldOut 1s ease forwards;

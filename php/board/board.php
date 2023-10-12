@@ -141,7 +141,7 @@
                 <ul>
 <?php
     // 총 페이지 갯수
-    $boardTotalCount = ceil($boardTotalCount/$viewNum);
+    $boardTotalCount = ceil($boardTotalCount / $viewNum);
 
     // 현재 보고 있는 페이지 기준으로 앞뒤로 5개씩
     $pageView = 5;
@@ -155,7 +155,7 @@
     // 페이지 이동(선생님이 알려준 방식)
 
     //선생님 방식(처음으로/이전)
-    if($Page != 1){
+    if($page != 1){
         $prevPage = $page - 1;
         echo "<li class='first'><a href='board.php?page=1'>처음으로</a></li>";
         echo "<li class='prev'><a href='board.php?page={$prevPage}'>이전</a></li>";
@@ -169,7 +169,7 @@
     }
     
     // 선생님 방식(마지막/다음)
-    if($Page != $boardTotalCount){
+    if($page != $boardTotalCount){
         $nextPage = $page + 1;
         echo "<li class='next'><a href='board.php?page={$nextPage}'>다음</a></li>";
         echo "<li class='last'><a href='board.php?page=$boardTotalCount'>마지막으로</a></li>";
