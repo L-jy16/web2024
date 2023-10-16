@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: var(--black);
+}
+
+/* container */
+.container {
+    max-width: 1260px;
+    width: 96%;
+    margin: 0 auto;
+}
+@media (max-width: 800px) {
+    .container {
+        width: 100%;
+        padding: 0 16px;
+    }
+}
+
+/* header */
+#haeader {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    background-color: #e3e3e3;
+    justify-content: space-between;
+    background-color: var(--black);
+    color: var(--white);
+}
+.logo {
+    display: inline-block;
+    font-family: var(--primary-Oleo);
+    font-size: 3.125rem;
+    padding: 10px 20px;
+    margin-left: 1.2rem;
+    font-weight: 900;
+    box-sizing: border-box;
+}
+.nav {
+    font-family: var(--primary-Hahmlet);
+    display: flex;
+    margin-right: 1.2rem;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.9rem;
+}
+.nav ul {
+    display: flex;
+}
+.nav li {
+    margin-right: 1rem;
+}
+.nav .nav__ham {
+    margin-left: 1.8rem;
+    width: 50px;
+    height: 50px;
+}
+.nav .nav__ham a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 18px 0 0 8px;
+}
+.nav .nav__ham a span {
+    display: block;
+    width: 3.125rem;
+    height: 0.4rem;
+    background-color: #D7D7D7;
+    position: relative;
+}
+.nav .nav__ham span::before{
+    content: '';
+    width: 3.125rem;
+    height: 0.4rem;
+    background-color: #D7D7D7;
+    position: absolute;
+    left: 0;
+    bottom: 14px;
+}
+.nav .nav__ham span::after{
+    content: '';
+    width: 3.125rem;
+    height: 0.4rem;
+    background-color: #D7D7D7;
+    position: absolute;
+    left: 0;
+    top: 14px;
+}
+
+/* main */
+#main {
+    width: 100%;
+    height: calc(100vh - 300px);
+}
+
+/* footer */
+#footer {
+    background-color: rgba(0,0,0,0.3);
+}
+#footer .container {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6d6d6d;
+}
+.footer1 {
+    display: flex;
+    width: 35%;
+    justify-content: center;
+    align-items: center;
+}
+.footer1 img {
+    width: 60%;
+    height: 60%;
+    filter: brightness(0.5);
+}
+.footer2 {
+    width: 65%;
+    margin-left: 20px;
+}
+.footer2 .footer2-1 li {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+.footer2 .footer2-1 li a {
+    font-size: 1.1rem;
+}
+.footer2 .footer2-2 {
+    font-size: 1.1rem;
+}

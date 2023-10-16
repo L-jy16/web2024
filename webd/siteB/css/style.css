@@ -182,6 +182,9 @@ img {
 }
 #contents .container .notice li a {
     width: 70%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 #contents .container .notice li a:hover {
     text-decoration: underline;

@@ -59,7 +59,7 @@
     font-weight: 300;
 }
 .intro__text h2 {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     margin-bottom: 1.25rem;
 }
 .intro__text em {
@@ -151,7 +151,7 @@ background-color: var(--black);
 /* btn__style */
 .btn__style {
     display: block;
-    background-color: var(--black);
+    background-color: var(--green300);
     color: var(--white);
     font-size: 1.2rem;
     border-radius: 30px;
@@ -162,7 +162,7 @@ background-color: var(--black);
 .btn__style2 {
     width: 100%;
     display: block;
-    background-color: var(--black);
+    background-color: var(--green300);
     color: var(--white);
     font-size: 1.2rem;
     border-radius: 30px;
@@ -172,7 +172,7 @@ background-color: var(--black);
 }
 .btn__style3 {
     display: inline-block;
-    background-color: var(--black);
+    background-color: var(--green300);
     color: var(--white);
     font-size: 1rem;
     padding: 0.7rem 2rem;
@@ -219,6 +219,22 @@ background-color: var(--black);
     -webkit-box-orient: vertical;
 }
 
+/* 스크롤 스타일 */
+.scroll__style::-webkit-scrollbar {
+    width: 10px;  /* 스크롤바의 너비 */
+}
+
+.scroll__style::-webkit-scrollbar-thumb {
+    height: 30%; /* 스크롤바의 길이 */
+    background: var(--green600); /* 스크롤바의 색상 */
+    
+    border-radius: 10px;
+}
+
+.scroll__style::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);  /*스크롤바 뒷 배경 색상*/
+}
+
 /* required */
 .required::after {
     content: ' *';
@@ -227,12 +243,13 @@ background-color: var(--black);
 
 /* main */
 #main {
-    min-height: 100vh;
+    min-height: 80vh;
 }
 
 /* footer */
 #footer {
     text-align: center;
+    margin-bottom: 50px;
 }
 .footer__inner {
     display: flex;
