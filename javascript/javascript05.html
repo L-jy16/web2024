@@ -82,6 +82,28 @@
 
             <div class="main__sample">
 
+                <div id="s07" class="sample">
+                    <h3>07. string.prototype.indexOf()</h3>
+                    <p>indexOf() 메서드는 호출한 String 객체에서 주어진 값과 일치하는 첫 번째 인덱스를 반환합니다. 일치하는 값이 없으면 -1을 반환합니다.</p>
+<pre><code class="language-js">{
+    const paragraph = 'The quick brown fox jumps over the lazy dog. If the dog barked, was it really lazy?';
+
+    const searchTerm = 'dog';
+    const indexOfFirst = paragraph.indexOf(searchTerm);
+
+    console.log(`The index of the first "${searchTerm}" from the beginning is ${indexOfFirst}`);
+    // Expected output: "The index of the first "dog" from the beginning is 40"
+
+    console.log(`The index of the 2nd "${searchTerm}" is ${paragraph.indexOf(searchTerm, indexOfFirst + 1)}`);
+    // Expected output: "The index of the 2nd "dog" is 52"
+
+}</code></pre>
+                <p class="desc">
+                    indexOf는 JavaScript에서 배열 내에서 특정 항목(요소)을 찾는 메소드입니다. 이 메소드는 배열 안에서 찾고자 하는 항목의 인덱스(위치)를 반환합니다.
+                </p>
+                </div>
+                <!-- //s22 -->
+
                 <div id="s22" class="sample">
                     <h3>22. string.prototype.split()</h3>
                     <p>split() 메서드는 String 객체를 지정한 구분자를 이용하여 여러 개의 문자열로 나눕니다.</p>

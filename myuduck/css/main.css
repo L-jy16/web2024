@@ -1,0 +1,13 @@
+body {
+    background-color: var(--black);
+    width: 100vw;
+}
+main {
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}

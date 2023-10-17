@@ -1,0 +1,61 @@
+body {
+    background-color: var(--black);
+    width: 100vw;
+}
+#main {
+    width: 100vw;
+    height: 1029px;
+    background-color: #fff;
+
+}
+
+/* container */
+.container {
+    max-width: 1260px;
+    width: 96%;
+    margin: 0 auto;
+}
+@media (max-width: 800px) {
+    .container {
+        width: 100%;
+        padding: 0 16px;
+    }
+}
+
+/* btn-style */
+.btn-style {
+    display: inline-block;
+    font-size: 1rem;
+    padding: 0.7rem 1rem;
+    background-color: var(--black);
+    border: 1px solid var(--white);
+    border-radius: 10px;
+    color: var(--white);
+    cursor: pointer;
+}
+.btn-style2 {
+    display: inline-block;
+    font-size: 1rem;
+    padding: 0.7rem 1rem;
+    background-color: var(--white);
+    border: 1px solid var(--black);
+    border-radius: 10px;
+    color: var(--black);
+    cursor: pointer;
+}
+
+/* 스크롤 스타일 */
+.scroll__style::-webkit-scrollbar {
+    width: 10px;
+    background-color: #525252;
+}
+
+.scroll__style::-webkit-scrollbar-thumb {
+    height: 20%;
+    background: var(--white);
+    border-radius: 5px;
+}
+
+.scroll__style::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);  /*스크롤바 뒷 배경 색상*/
+}
