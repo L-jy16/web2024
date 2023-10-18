@@ -35,8 +35,8 @@
                 <h1>CSS 속성 설명 검색하기</h1>
             </div>
             <div class="search__box">
-                <label for="searchBox">검색하기</label>
                 <input type="text" id="searchBox" name="searchBox" placeholder="CSS 속성을 검색하면 설명이 나옵니다.">
+                <label for="searchBox">검색하기</label>
                 <div class="search__box__result">
                     animation-delay는 애니메이션 지연 시간을 설정합니다.
                 </div>
@@ -131,42 +131,71 @@
         const searchInfo = document.querySelector(".search__info");
         const searchBox = document.querySelector(".search__box input");
         const searchBoxResult = document.querySelector(".search__box__result");
-        // const searchListSpan = document.querySelectorAll(".search__list span")
+        const searchBoxBtn = document.querySelector(".search__box label");
 
         // 출력하기
         cssProperty.map((element, index) => {
             searchList.innerHTML += `<span>${element.name}</span>`;
         });
 
-        // 입력하기
-        searchBox.addEventListener("keyup", () => {
-            const searchWord = searchBox.value;
-            console.log(searchWord)
-            findProperty(searchWord);
-        })
-
         // list 클릭 시 나오게 하는 법
-        document.querySelectorAll(".search__list span").forEach(span => {
+        const searchListSpan = document.querySelectorAll(".search__list span");
+
+        searchListSpan.forEach(span => {
             span.addEventListener("click", () => {
-                const searchListSpan = span.textContent;
-                findProperty(searchListSpan)
+                const clickListSpan = span.textContent;
+                findProperty(clickListSpan);
+
+                searchListSpan.forEach(act => {
+                    act.classList.remove("active");
+                })
+                span.classList.add("active");
             })
         })
 
+         // 입력하기
+         searchBoxBtn.addEventListener("click", () => {
+            AllSearch();
+        })
+        searchBox.addEventListener("keydown", (event) => {
+            if (event.key === "Enter") {
+                AllSearch();
+            }
+        })
+
+        function AllSearch(){
+            const searchWord = searchBox.value;
+            const activeSpan = document.querySelector(".search__list span.active");
+            if (activeSpan) {
+                activeSpan.classList.remove("active");
+            }
+
+            const matchingSpan = [...searchListSpan].find(span => span.textContent.toUpperCase() === searchWord.toUpperCase());
+
+            if (matchingSpan) {
+                matchingSpan.classList.add("active");
+            }
+                
+            findProperty(searchWord);
+        }
+
         // 속성 찾기
-        function findProperty(searchData){
+        function findProperty(searchData, clickListSpan){
             const targetData = cssProperty.find((data) => data.name === searchData);
+            const activeSpan = document.querySelector(".search__list span.active")
             
 
             if(targetData == null){
                 searchBoxResult.textContent = "해당 속성은 존재하지 않습니다. 다시 한번 검색해주세요."
                 return;
             } else {
-                searchBoxResult.textContent = targetData.desc
+                console.log(searchData)
+                searchBoxResult.textContent = targetData.desc;
+
             }
         }
-        
 
+        
     </script>
 
 </body>
