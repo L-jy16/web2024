@@ -1,6 +1,12 @@
 :root {
     --main-nanum: "NanumSquareNeo";
     --main-gmark: "GmarketSans";
+    
+    --primary-Oleo: "OleoScript";
+    --primary-Hahmlet: "Hahmlet";
+    --primary-Mapo: "MapoGoldenPier";
+    --primary-Nanum: "nanumSquareNeo";
+    --primary-Oswald: "Oswald";
 
     --primary-color: #EEEEEE;
 

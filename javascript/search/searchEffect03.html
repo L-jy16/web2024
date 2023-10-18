@@ -42,6 +42,7 @@
                 <span>e</span>
                 <span>f</span>
                 <span>g</span>
+                <span id="showAll">all</span>
             </div>
             <div class="search__info">
                 <div>CSS 속성 갯수: <span class="num">0</span>개</div>
@@ -143,6 +144,7 @@
         const searchList = document.querySelectorAll(".search__list ul li");
         const searchInfoNum = document.querySelector(".search__info .num");
         const searchSelect = document.querySelectorAll(".search__select span");
+        const searchBox = document.querySelector(".search__box input");
         const letters = [];
 
         searchSelect.forEach(lett => {
@@ -175,8 +177,62 @@
             })
             
         })
-        
+
+        // 전체 보기 버튼
+        const showAllButton = document.getElementById("showAll");
+
+        showAllButton.addEventListener("click", () => {
+            searchList.forEach(list => {
+                list.classList.remove("hide");
+            });
+            searchInfoNum.textContent = searchList.length;
+        });
     </script>
+    
+    <!-- <script>
+        // 선생님 정답
+        const searchList = document.querySelectorAll(".search__list ul li");
+        const searchSelect = document.querySelectorAll(".search__select span");
+        const searchInfo = document.querySelector(".search__info");
+        const searchBox = document.querySelector(".search__box input");
+
+        let count = 0;
+
+        // 전체 갯수 구하기
+        searchInfo.textContent = "CSS 속성의 갯수는 " + searchList.length + "개 입니다.";
+
+        searchSelect.forEach(el => {
+            el.addEventListener("click", () => {
+                const searchWord = el.innerText;        //사용자가 클릭한 알파벳
+                // console.log(searchWord);
+
+                searchList.forEach(el => {
+                    const cssName = el.querySelector("strong").innerText;       //CSS 속성 텍스트
+                    // console.log(cssName)
+
+                    //알파벳 첫글자 == CSS 속성의 첫글자
+                    if (searchWord.charAt(0) === cssName.charAt(0)) {
+                        el.classList.remove("hide");
+                        count++;
+                    } else {
+                        el.classList.add("hide");
+                    }
+                    searchInfo.textContent = searchWord.charAt(0) + "로 시작하는 속성은 " + count + "개입니다.";
+                });
+                count = 0;
+            });
+        });
+
+        // 전체 보기 버튼
+        const showAllButton = document.getElementById("showAll");
+
+        showAllButton.addEventListener("click", () => {
+            searchList.forEach(el => {
+                el.classList.remove("hide");
+            });
+            searchInfo.textContent = "CSS 속성의 갯수는 " + searchList.length + "개입니다.";
+        });
+    </script> -->
 
 </body>
 </html>
