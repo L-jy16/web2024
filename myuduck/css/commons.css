@@ -25,6 +25,17 @@ svg {
         padding: 0 16px;
     }
 }
+.container2 {
+    max-width: 520px;
+    width: 96%;
+    margin: 0 auto;
+}
+@media (max-width: 800px) {
+    .container {
+        width: 100%;
+        padding: 0 16px;
+    }
+}
 
 /* btn-style */
 .btn-style {
@@ -42,7 +53,7 @@ svg {
     font-size: 1rem;
     padding: 0.7rem 1rem;
     background-color: var(--white);
-    border: 1px solid var(--black);
+    /* border: 1px solid var(--black); */
     border-radius: 10px;
     color: var(--black);
     cursor: pointer;
@@ -51,10 +62,28 @@ svg {
     display: block;
     width: 100%;
     font-size: 1rem;
-    margin: 60px auto;
     background-color: var(--white);
     color: var(--black);
     padding: 0.8rem 2.5rem;
+    cursor: pointer;
+}
+.btn-style4 {
+    display: inline-block;
+    width: 100%;
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: var(--white);
+    padding: 0.8rem 2.5rem;
+    cursor: pointer;
+}
+.btn-style5 {
+    display: inline-block;
+    font-size: 1rem;
+    padding: 0.7rem 1rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 10px;
+    color: var(--white);
     cursor: pointer;
 }
 

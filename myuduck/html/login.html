@@ -7,9 +7,9 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="../css/style.css">
-    <!-- <link rel="stylesheet" href="../css/join.css"> -->
 
-    <title>뮤지컬 회원가입</title>
+
+    <title>뮤지컬 탈퇴하기</title>
     <style>
     </style>
 </head>
@@ -61,13 +61,11 @@
     </header>
 
     <main>
-        <section class="join__inner2">
-            <h2 class="blind">회원가입</h2>
-            <div class="join__from2 container2">
-                <h3>회원가입 <span>Sing up</span></h3>
+        <section class="login_inner">
+            <h2 class="blind">로그인</h2>
+            <div class="login__from container2">
                 <form action="#" name="#" method="post">
                     <fieldset>
-                        <legend class="blind">회원가입 영역</legend>
                         <div>
                             <label for="youID" class="required blind">아이디</label>
                             <input type="text" name="youID" id="youID" placeholder="아이디" class="input__style" required>
@@ -76,19 +74,21 @@
                             <label for="youPass" class="required blind">비밀번호</label>
                             <input type="password" name="youPass" id="youPass" placeholder="비밀번호" class="input__style" required>
                         </div>
-                        <div>
-                            <label for="youPassC" class="required blind">비밀번호 확인</label>
-                            <input type="password" name="youPassC" id="youPassC" placeholder="비밀번호 확인" class="input__style" required>
+                        <div class="check">
+                            <label for="loginCheck1">
+                                로그인 상태 유지
+                                <input type="checkbox" name="loginCheck1" id="loginCheck1">
+                                <span class="indicator"></span>
+                            </label>
                         </div>
-                        <div>
-                            <label for="youName" class="required">이름 *</label>
-                            <input type="text" name="youName" id="youName" placeholder="이름을 입력하세요" class="input__style" required>
+                        <button type="submit" class="btn-style3">로그인</button>
+                        <div class="login__btn">
+                            <a href="#" class="joinbtn">회원가입</a>
+                            <div class="findbtn">
+                                <a href="#" class="idfindbtn">아이디 찾기</a>
+                                <a href="#" class="passfindbtn">비밀번호 찾기</a>
+                            </div>
                         </div>
-                        <div>
-                            <label for="youEmail" class="required">이메일 *</label>
-                            <input type="email" name="youEmail" id="youEmail" placeholder="이메일을 입력하세요" class="input__style" required>
-                        </div>
-                        <button type="submit" class="join_btn btn-style3">회원가입 완료</button>
                     </fieldset>
                 </form>
             </div>
@@ -129,4 +129,6 @@
     <script src="../script/checkBox.js"></script>
 
 </body>
+
+
 </html>

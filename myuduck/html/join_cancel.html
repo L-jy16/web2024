@@ -63,7 +63,8 @@
     <main>
         <section class="join__inner2">
             <h2 class="blind">회원탈퇴</h2>
-            <div class="join__from container">
+            <div class="join__from2 container2">
+                <h3>회원탈퇴</h3>
                 <form action="#" name="#" method="post">
                     <fieldset>
                         <div>
@@ -71,18 +72,13 @@
                             <input type="password" name="youPass" id="youPass" placeholder="비밀번호" class="input__style" required>
                         </div>
                         <div>
-                            <label for="youPass" class="required blind">비밀번호 확인</label>
-                            <input type="password" name="youPass" id="youPass" placeholder="비밀번호 확인" class="input__style" required>
+                            <label for="youPassC" class="required blind">비밀번호 확인</label>
+                            <input type="password" name="youPassC" id="youPassC" placeholder="비밀번호 확인" class="input__style" required>
                         </div>
-                        <div>
-                            <label for="youName" class="required">이름 *</label>
-                            <input type="text" name="youName" id="youName" placeholder="이름을 입력하세요" class="input__style" required>
+                        <div class="cancel__btn">
+                            <button type="submit" class="btn-style3">탈퇴하기</button>
+                            <button type="submit" class="deletebtn btn-style4">취소</button>
                         </div>
-                        <div>
-                            <label for="youEmail" class="required">이메일 *</label>
-                            <input type="email" name="youEmail" id="youEmail" placeholder="이메일을 입력하세요" class="input__style" required>
-                        </div>
-                        <button type="submit" class="btn-style3">회원가입 완료</button>
                     </fieldset>
                 </form>
             </div>
@@ -118,8 +114,11 @@
     </footer>
     <!-- //footer -->
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../script/commons.js"></script>
+    <script src="../script/checkBox.js"></script>
+
 </body>
-<script src="../script/commons.js"></script>
-<script src="../script/checkBox.js"></script>
+
 
 </html>

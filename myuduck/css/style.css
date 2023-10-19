@@ -10,5 +10,7 @@
 /* 섹션별 설정 */
 @import "header.css";
 @import "join.css";
+@import "find.css";
+@import "login.css";
 @import "footer.css";
 @import "sidebar.css";
