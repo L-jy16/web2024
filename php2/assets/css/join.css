@@ -108,71 +108,80 @@
     margin-top: 20px;
 }
 
-.join__from {
-    padding: 80px 20%;
+
+/* join__insert */
+.join__insert {
+    padding: 0 10%;
 }
-.join__from div {
-    margin-bottom: 3em;
+.join__insert .join {
+    margin-top: 50px;
 }
-.join__from div label {
+.join__insert div label {
     display: block;
     font-size: 1.2rem;
     margin-bottom: 5px;
 }
-
-.join__from .check {
+.join__insert div input {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.join__insert div .msg {
+    color: var(--red);
+    margin-bottom: 3rem;
+}
+.join__insert .check {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
-.join__from .check label {
+.join__insert .check label {
     width: 100%;
 }
-.join__from .check input {
+.join__insert .check input {
+    width: 69%;
+    height: 58px;
+}
+.join__insert .check .btn {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--green300);
+    color: var(--white);
+    font-size: 1rem;
+    padding: 0 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 58px;
+}
+.join__btn {
+    margin-top: 70px;
+    text-align: center;
+}
+.join__btn a {
     display: inline-block;
-    width: 78%;
 }
-.join__from .check button {
-    display: inline;
-    word-break: keep-all;
-    width: 20%;
-    font-size: 1.2rem;
-    border: 1px solid var(--green600);
-    background-color: var(--green600);
-    color: #fff;
-    border-radius: 10px;
+@media (max-width: 800px){
+    .join__insert {
+        padding: 0;
+    }
 }
-
-.join__from .check2 {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-.join__from .check2 label {
-    width: 100%;
-}
-.join__from .check2 input {
-    width: 100%;
-}
-.join__from .check2 #youAddress1 {
-    width: 78%;
-}
-.join__from .check2 button {
-    display: inline;
-    word-break: keep-all;
-    width: 20%;
-    font-size: 1.2rem;
-    border: 1px solid var(--green600);
-    background-color: var(--green600);
-    color: #fff;
-    border-radius: 10px;
+@media (max-width: 600px){
+    .join__insert .check {
+        flex-direction: column;
+    }
+    .join__insert .check input {
+        width: 100%;
+        height: 47px;
+    }
+    .join__insert .check .btn {
+        width: 100%;
+        height: 47px;
+        margin-bottom: 10px;
+    }
 }
 
-.join__from p {
-    color: red;
-    padding-top: 5px;
-    margin-left: 5px;
-}
+
 .join__result {
     text-align: center;
     margin: 70px 0 100px 0;

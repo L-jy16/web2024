@@ -1,3 +1,9 @@
+body {
+    -webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+}
+
 /* 여백 초기화 */
 body,
 div,
@@ -42,7 +48,7 @@ input,
 select,
 table,
 textarea {
-    font-family: var(--main-nanum), var(--main-poppins), 'AppleSDGothicNeo-Regular', 'Malgun Gothic', '맑은 고딕', 'dotum', '돋움';
+    font-family: var(--main-nanum), var(--main-gmark), 'AppleSDGothicNeo-Regular', 'Malgun Gothic', '맑은 고딕', 'dotum', '돋움';
 }
 
 /* 링크 초기화 */

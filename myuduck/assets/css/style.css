@@ -1,10 +1,17 @@
 @charset "UTF-8";
 
-/* 기본설정 */
+/* 기본 설정 */
 @import "fonts.css";
 @import "resets.css";
 @import "vars.css";
 @import "commons.css";
 
+
 /* 섹션별 설정 */
-@import "main.css";
+@import "header.css";
+@import "join.css";
+@import "find.css";
+@import "login.css";
+@import "footer.css";
+@import "sidebar.css";
+@import "kate__theater.css";
