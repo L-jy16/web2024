@@ -142,9 +142,63 @@
     padding: 1.3rem;
 }
 
+
 /* theater__detail */
 .theater__info .theater_detail {
-    border: 1px solid ;
+    /* border: 1px solid var(--black); */
     display: flex;
+    background-color: var(--white);
+    color: var(--black);
+    margin: 1.2rem 0;
+    box-sizing: border-box;
+}
+.theater_detail .log_img {
+    width: 30%;
+    height: 15vh;
+    /* margin: 0 auto;
+    padding-top: 1.5rem;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+} 
+.theater__detail__title {
+    width: 69%;
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
+.theater__detail__cont {
+    border: 1px solid var(--white);
+    color: var(--black);
+    background-color: var(--white);
+    padding: 10px;
+}
+.theater_transport {
+    margin-bottom: 1.2rem;
+}
+.theater_transport h3 {
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 10px 0;
+    border-bottom: 2px solid var(--black400);
+    margin-bottom: 1.1rem;
+}
+.theater_transport .transport_info {
+    white-space: pre-line;
+    font-size: 0.9rem;
+}
+.theater_seat_info {
+    margin-bottom: 1.3rem;
+}
+.theater_seat_info h3 {
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 10px 0;
+    border-bottom: 2px solid var(--black400);
+    margin-bottom: 1.1rem;
+}
+.theater_seat_info .seat_img {
+    margin-top: 20px;
 }

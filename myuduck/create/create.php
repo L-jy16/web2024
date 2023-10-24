@@ -6,6 +6,7 @@
     $sql .= "youId varchar(10) NOT NULL,";
     $sql .= "youPass varchar(40) NOT NULL,";
     $sql .= "youName varchar(10) NOT NULL,";
+    $sql .= "youAddress varchar(255) DEFAULT NULL,";
     $sql .= "youEmail varchar(40) DEFAULT NULL,";
     $sql .= "youPhone varchar(40) NOT NULL,";
     $sql .= "regTime int(20) NOT NULL,";
