@@ -4,11 +4,11 @@
 @import "fonts.css";
 @import "resets.css";
 @import "vars.css";
-@import "commons.css";
 
 
 /* 섹션별 설정 */
 @import "header.css";
+@import "main.css";
 @import "join.css";
 @import "find.css";
 @import "login.css";
@@ -16,3 +16,8 @@
 @import "sidebar.css";
 @import "kate__theater.css";
 @import "joinResult.css";
+
+/* 서현님 */
+@import "search.css";
+@import "category_actor.css";
+@import "category_ac_detail.css";

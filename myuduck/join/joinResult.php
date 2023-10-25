@@ -28,6 +28,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/commons.css">
 
     <title>뮤지컬 회원가입 약관</title>
     <style>

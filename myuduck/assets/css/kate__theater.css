@@ -1,18 +1,8 @@
 .theater__ineer {
-    padding: 100px 60px 100px 60px;
+    padding: 70px 60px 100px 60px;
     color: var(--white);
 }
-.theater__ineer h1 {
-    font-size: 2rem;
-    font-family: var(--primary-Oswald);
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-.theater__ineer h1 span {
-    font-size: 1.6rem;
-    font-family: var(--primary-Oswald);
-    font-weight: normal;
-}
+
 
 /* theater__info */
 .theater__info {
@@ -144,11 +134,14 @@
 
 
 /* theater__detail */
+.theater__info {
+
+}
+
 .theater__info .theater_detail {
     /* border: 1px solid var(--black); */
     display: flex;
-    background-color: var(--white);
-    color: var(--black);
+    background-image: url(../img/theater/detail_image.jpg);
     margin: 1.2rem 0;
     box-sizing: border-box;
 }
@@ -169,6 +162,22 @@
     justify-content: center;
 }
 
+
+.theater__detail__info {
+    padding: 10px 60px 100px 60px;
+    color: var(--white);
+}
+.theater__detail__info h1 {
+    font-size: 2rem;
+    font-family: var(--primary-Oswald);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.theater__detail__info h1 span {
+    font-size: 1.6rem;
+    font-family: var(--primary-Oswald);
+    font-weight: normal;
+}
 .theater__detail__cont {
     border: 1px solid var(--white);
     color: var(--black);
