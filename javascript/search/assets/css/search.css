@@ -107,6 +107,9 @@ a {
     transition: all 0.5s;
     cursor: pointer;
 }
+.search__star li::after {
+    content: attr(data-desc);
+}
 .search__star li:hover {
     transform: scale(1.1);
     transition: all 0.3s;
@@ -251,7 +254,7 @@ a {
 }
 
 .starlist {
-    width: 100%;
+    width: 100%; 
 }
 .starlist li {
     display: block;
@@ -260,19 +263,18 @@ a {
     border: 1px solid #fff;
     background-color: #fff;
     border-radius: 5px;
+    justify-content: space-between;
 
 }
 .starlist li strong {
     font-size: 1.3rem;
 }
-.starlist li i {
+.starlist li em {
     text-decoration: none;
     font-style: none;
     color: #0f477c;
-    text-align: right;
-}
-.starlist li i span {
-    display: none;
+    /* text-align: right; */
+    float: right;
 }
 
 

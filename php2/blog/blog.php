@@ -73,10 +73,20 @@
                 <section class="blog__write">blog__write</section>
             </div>
             <div class="blog__aside">
-                <article class="blog__intro">blog__intro</article>
-                <article class="blog__category">blog__category</article>
-                <article class="blog__popular">blog__popular</article>
-                <article class="blog__comment">blog__comment</article>
+                <?php include "blogAd.php"?>
+                <!-- //blogAd -->
+                
+                <?php include "blogIntro.php"?>
+                <!-- //blogIntro -->
+
+                <?php include "blogCategory.php"?>
+                <!-- blogCategory -->
+                
+                <?php include "blogPopular.php"?>
+                <!-- blogPopular -->
+                
+                <?php include "blogComment.php"?>
+                <!-- blogComment -->
             </div>
         </div>
     </main>

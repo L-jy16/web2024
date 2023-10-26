@@ -14,10 +14,13 @@
 @import "login.css";
 @import "footer.css";
 @import "sidebar.css";
-@import "kate__theater.css";
-@import "joinResult.css";
+@import "cate__theater.css";
 
 /* 서현님 */
 @import "search.css";
 @import "category_actor.css";
 @import "category_ac_detail.css";
+
+/* 해연님 */
+@import "joinResult.css";
+@import "QA.css";

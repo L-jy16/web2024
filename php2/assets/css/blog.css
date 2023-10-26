@@ -56,3 +56,27 @@
     height: 600px;
     margin-bottom: 10px;
 }
+
+/* blog__category" */
+.blog__category h3 {
+    padding: 10px;
+    border-top: 1px solid var(--black300);
+    border-bottom: 1px solid var(--black300);
+}
+.blog__category ul {
+    padding: 20px;
+    border-bottom: 1px solid var(--black300);
+}
+.blog__category ul li {
+    list-style-type: circle;
+}
+
+.blog__index {
+    border-top: 1px solid var(--black500);
+    border-bottom: 1px solid var(--black500);
+    padding: 10px 0;
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

@@ -1,28 +1,28 @@
-.none {
-    display: none;
-}
-
 body {
     background-color: var(--black);
-    width: 100vw;
+    width: 100%;
     color: var(--white);
 }
-/* #main {
-    width: 100vw;
+#main {
+    width: 100%;
     height: 1029px;
     background-color: #fff;
 }
 svg {
     background-color: var(--black);
     color: #fff;
-} */
+}
 
 /* container */
 .container {
     max-width: 1260px;
     width: 96%;
-    /* min-height: 100vh; */
+    min-height: 100vh;
+    height: auto;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 @media (max-width: 800px) {
     .container {
@@ -33,8 +33,12 @@ svg {
 .container2 {
     max-width: 520px;
     width: 96%;
-    /* min-height: 100vh; */
+    min-height: 100vh;
+    height: auto;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 @media (max-width: 800px) {
     .container {
@@ -43,39 +47,6 @@ svg {
     }
 }
 
-/* img관련 */
-.fix_image img {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
-    display: block;
-    object-fit: cover;
-    width: 100%;
-    height: 540px;
-    padding-top: 70px;
-}
-
-
-.dtail_fix_image {
-    position: relative; /* 부모 요소를 상대 위치로 설정 */
-    width: 100%;
-    height: 540px;
-    overflow: hidden; /* 이미지를 넘치지 않도록 함 */
-    margin-top: 70px;
-}
-.dtail_fix_image > img {
-    position: absolute; /* 이미지를 절대 위치로 설정하여 부모 요소 내에 위치시킴 */
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
-    display: block;
-    object-fit: cover;
-    width: 100%;
-    height: 100%; /* 부모 요소의 높이와 동일하게 설정 */
-}
 
 /* btn-style */
 .btn-style {
@@ -87,6 +58,7 @@ svg {
     border-radius: 10px;
     color: var(--white);
     cursor: pointer;
+    border-radius: 5px;
 }
 .btn-style2 {
     display: inline-block;
@@ -97,6 +69,7 @@ svg {
     border-radius: 10px;
     color: var(--black);
     cursor: pointer;
+    border-radius: 5px;
 }
 .btn-style3 {
     display: block;
@@ -106,6 +79,7 @@ svg {
     color: var(--black);
     padding: 0.8rem 2.5rem;
     cursor: pointer;
+    border-radius: 5px;
 }
 .btn-style4 {
     display: inline-block;
@@ -115,6 +89,7 @@ svg {
     color: var(--white);
     padding: 0.8rem 2.5rem;
     cursor: pointer;
+    border-radius: 5px;
 }
 .btn-style5 {
     display: inline-block;
@@ -125,6 +100,7 @@ svg {
     border-radius: 10px;
     color: var(--white);
     cursor: pointer;
+    border-radius: 5px;
 }
 
 /* 스크롤 스타일 */

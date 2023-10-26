@@ -22,9 +22,6 @@ a {
     display: flex;
 }
 
-#menu {
-}
-
 #nav {
     width: 300px;
     height: 95vh;
@@ -65,10 +62,6 @@ a {
 
 #nav::-webkit-scrollbar-button {
     background-color: #1a1a1a;
-}
-
-#nav::-webkit-scrollbar-track {
-    /* background-color: #95ff00; */
 }
 
 #nav::-webkit-scrollbar-track-piece {

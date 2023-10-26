@@ -36,11 +36,11 @@
             </div>
             <div class="search__star">
                 <ul>
-                    <li>★☆☆☆☆ : <span>사용 안함</span></li>
-                    <li>★★☆☆☆ : <span>가끔 사용</span></li>
-                    <li>★★★☆☆ : <span>보통 사용</span></li>
-                    <li>★★★★☆ : <span>자주 사용</span></li>
-                    <li>★★★★★ : <span>필수 사용</span></li>
+                    <li data-star="1" data-desc=" 사용 안함">★☆☆☆☆</li>
+                    <li data-star="2" data-desc=" 가끔 사용">★★☆☆☆</li>
+                    <li data-star="3" data-desc=" 보통 사용">★★★☆☆</li>
+                    <li data-star="4" data-desc=" 자주 사용">★★★★☆</li>
+                    <li data-star="5" data-desc=" 필수 사용">★★★★★</li>
                 </ul>
             </div>
             <div class="search__info">
@@ -130,47 +130,50 @@
             {star: 5, name: "bottom", desc: "위치 요소의 아래쪽 속성을 설정합니다."},
             {star: 2, name: "box-decoration-break", desc: "컬럼 및 줄바꿈시 테두리와 패딩의 방식을 설정합니다."},
             {star: 3, name: "box-shadow", desc: "박스 요소의 그림자를 설정합니다."},
-            {star: 5, name: "box-sizing", desc: "요소 크기에 패딩 포함 여부를 {"},
+            {star: 5, name: "box-sizing", desc: "요소 크기에 패딩 포함 여부를 설정합니다."},
             {star: 1, name: "caption-side", desc: "caption-side 속성은 caption의 위치를 설정합니다."},
-            {star: 2, name: "caret-color", desc: "caret-color 속성은 input의 커서 색을 정의합{"},
+            {star: 2, name: "caret-color", desc: "caret-color 속성은 input의 커서 색을 정의합니다"},
             {star: 2, name: "direction", desc: "direction 속성은 문장의 방향을 설정합니다."},
-            {star: 5, name: "display", desc: "display 속성은 요소의 성질을 {"},
-            {star: 2, name: "empty-cells", desc: "empty-cells 속성은 테이블의 빈요소의 속성을 설정합{"},
+            {star: 5, name: "display", desc: "display 속성은 요소의 성질을 정의합니다."},
+            {star: 2, name: "empty-cells", desc: "empty-cells 속성은 테이블의 빈요소의 속성을 설정합니다."},
             {star: 3, name: "filter", desc: "filter 속성은 그래픽 효과를 설정합니다."},
-            {star: 5, name: "flex", desc: "flex 속성은 콘텐츠의 성질을 flex로 정의합{"},
+            {star: 5, name: "flex", desc: "flex 속성은 콘텐츠의 성질을 flex로 정의합니다."},
             {star: 5, name: "grid-template-columns", desc: "grid-template-columns 속성은 가로 컬럼의 크기와 위치 설정합니다."}
         ]
 
         const searchList = document.querySelector(".search__list ul");
-        const searchInfo = document.querySelector(".search__info");
-        const searchBox = document.querySelector(".search__box input");
-        const searchBoxResult = document.querySelector(".search__box__result");
-        const searchButton = document.getElementById("searchButton");
-        const searchStar = document.querySelectorAll(".search__star ul li ");
+        // const searchInfo = document.querySelector(".search__info");
+        // const searchBox = document.querySelector(".search__box input");
+        // const searchBoxResult = document.querySelector(".search__box__result");
+        // const searchButton = document.getElementById("searchButton");
+        const searchStarItems = document.querySelectorAll(".search__star li");
+        const searchCount = document.querySelector(".search__info .num");
+
 
         // 출력하기
         function listUpdate(list){
             let listItem = "";
 
             for(const data of list){
-                for(let i=0; i<searchStar.length; i++){
-                    if(data.star == i+1){
-                        const startnum = searchStar[i].textContent;
-                        data.star = startnum.slice(0,5)
-                        listItem += `<li><strong>${data.name}</strong> : ${data.desc} <i>${data.star}</i></li>`
-                    }
-                }
+                let listStar = searchStarItems[data.star-1].innerText;
+                listItem += `<li><strong>${data.name}</strong> : ${data.desc} <em>${listStar}</em></li>`
             }
             searchList.innerHTML = listItem;
-
-            // cssProperty.map((element, index) => {    
-            //     searchList.innerHTML += `<li><strong>${element.name}</strong> : ${element.desc} <i>${element.star}</i></li>`
-            // })
-            //<li><strong>align-content</strong> : 콘텐츠 아이템의 상하관계 정렬 상태를 설정합니다. <i>★★★★☆</i></li>
-
+            searchCount.textContent = list.length;
         }
         listUpdate(cssProperty);
-        
+
+        // 클릭하기
+        searchStarItems.forEach(star => {
+            star.addEventListener("click", () => {
+                const target = star.dataset.star;
+                const filterList = cssProperty.filter(data => data.star == target);
+                // const filterList = cssProperty.filter(data => data.star >= target);
+                listUpdate(filterList);
+            })
+        })
+
+
     </script>
 
 </body>

@@ -1,0 +1,74 @@
+#wrap {
+    width: 100%;
+    height: 100vh;
+}
+#wrap.bg01 {
+    background-image: url(../img/bg02.jpg);
+    background-position: center center;
+    background-size: cover;
+}
+#header {
+    width: 100%;
+    height: 50px;
+
+}
+
+
+/* icon__menu */
+.icon__menu {
+    width: 20%;
+    height: 100vh;
+    padding: 10px 50px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+}
+.icon__menu img {
+    width: 65px;
+    height: 65px;
+    border: 1px solid #d9d9dd;
+    border-radius: 10px;
+
+}
+.icon__menu a {
+    text-align: center;
+    text-decoration: none;
+}
+.icon__menu img:hover {
+    transform: scale(1.2);
+    border: 2px solid #d9d9dd;
+    transition: all 0.3s;
+}
+
+/* musicWrap */
+#musicWrap {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 350px;
+    height: 500px;
+    background-color: #000;
+}
+
+.music__inner {
+    width: 350px;
+}
+.music__inner .music__header {
+    margin: 25px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 20px 20px 20px;
+}
+.music__inner .music__header h2 {
+    color: white;
+    font-family: "BMHannaPro";
+}
+.music__view {
+    padding: 0 20px 20px 20px;
+}
+.music__view img {
+    width: 100%;
+    height: 300px;
+}
