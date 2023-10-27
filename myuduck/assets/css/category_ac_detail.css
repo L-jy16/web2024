@@ -33,7 +33,7 @@
     transform: translateY(-10px) translateX(2px);
     z-index: 10000;
     font: 2em Arial, Helvetica, sans-serif;
-    color: #e6ff004a;
+    color: #ffffffad;
     pointer-events: none;
  }
  
@@ -49,8 +49,9 @@
  }
 
 
+ /* intro_actor */
 .intro_actor {
-    z-index: 2; /* 이미지(z-index:1) 위에 배치하기 위해 z-index를 높게 설정 */
+    z-index: 2; /* �대�吏�(z-index:1) �꾩뿉 諛곗튂�섍린 �꾪빐 z-index瑜� �믨쾶 �ㅼ젙 */
     width: 1280px;
     height: 540px;
     margin: 0 auto;
@@ -71,6 +72,7 @@
     height: 400px;
 }
 
+/* intro_info */
 .intro_info {
     display: flex;
     flex-direction: column;
