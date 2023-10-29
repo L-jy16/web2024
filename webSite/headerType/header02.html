@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB SITE</title>
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/iropke/IropkeBatang.css');
+        .IropkeBatang {
+            font-family: "IropkeBatang";
+            font-weight: 400px;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        em {
+            font-style: normal;
+        }
+        li {
+            list-style: none;
+        }
+
+        /* headerType */
+        #headerType {}
+        .header__wrap {}
+        .header__inner {
+            width: 100%;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            border-bottom: 1px  solid #ccc;
+        }
+        .header__logo {
+            font-size: 30px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .header__logo em {
+            font-size: 18px;
+            font-weight: 400;
+        }
+        .header__menu {}
+        .header__member {}
+    </style>
+    
+
+</head>
+<body>
+    <header id="headerType" class="header__wrap IropkeBatang">
+        <div class="header__inner">
+            <div class="header__logo">
+                <a href="#">LEE <em>SITE</em></a>
+            </div>
+            <div class="header__menu">header__menu</div>
+            <div class="header__member">header__member</div>
+        </div>
+    </header>
+</body>
+</html>
