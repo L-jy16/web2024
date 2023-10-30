@@ -27,10 +27,10 @@
 
     <main id="main" role="main">
         <div class="intro__inner bmStyle container">
-            <div class="intron__img">
-                <img srcset="../assets/img/intro02.jpg 1x,
-                             ../assets/img/intro02@2x.jpg 2x,
-                             ../assets/img/intro02@03.jpg 3x" alt="소개 이미지">
+        <div class="intron__img">
+            <img srcset="../assets/img/cat/cat00.jpg 1x,
+                            ../assets/img/cat/cat00@2x.jpg 2x,
+                            ../assets/img/cat/cat00@3x.jpg 3x" alt="소개 이미지">
             </div>
             <div class="intro__text">
                어떤 일이라도 노력하고 즐기면 그 결과는 빛을 바란다고 생각합니다.

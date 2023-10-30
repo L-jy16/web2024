@@ -17,6 +17,7 @@
             <?php } else { ?>
                     <ul>
                         <li><a href="../join/join.php">회원가입</a></li>
+                        <li><a href="../blog/blogWrite.php">글쓰기</a></li>
                     </ul>
             <?php } ?>
         </div>
