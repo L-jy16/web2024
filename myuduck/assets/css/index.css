@@ -23,10 +23,11 @@ a {
 }
 
 #nav {
-    width: 300px;
+    width: 400px;
     height: 95vh;
     padding: 20px;
     overflow: scroll;
+    margin: 0 auto;
 }
 
 #nav h3 {
@@ -39,12 +40,13 @@ a {
     padding: 10px;
     margin-bottom: 5px;
     transition: all 0.1s;
-    
+
 }
 
 #nav li a:hover {
     color: #b96565;
 }
+
 #nav .webd {
     margin-top: 50px;
 }
@@ -88,6 +90,9 @@ a {
 
 .menu ul {
     margin-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .menu ul li {
@@ -95,6 +100,8 @@ a {
     padding: 10px;
     border: 1px solid #555;
     cursor: pointer;
+    width: 32%;
+    text-align: center;
 }
 
 .menu ul li.active {
@@ -110,6 +117,6 @@ a {
     display: block;
 }
 
-.contents > div > ul > li > a.active {
+.contents>div>ul>li>a.active {
     color: #b96565;
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
     <link rel="stylesheet" href="../assets/css/prism.css">
     <!-- <link rel="stylesheet" href="../assets/css/default.min.css"> -->
 </head>
+
 <body>
     <div id="wrap">
         <header id="header">
@@ -35,11 +37,12 @@
                     <li><a href="javascript12.html">퀴즈 효과</a></li>
                     <li class="active"><a href="javascript13.html">마우스 효과</a></li>
                     <li><a href="javascript14.html">슬라이드 효과</a></li>
+                    <li><a href="javascript15.html">GSAP 효과</a></li>
                 </ul>
             </nav>
         </header>
         <!-- //header -->
-        
+
         <main id="main">
             <div class="main__menu">
                 <ul>
@@ -59,7 +62,7 @@
                     <p>마우스가 따라다니는 효과입니다.</p>
                     <ul>
                         <li>javascript</li>
-<pre><code class="language-js">{
+                        <pre><code class="language-js">{
     window.addEventListener("mousemove", (event) => {
         document.querySelector(".clientX").innerHTML = event.clientX;
         document.querySelector(".clientY").innerHTML = event.clientY;
@@ -109,7 +112,7 @@
                     <p>GSAP를 이용한 마우스 따라다니는 효과입니다..</p>
                     <ul>
                         <li>javascript</li>
-<pre><code class="language-js">{
+                        <pre><code class="language-js">{
     // 선택자
     const mouseCursor = document.querySelector(".mouse__cursor");
     const mouseCursor2 = document.querySelector(".mouse__cursor2");
@@ -133,7 +136,7 @@
     })
 }</code></pre>
                         <li>gsap</li>
-<pre><code class="language-js">{
+                        <pre><code class="language-js">{
     // 선택자
     const mouseCursor = document.querySelector(".mouse__cursor");
     const mouseCursor2 = document.querySelector(".mouse__cursor2");
@@ -163,7 +166,7 @@
                     <p>마우스 돋보기 효과입니다.</p>
                     <ul>
                         <li>JAVASCRIPT_CLIENTWIDTH</li>
-<pre><code class="language-js">{
+                        <pre><code class="language-js">{
     const mouseCursor = document.querySelector(".mouse__cursor");
     const rect = mouseCursor.getBoundingClientRect();
 
@@ -176,7 +179,7 @@
     })
 }</code></pre>
                         <li>AVASCRIPT_GETBOUNDINGCLIENTRECT</li>
-<pre><code class="language-js">{
+                        <pre><code class="language-js">{
     const mouseCursor = document.querySelector(".mouse__cursor");
     const rect = mouseCursor.getBoundingClientRect();
 
@@ -205,13 +208,14 @@
         <!-- //footer -->
     </div>
 
-     <!-- script -->
-     <script src="../assets/js/prism.js"></script>
-     <!-- <script src="../assets/js/highlight.min.js"></script> -->
-     <script>hljs.highlightAll();</script>
+    <!-- script -->
+    <script src="../assets/js/prism.js"></script>
+    <!-- <script src="../assets/js/highlight.min.js"></script> -->
+    <script>hljs.highlightAll();</script>
 
     <script>
 
     </script>
 </body>
+
 </html>

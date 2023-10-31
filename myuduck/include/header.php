@@ -47,7 +47,7 @@
                         </ul>
                     </li>
 
-                    <li><a href="#" class="m">회원탈퇴</a></li>
+                    <li><a href="../memberCancel/joinCancelAgree.php" class="m">회원탈퇴</a></li>
                 <?php } else { ?> 
                     <li><a href="../login/login.php" class="m">로그인</a></li>
                     <li><a href="../join/joinAgree.php" class="m">회원가입</a></li>
