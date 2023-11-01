@@ -1,6 +1,6 @@
 <header id="header">
     <h1 class="logo">
-        <a href="main.html">myuduck</a>
+        <a href="main/main.php">myuduck</a>
     </h1>
     <nav class="category">
         <ul>

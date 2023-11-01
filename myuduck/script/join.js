@@ -7,7 +7,7 @@ function idChecking() {
     if (youId == null || youId == '') {
         $("#youIdComment").text("-> 아이디를 입력해주세요.")
     } else {
-        let getYouId = RegExp(/^[A-Za-z_-]{4,20}$/);
+        let getYouId = RegExp(/^(?=.*[A-Za-z\d])[A-Za-z\d]*$/);
 
         if (!getYouId.test($("#youId").val())) {
             $("#youIdComment").text("아이디는 영어와 숫자를 포함하여 4~20글자 이내로 작성해야 합니다.")
