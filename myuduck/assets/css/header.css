@@ -157,6 +157,7 @@
     align-items: center;
     height: 70px;
 }
+
 .navbar_menu>ul>li:nth-child(4)>a {
     display: inline;
     font-size: 0.75rem;
@@ -183,9 +184,51 @@
 .submenu {
     display: none;
 }
+
 .submenu li a {
     background-color: #160A0C;
 }
+
 .submenu li a:hover {
     background-color: #622c34;
+}
+
+@media (max-width: 1000px) {
+    #header .logo {
+        padding: 0 20px;
+        width: auto;
+    }
+
+    #header .category ul {
+        padding: 30px 10px 30px 10px;
+    }
+
+    #header .category ul li {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    .navbar_menu {
+        width: 40%;
+    }
+
+    .navbar_menu a.m {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    #header .logo {
+        padding: 10px 10px;
+        width: auto;
+        font-size: 2rem;
+    }
+
+    .navbar_menu {
+        width: 50%;
+    }
+
+    #header .category ul li {
+        padding: 0px 8px;
+    }
 }
