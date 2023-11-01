@@ -110,10 +110,6 @@
     border-radius: 5px;
 }
 
-.board__viewpages .prev,
-.board__viewpages .next {
-    border-bottom: 1px solid var(--white);
-}
 
 
 
@@ -336,7 +332,10 @@ tbody {
 
 
 /* .board__pages */
-
+.board__viewpages .prev,
+.board__viewpages .next {
+    border-bottom: 1px solid var(--white);
+}
 
 .board__pages ul {
     display: flex;

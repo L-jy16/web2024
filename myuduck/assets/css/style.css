@@ -13,7 +13,7 @@
 @import "find.css";
 @import "login.css";
 @import "footer.css";
-@import "sidebar.css";
+/* @import "sidebar.css"; */
 @import "cate__theater.css";
 
 /* 서현님 */
@@ -22,7 +22,7 @@
 @import "category_ac_detail.css";
 
 /* 해연님 */
-@import "joinResult.css";
 @import "QA.css";
+@import "joinResult.css";
 @import "cm.css";
 @import "cm_detail.css";
