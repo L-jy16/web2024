@@ -1,10 +1,10 @@
 <header id="header">
     <h1 class="logo">
-        <a href="main/main.php">myuduck</a>
+        <a href="../main/main.php">myuduck</a>
     </h1>
     <nav class="category">
         <ul>
-            <li><a href="../category_th/category_theater">Theater</a></li>
+            <li><a href="../category_theater/categoryTheater.php">Theater</a></li>
             <li><a href="../category_mu/category_musical.php">Musical</a></li>
             <li><a href="../category_ac/category_actor.php">Actor</a></li>
             <li><a href="../search/search.php">Search</a></li>
@@ -39,11 +39,11 @@
 
                     <li><a href="../login/logout.php" class="m">로그아웃</a></li>
 
-                    <li><a href="#" class="m">문의하기</a>
+                    <li><a href="../QA/QA.php" class="m">문의하기</a>
                         <ul class="submenu">
-                            <li><a href="#" class="m">문의 글 쓰기</a>
+                            <li><a href="../QA/QAWrite.php" class="m">문의 글 쓰기</a>
                             </li>
-                            <li><a href="#" class="m">문의 글 목록</a></li>
+                            <li><a href="../QA/QA.php" class="m">문의 글 목록</a></li>
                         </ul>
                     </li>
 
@@ -52,11 +52,11 @@
                     <li><a href="../login/login.php" class="m">로그인</a></li>
                     <li><a href="../join/joinAgree.php" class="m">회원가입</a></li>
 
-                    <li><a href="#" class="m">문의하기</a>
+                    <li><a href="../QA/QA.php" class="m">문의하기</a>
                         <ul class="submenu">
-                            <li><a href="#" class="m">문의 글 쓰기</a>
+                            <li><a href="../QA/QAWrite.php" class="m">문의 글 쓰기</a>
                             </li>
-                            <li><a href="#" class="m">문의 글 목록</a></li>
+                            <li><a href="../QA/QA.php" class="m">문의 글 목록</a></li>
                         </ul>
                     </li>
                 <?php }?>

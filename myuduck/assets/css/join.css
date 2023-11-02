@@ -561,10 +561,10 @@
         /* display: inline-block; */
     }
 
-    .cancel__btn .deletebtn {
+    /* .cancel__btn .deletebtn {
         width: 45%;
-        /* display: inline-block; */
-    }
+        display: inline-block;
+    } */
 }
 
 @media (max-width: 480px) {
