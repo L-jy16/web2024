@@ -56,7 +56,7 @@
 </head>
 
 <body>
-    <?php include "../include/header.php" ?>
+
     <!-- //header -->
 
     <main id="main" role="main">
@@ -149,8 +149,8 @@ if ($result) {
                     <span>
                         <span class="author"><?=$_SESSION['youId']?></span>
                         <span class="date"><?=date('Y-m-d H:i', $comment['regTime'])?></span>
-                        <a href="#" class="modify" data-comment-id="<?=$_SESSION['youId']?>">수정</a>
-                        <a href="#" class="delete" data-comment-id="<?=$_SESSION['youId']?>">삭제</a> 
+                        <a href="#" class="modify" data-comment-id="<?=$comment['commentId']?>">수정</a>
+                        <a href="#" class="delete" data-comment-id="<?=$comment['commentId']?>">삭제</a> 
                     </span>
                     <p><?=$comment['commentMsg']?></p>
                 </div>

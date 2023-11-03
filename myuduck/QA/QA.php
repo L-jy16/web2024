@@ -102,6 +102,7 @@
     //b와 m이라는 별칭을 사용해 SQL 문에서 각 테이블에 접근할 때 b와 m 별칭을 사용할 수 있습니다.
 
     $result = $connect->query($sql);
+    
 
     if ($result) {
         $count = $result->num_rows;

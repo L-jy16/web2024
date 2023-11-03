@@ -22,7 +22,9 @@
             $myuduckId = $result-> fetch_array(MYSQLI_ASSOC);
 
             $_SESSION['myuduckId'] = $myuduckId['myuduckId'];
+            $_SESSION['youId'] = $myuduckId['youId'];
             $_SESSION['youName'] = $myuduckId['youName'];
+            $_SESSION['youPass'] = $myuduckId['youPass'];
             $_SESSION['youEmail'] = $myuduckId['youEmail'];
             $_SESSION['youPhone'] = $myuduckId['youPhone'];
 
