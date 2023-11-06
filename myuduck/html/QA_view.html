@@ -147,10 +147,28 @@
                                 <p>댓글이 없습니다. 작성해 주세요.</p>
                             </div>
                         </div>
+                        <div class="comment__view">
+                            <div class="avata"></div>
+                            <div class="text">
+                                <span>
+                                    <span class="author">웹쓰</span>
+                                    <span class="date">2023.01.04</span>
+                                    <div class="Btn">
+                                        <a href="#" class="modify">수정</a>
+                                        <a href="#" class="delete">삭제</a>
+                                    </div>
+                                </span>
+                                <p>방가워용!!</p>
+                            </div>
+                        </div>
                         <div class="comment__input">
                             <form action="#">
                                 <fieldset>
                                     <legend class="blind">댓글쓰기</legend>
+                                    <label for="commentName" class="blind">이름</label>
+                                    <input type="text" id="commentName" name="commentName" class="input__style blind" required>
+                                    <label for="commentPass" class="blind">비밀번호</label>
+                                    <input type="password" id="commentPass" name="commentPass" class="input__style blind" required>
                                     <label for="commentWrite" class="blind">댓글쓰기</label>
                                     <input type="text" id="commentWrite" name="commentWrite" placeholder="댓글을 입력해주세요" required>
                                     <button type="button" id="commentWriteBtn" class="commentBtn">댓글쓰기</button>                                
@@ -189,8 +207,8 @@
     </footer>
     <!-- //footer -->
 
-    <div id="popupDelete" class="none">
-        <div class="comment__delete">
+    <div id="popupDelete">
+        <div class="comment__delete" class="none">
             <h4>댓글 삭제</h4>
             <label for="commentDeletePass" class="blind">비밀번호</label>
             <input type="password" id="commentDeletePass" name="commentDeletePass" placeholder="비밀번호">

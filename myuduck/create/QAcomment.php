@@ -5,7 +5,7 @@
     $sql = "CREATE TABLE QAcomment (";
     $sql .= "commentId int(10) unsigned auto_increment,";
     $sql .= "youId varchar(10) NOT NULL,"; // 데이터 형식 변경
-    $sql .= "boradId int(10) unsigned,";
+    $sql .= "boardId int(10) unsigned,";
     $sql .= "commentName varchar(20) NOT NULL,";
     $sql .= "commentPass varchar(20) NOT NULL,";
     $sql .= "commentMsg varchar(225) NOT NULL,";

@@ -143,6 +143,4 @@
     <script src="../script/commons.js"></script>
     <script src="../script/checkBox.js"></script>
 </body>
-
-
 </html>

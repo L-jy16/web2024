@@ -34,7 +34,7 @@ const avataImages = [
 const commentViews = document.querySelectorAll(".comment__view");
 commentViews.forEach((view, i) => {
     const avata = view.querySelector(".avata");
-    const rand = avataImages[Math.floor(Math.random() * avataImages.length)];
+    const rand = avataImages[Math.floor(Math.random() * (avataImages.length - 1))];
     
     console.log(rand);
     avata.style.backgroundImage = `url(../assets/face/${rand})`;
