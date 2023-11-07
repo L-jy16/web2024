@@ -23,7 +23,7 @@
 /* mypage_info */
 .mypage_info {
     width: 55%;
-    padding-top: 20px;
+    /* padding-top: 20px; */
 }
 
 .my_profile {
@@ -194,11 +194,13 @@
 /* mypage_info */
 .mypage_info {
     width: 55%;
-
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .mypage_info_title {
-    width: 100%;
+    width: 80%;
     border-bottom: 2px solid var(--black400);
     font-size: 1.5rem;
     font-family: var(--hahm);
@@ -207,6 +209,7 @@
 
 /* mypage_info_form */
 .mypage_info_form {
+    width: 80%;
     padding: 15px 0 15px 5px;
     display: flex;
     flex-direction: column;
@@ -234,11 +237,15 @@
     background: transparent;
     font-size: 0.9rem;
     margin-bottom: 6px;
+    border-radius: 5px;
 }
 
 .mypage_info_form .readonly input {
     background-color: var(--black200);
     border: 1px solid var(--black200);
+    margin-bottom: 20px;
+    border-radius: 5px;
+
 }
 
 .mypage_info_form .check {

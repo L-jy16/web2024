@@ -171,6 +171,7 @@
     height: 5vh;
     border: 1px solid var(--black400);
     background: transparent;
+    border-radius: 5px;
     /* background-color: var(--black);
     color: var(--white); */
 }
