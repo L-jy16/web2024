@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/commons.css">
 
-    <title>마이페이지</title>
+    <title>회원정보 수정</title>
     <style>
     </style>
 </head>
@@ -75,45 +75,66 @@
         <div class="mypage_inner container">
             <div class="mypage_side_img"></div>
             <div class="mypage_info">
-                <div class="my_profile">
-                    <h3>내 프로필</h3>
-                    <div class="my_info">
-                        <p class="my_id"><img src="../assets/img/ID.jpg" alt="ID" aria-hidden="true">아이디 :
-                            <span>abcd1234</span>
-                        </p>
-                        <p><img src="../assets/img/PA.jpg" alt="PA" aria-hidden="true">비밀번호 확인 및 수정은 아래의 회원정보수정을 눌러주세요
-                        </p>
-                        <p class="my_name"><img src="../assets/img/Nam.jpg" alt="ID" aria-hidden="true">이름 :
-                            <span>김한글</span>
-                        </p>
-                        <p class="my_email"><img src="../assets/img/Email.jpg" alt="ID" aria-hidden="true">아이디 :
-                            <span>abcd1234@gmail.com</span>
-                        </p>
-                        <button type="button">회원정보수정</button>
-                    </div>
-                </div>
-                <div class="my_favorites">
-                    <h3>즐겨찾기 목록</h3>
-                    <div class="favorites_list">
-                        <div class="favorites-card">
-                            <a href="#"><img src="../assets/img/my_page01.jpg" alt="my_page01"></a>
-                            <!-- php엔 이런식으로 <img src="" alt="my_page01"> -->
-                            <p><a href="#" class="my_mu_title">위키드</a></p>
-                            <p><a href="#" class="my_mu_theater">블루스퀘어</a></p>
-                        </div>
-                        <div class="favorites-card">
-                            <a href="#"><img src="../assets/img/my_page01.jpg" alt="my_page01"></a>
-                            <!-- php엔 이런식으로 <img src="" alt="my_page01"> -->
-                            <p><a href="#" class="my_mu_title">위키드</a></p>
-                            <p><a href="#" class="my_mu_theater">블루스퀘어</a></p>
-                        </div>
-                        <div class="favorites-card">
-                            <a href="#"><img src="../assets/img/my_page01.jpg" alt="my_page01"></a>
-                            <!-- php엔 이런식으로 <img src="" alt="my_page01"> -->
-                            <p><a href="#" class="my_mu_title">위키드</a></p>
-                            <p><a href="#" class="my_mu_theater">블루스퀘어</a></p>
-                        </div>
-                    </div>
+                <h2 class="mypage_info_title">회원 정보 수정</h2>
+                <div class="mypage_info_form">
+                    <form action="#" name="#" method="post" onsubmit="return joinChecks();">
+                        <fieldset>
+                            <legend class="blind">회원 정보 수정</legend>
+                            <div class="readonly">
+                                <label for="youId" class="required">아이디</label>
+                                <input type="text" name="youId" id="youId" placeholder="아이디" class="input__style"
+                                    value="asf123" readonly>
+                            </div>
+                            <p class="msg" id="youIdComment"></p>
+                            <div>
+                                <label for="youPass" class="required"><em> * </em>비밀번호</label>
+                                <input type="password" name="youPass" id="youPass" placeholder="비밀번호"
+                                    class="input__style">
+                                <p class="msg" id="youPassComment"></p>
+                            </div>
+                            <div>
+                                <label for="youPassC" class="required"><em> * </em>비밀번호 확인</label>
+                                <input type="password" name="youPassC" id="youPassC" placeholder="비밀번호 확인"
+                                    class="input__style">
+                                <p class="msg" id="youPassCComment"></p>
+                            </div>
+                            <div>
+                                <label for="youName" class="required"><em> * </em>이름</label>
+                                <input type="text" name="youName" id="youName" placeholder="이름을 입력하세요"
+                                    class="input__style">
+                                <p class="msg" id="youNameComment"></p>
+                            </div>
+                            <div class="address">
+                                <label for="youAddress1" class="required">주소</label>
+                                <div class="check">
+                                    <input type="text" id="youAddress1" name="youAddress1" placeholder="우편번호"
+                                        class="input__style">
+                                    <div class="btn" id="addressCheck">주소 찾기</div>
+                                </div>
+                                <label for="youAddress2" class="required blind">주소</label>
+                                <input type="text" id="youAddress2" name="youAddress2" placeholder="주소"
+                                    class="input__style">
+                                <label for="youAddress3" class="required blind">상세 주소</label>
+                                <input type="text" id="youAddress3" name="youAddress3" placeholder="상세 주소"
+                                    class="input__style">
+                                <p class="msg" id="youAddressComment"></p>
+                            </div>
+                            <label for="youEmail" class="required"><em> * </em>이메일</label>
+                            <div>
+                                <input type="email" name="youEmail" id="youEmail" placeholder="이메일을 입력하세요"
+                                    class="input__style">
+                            </div>
+                            <p class="msg" id="youEmailComment"></p>
+                            <p class="msg" id="youEmailComment"></p>
+                            <div>
+                                <label for="youPhone" class="required "><em> * </em>연락처</label>
+                                <input type="text" id="youPhone" name="youPhone" placeholder="연락처를 적어주세요!"
+                                    class="input__style">
+                                <p class="msg" id="youPhoneComment"></p>
+                            </div>
+                            <button type="submit" id="submitBtn" class="mypage_info_btn btn-style3">회원 정보 수정</button>
+                        </fieldset>
+                    </form>
                 </div>
             </div>
         </div>
@@ -147,8 +168,8 @@
     <!-- //footer -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script src="../script/commons.js"></script>
-    <script src="../script/checkBox.js"></script>
 </body>
 
 

@@ -120,13 +120,15 @@
 }
 
 .favorites-card>a {
-    /* height: 205px; */
-    padding-bottom: 10px;
+    /* padding-bottom: 10px; */
 }
 
 .favorites-card img {
     width: 100%;
-    /* height: 205px; */
+}
+
+.favorites-card img:hover {
+    filter: brightness(0.5);
 }
 
 .favorites-card p {
@@ -162,14 +164,6 @@
         margin: 8px 0 0 8px;
     }
 
-    /* .favorites-card>a {
-        height: 158px;
-    }
-
-    .favorites-card img {
-        height: 158px;
-    } */
-
     .favorites-card p {
         font-size: 10px;
     }
@@ -192,6 +186,103 @@
     }
 
     .my_favorites {
+        width: 100%;
+    }
+}
+
+
+/* mypage_info */
+.mypage_info {
+    width: 55%;
+
+}
+
+.mypage_info_title {
+    width: 100%;
+    border-bottom: 2px solid var(--black400);
+    font-size: 1.5rem;
+    font-family: var(--hahm);
+    padding: 0 0 10px 5px;
+}
+
+/* mypage_info_form */
+.mypage_info_form {
+    padding: 15px 0 15px 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mypage_info_form fieldset {
+    width: 100%;
+}
+
+.mypage_info_form label {
+    display: inline-block;
+    padding: 3px 0 5px 0;
+}
+
+.mypage_info_form label em {
+    color: red;
+}
+
+.mypage_info_form input {
+    padding: 10px;
+    color: var(--white);
+    width: 100%;
+    height: 5vh;
+    border: 1px solid var(--black400);
+    background: transparent;
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+}
+
+.mypage_info_form .readonly input {
+    background-color: var(--black200);
+    border: 1px solid var(--black200);
+}
+
+.mypage_info_form .check {
+    display: flex;
+}
+
+.mypage_info_form .mypage_info_btn {
+    font-family: var(--primary-Hahmlet);
+    border-radius: 5px;
+    margin: 25px auto;
+    border: 1px solid var(--white);
+    color: var(--black);
+    background-color: var(--white);
+}
+
+.mypage_info_form .mypage_info_btn:hover {
+    border: 1px solid var(--white);
+    color: var(--white);
+    background-color: var(--black800);
+}
+
+.mypage_info_form .check .btn {
+    border: 1px solid var(--white);
+    background-color: var(--white);
+    width: 23%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--black);
+    font-size: 0.8rem;
+    cursor: pointer;
+    height: 5vh;
+    margin-left: 2%;
+    border-radius: 5px;
+}
+
+.mypage_info_form .check .btn:hover {
+    border: 1px solid var(--white);
+    background-color: var(--black800);
+    color: var(--white);
+}
+
+@media (max-width: 800px) {
+    .mypage_info {
         width: 100%;
     }
 }
