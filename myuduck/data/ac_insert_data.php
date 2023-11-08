@@ -157,7 +157,86 @@ $jsonData = '[
                 "acPerformRole": "나 역"
             }
         ]
-    }
+    },
+
+    {
+        "acNameKo": "오만석",
+        "acNameEn": "Oh Man Seok",
+        "acOccupation": "뮤지컬배우, 연출, 연극배우",
+        "acDOB": "1975.01.30",
+        "acPerform": [
+            {
+                "acPerformName": "그날들 - 대구",
+                "acPerformDate": "2023.10.13 ~ 2023.10.15",
+                "acPerformPlace": "대구 계명아트센터",
+                "acPerformRole": "차정학 역"
+            },
+            {
+                "acPerformName": "3일간의 비",
+                "acPerformDate": "2023.07.25 ~ 2023.10.01",
+                "acPerformPlace": "이해랑 예술극장",
+                "acPerformRole": "연출 각색"
+            },
+            {
+                "acPerformName": "그날들",
+                "acPerformDate": "2023.07.12 ~ 2023.09.03",
+                "acPerformPlace": "예술의전당 오페라극장",
+                "acPerformRole": "차정학 역"
+            }
+        ]
+    },
+    {
+        "acNameKo": "이규형",
+        "acNameEn": "Lee Kyoo-hyung",
+        "acOccupation": "뮤지컬배우, 배우",
+        "acDOB": "1983.11.29",
+        "acPerform": [
+            {
+                "acPerformName": "몬테크리스토",
+                "acPerformDate": "2023.11.21 ~ 2024.02.25",
+                "acPerformPlace": "대구 계명아트센터",
+                "acPerformRole": "차정학 역"
+            },
+            {
+                "acPerformName": "사의찬미 콘서트",
+                "acPerformDate": "2023.08.04 ~ 2023.08.06",
+                "acPerformPlace": "롯데콘서트홀",
+                "acPerformRole": "사내 역"
+            },
+            {
+                "acPerformName": "스위니토드",
+                "acPerformDate": "2022.12.01 ~ 2023.03.05",
+                "acPerformPlace": "샤롯데씨어터",
+                "acPerformRole": "스위니토드 역"
+            }
+        ]
+    },
+    {
+        "acNameKo": "이영미",
+        "acNameEn": "Lee Yeong Mi",
+        "acOccupation": "뮤지컬배우, 가수",
+        "acDOB": "1974.11.15",
+        "acPerform": [
+            {
+                "acPerformName": "타오르는 어둠 속에서",
+                "acPerformDate": "2023.08.26 ~ 2023.11.26",
+                "acPerformPlace": "링크아트센터 페이코홀",
+                "acPerformRole": "도냐 페피따 역"
+            },
+            {
+                "acPerformName": "데스노트 - 부산",
+                "acPerformDate": "2023.07.26 ~ 2023.08.06",
+                "acPerformPlace": "샤롯데씨어터",
+                "acPerformRole": "렘 역"
+            },
+            {
+                "acPerformName": "데스노트",
+                "acPerformDate": "2023.03.28 ~ 2023.06.18",
+                "acPerformPlace": "샤롯데씨어터",
+                "acPerformRole": "렘 역"
+            }
+        ]
+    },
 ]';
 
 $data = json_decode($jsonData, true);
