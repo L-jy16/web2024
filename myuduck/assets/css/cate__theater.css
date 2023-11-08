@@ -16,7 +16,18 @@
     font-weight: normal;
 }
 
-
+/* map */
+.mapwrap {
+    display: flex;
+    justify-content: space-around
+}
+#map {
+    width: 90%;
+    height: 550px;
+    border-radius: 20px;
+    margin: 20px;
+    
+}
 
 /* theater__info */
 .theater__info {
@@ -27,14 +38,6 @@
 }
 
 /* theater__map */
-.theater__map {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 51vh;
-}
-
 .theater__map img {
     width: 80%;
     height: 85%;
@@ -83,7 +86,6 @@
 .theater__link>ul li a img {
     border-radius: 15px;
 }
-
 .theater__link>ul li a:hover img {
     transform: scale(1.1);
     transition: transform 0.4s;
@@ -226,7 +228,7 @@
 .th__detail_info {
     border: 1px solid var(--black);
     display: flex;
-    background-image: url(../img/theater/detail_image.jpg);
+    background-image: url(../img/join_bg.jpg);
     background-position: center center;
     background-size: cover;
     margin: 1.2rem 0;
@@ -241,6 +243,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
 }
 
 .theater_detail .logo_img {
@@ -248,7 +251,8 @@
 }
 
 .theater_detail .logo_img img {
-    width: 80%;
+    width: 70%;
+    border-radius: 25px;
 }
 
 .theater__detail__title {

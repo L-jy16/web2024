@@ -65,16 +65,22 @@
     margin: 1rem auto;
 }
 
-.my_info button {
-    margin: 1rem 0 0 1.5rem;
+.my_info .button {
+    display: inline-block;
+    padding: 1rem 0 0 15px;
+}
+
+.my_info a {
+    display: block;
+    font-size: 0.8rem;
     padding: 5px;
-    background-color: var(--black);
     border: 1px solid var(--white);
     border-radius: 50px;
     cursor: pointer;
 }
 
-.my_info button:hover {
+
+.my_info a:hover {
     background-color: var(--white);
     color: var(--black);
 }
@@ -160,8 +166,8 @@
         font-size: 14px;
     }
 
-    .my_info button {
-        margin: 8px 0 0 8px;
+    .my_info .button {
+        padding: 15px 0 0 5px;
     }
 
     .favorites-card p {
@@ -225,7 +231,12 @@
 }
 
 .mypage_info_form label em {
-    color: red;
+    color: var(--red);
+}
+
+.mypage_info_form p {
+    font-size: 0.8em;
+    color: var(--red);
 }
 
 .mypage_info_form input {
