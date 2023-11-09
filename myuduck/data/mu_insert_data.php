@@ -33,7 +33,7 @@ $jsonData = '[
         "muDate": "2023"
     },
     {
-        "muNameKo": "일테로네",
+        "muNameKo": "일테로레",
         "muNameEn": "IL TENORE",
         "muPlace": "예술의전당",
         "muDate": "2023"
@@ -61,13 +61,6 @@ $jsonData = '[
         "muPlace": "한전아트센터",
         "muDate": "2023"
     },
-
-
-
-
-
-
-
     {
         "muNameKo": "헤드윅",
         "muNameEn": "Hedwig and the Angry Inch",
@@ -101,11 +94,6 @@ $jsonData = '[
         "muNameKo": "아이스크림 왕국의 뽀로로와 친구들",
         "muPlace": "유니버설아트센터",
         "muDate": "2021"
-    },
-    {
-        "muNameKo": "82년생 김지영",
-        "muPlace": "백암아트홀",
-        "muDate": "2022"
     },
     {
         "muNameKo": "데스노트",

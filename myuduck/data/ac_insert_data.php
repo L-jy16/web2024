@@ -166,22 +166,22 @@ $jsonData = '[
         "acDOB": "1975.01.30",
         "acPerform": [
             {
-                "acPerformName": "그날들 - 대구",
-                "acPerformDate": "2023.10.13 ~ 2023.10.15",
-                "acPerformPlace": "대구 계명아트센터",
-                "acPerformRole": "차정학 역"
-            },
-            {
-                "acPerformName": "3일간의 비",
-                "acPerformDate": "2023.07.25 ~ 2023.10.01",
-                "acPerformPlace": "이해랑 예술극장",
-                "acPerformRole": "연출 각색"
-            },
-            {
                 "acPerformName": "그날들",
                 "acPerformDate": "2023.07.12 ~ 2023.09.03",
-                "acPerformPlace": "예술의전당 오페라극장",
+                "acPerformPlace": "예술의전당",
                 "acPerformRole": "차정학 역"
+            },
+            {
+                "acPerformName": "젠틀맨스 가이드",
+                "acPerformDate": "2021.11.13 ~ 2022.02.20",
+                "acPerformPlace": "광림아트센터 BBCH홀",
+                "acPerformRole": "다이스퀴스 역"
+            },
+            {
+                "acPerformName": "헤드윅",
+                "acPerformDate": "2021.07.30 ~ 2021.10.31",
+                "acPerformPlace": "충무아트센터",
+                "acPerformRole": "헤드윅 역"
             }
         ]
     },
@@ -194,8 +194,8 @@ $jsonData = '[
             {
                 "acPerformName": "몬테크리스토",
                 "acPerformDate": "2023.11.21 ~ 2024.02.25",
-                "acPerformPlace": "대구 계명아트센터",
-                "acPerformRole": "차정학 역"
+                "acPerformPlace": "충무아트센터",
+                "acPerformRole": "에드몬드 단테스/몬테크리스토 백작 역"
             },
             {
                 "acPerformName": "사의찬미 콘서트",
@@ -224,16 +224,550 @@ $jsonData = '[
                 "acPerformRole": "도냐 페피따 역"
             },
             {
-                "acPerformName": "데스노트 - 부산",
-                "acPerformDate": "2023.07.26 ~ 2023.08.06",
+                "acPerformName": "데스노트",
+                "acPerformDate": "2023.03.28 ~ 2023.06.18",
                 "acPerformPlace": "샤롯데씨어터",
                 "acPerformRole": "렘 역"
+            },
+            {
+                "acPerformName": "리지",
+                "acPerformDate": "2022.03.24 ~ 2022.06.12",
+                "acPerformPlace": "두산아트센터 연강홀",
+                "acPerformRole": "브리짓 설리번 역"
+            }
+        ]
+    },
+    {
+        "acNameKo": "류정한 ",
+        "acNameEn": "Ryu Jung-han",
+        "acOccupation": "뮤지컬배우",
+        "acDOB": "1971.01.10",
+        "acPerform": [
+            {
+                "acPerformName": "레베카",
+                "acPerformDate": "2023.08.19 ~ 2023.11.19",
+                "acPerformPlace": "블루스퀘어",
+                "acPerformRole": "막심 드 윈터 역"
+            },
+            {
+                "acPerformName": "할란카운티",
+                "acPerformDate": "2023.05.16 ~ 2023.07.16",
+                "acPerformPlace": "한전아트센터",
+                "acPerformRole": "존 역"
+            },
+            {
+                "acPerformName": "맥베스 레퀴엠",
+                "acPerformDate": "2022.12.01 ~ 2022.12.31",
+                "acPerformPlace": "국립정동극장(서울)",
+                "acPerformRole": "맥베스 역"
+            }
+        ]
+    }
+    ,{
+        "acNameKo": "김지현",
+        "acNameEn": "Kim Ji-hyun",
+        "acOccupation": "연극배우, 뮤지컬배우",
+        "acDOB": "1982.01.02",
+        "acPerform": [
+            {
+                "acPerformName": "일 테노레",
+                "acPerformDate": "2023.12.19 ~ 2024.02.25",
+                "acPerformPlace": "예술의전당",
+                "acPerformRole": "서진연 역"
+            },
+            {
+                "acPerformName": "그날들",
+                "acPerformDate": "예술의전당",
+                "acPerformPlace": "2023.07.12 ~ 2023.09.03",
+                "acPerformRole": "그녀 역"
+            },
+            {
+                "acPerformName": "스위니토드",
+                "acPerformDate": "2022.12.01 ~ 2023.03.05",
+                "acPerformPlace": "샤롯데씨어터",
+                "acPerformRole": "러빗 부인 역"
+            }
+        ]
+    }
+    ,{
+        "acNameKo": "윤공주 ",
+        "acNameEn": "Yoon Gong Joo",
+        "acOccupation": "뮤지컬배우",
+        "acDOB": "1981.05.20",
+        "acPerform": [
+            {
+                "acPerformName": "렛미플라이",
+                "acPerformDate": "2023.09.26 ~ 2023.12.10",
+                "acPerformPlace": "예스24스테이지 1관",
+                "acPerformRole": "선희 역"
+            },
+            {
+                "acPerformName": "벤허",
+                "acPerformDate": "2023.09.02 ~ 2023.11.19",
+                "acPerformPlace": "LG아트센터서울",
+                "acPerformRole": "에스더 역"
+            },
+            {
+                "acPerformName": "베토벤 2",
+                "acPerformDate": "2023.04.14 ~ 2023.05.15",
+                "acPerformPlace": "세종문화회관",
+                "acPerformRole": "안토니 브렌타노 역"
+            }
+        ]
+    }
+    ,{
+        "acNameKo": "김호영",
+        "acNameEn": "Kim Ho Young",
+        "acOccupation": "뮤지컬배우",
+        "acDOB": "1983.02.19",
+        "acPerform": [
+            {
+                "acPerformName": "렌트",
+                "acPerformDate": "2023.11.11 ~ 2024.02.25",
+                "acPerformPlace": "코엑스 신한카드 아티움",
+                "acPerformRole": "엔젤 역"
+            },
+            {
+                "acPerformName": "킹키부츠",
+                "acPerformDate": "2022.07.20 ~ 2022.10.23",
+                "acPerformPlace": "충무아트센터 대극장",
+                "acPerformRole": "찰리 역"
+            },
+            {
+                "acPerformName": "광화문 연가",
+                "acPerformDate": "2021.07.16 ~ 2021.09.05",
+                "acPerformPlace": "예술의전당",
+                "acPerformRole": "월하 역"
+            }
+        ]
+    }
+    ,{
+        "acNameKo": "김성규",
+        "acNameEn": "Kim Sung Kyu",
+        "acOccupation": "가수, 뮤지컬배우",
+        "acDOB": "1989.04.28",
+        "acPerform": [
+            {
+                "acPerformName": "레드북",
+                "acPerformDate": "2023.03.14 ~ 2023.05.28",
+                "acPerformPlace": "홍익대 대학로 아트센터 대극장",
+                "acPerformRole": "브라운 역"
+            },
+            {
+                "acPerformName": "킹키부츠",
+                "acPerformDate": "2022.07.20 ~ 2022.10.23",
+                "acPerformPlace": "충무아트센터",
+                "acPerformRole": "찰리 역"
+            },
+            {
+                "acPerformName": "엑스칼리버",
+                "acPerformDate": "2022.01.29 ~ 2022.03.13",
+                "acPerformPlace": "세종문화회관",
+                "acPerformRole": "아더 역"
+            }
+        ]
+    }
+    ,{
+        "acNameKo": "김지우",
+        "acNameEn": "Kim Ji Woo",
+        "acOccupation": "뮤지컬배우",
+        "acDOB": "1983.11.22",
+        "acPerform": [
+            {
+                "acPerformName": "식스 더 뮤지컬",
+                "acPerformDate": "2023.03.31 ~ 2023.06.25",
+                "acPerformPlace": "코엑스 신한카드 아티움",
+                "acPerformRole": "불린 역"
+            },
+            {
+                "acPerformName": "물랑루즈",
+                "acPerformDate": "2022.12.16 ~ 2023.03.05",
+                "acPerformPlace": "블루스퀘어",
+                "acPerformRole": "사틴 역"
+            },
+            {
+                "acPerformName": "킹키부츠",
+                "acPerformDate": "2022.07.20 ~ 2022.10.23",
+                "acPerformPlace": "충무아트센터",
+                "acPerformRole": "로렌 역"
+            }
+        ]
+    }
+    ,{
+        "acNameKo": "박은태",
+        "acNameEn": "Park Eun Tae",
+        "acOccupation": "뮤지컬배우",
+        "acDOB": "1981.06.14",
+        "acPerform": [
+            {
+                "acPerformName": "일 테노레",
+                "acPerformDate": "2023.12.19 ~ 2024.02.25",
+                "acPerformPlace": "예술의전당",
+                "acPerformRole": "윤이선 역"
+            },
+            {
+                "acPerformName": "벤허",
+                "acPerformDate": "2023.09.02 ~ 2023.11.19",
+                "acPerformPlace": "LG아트센터서울",
+                "acPerformRole": "유다 벤허 역"
+            },
+            {
+                "acPerformName": "베토벤 2",
+                "acPerformDate": "2023.04.14 ~ 2023.05.15",
+                "acPerformPlace": "세종문화회관",
+                "acPerformRole": "루드비히 반 베토벤 역"
+            }
+        ]
+    }
+    ,{
+        "acNameKo": "카이",
+        "acNameEn": "KAI",
+        "acOccupation": "뮤지컬배우",
+        "acDOB": "1981.12.05",
+        "acPerform": [
+            {
+                "acPerformName": "레미제라블",
+                "acPerformDate": "2023.11.30 ~ 2024.03.10",
+                "acPerformPlace": "블루스퀘어",
+                "acPerformRole": "자베르 역"
+            },
+            {
+                "acPerformName": "베토벤 2",
+                "acPerformDate": "2023.04.14 ~ 2023.05.15",
+                "acPerformPlace": "세종문화회관",
+                "acPerformRole": "루드비히 반 베토벤 역"
+            },
+            {
+                "acPerformName": "베토벤",
+                "acPerformDate": "2023.01.12 ~ 2023.03.26",
+                "acPerformPlace": "예술의전당",
+                "acPerformRole": "루드비히 반 베토벤 역"
+            }
+        ]
+    }
+    ,{
+        "acNameKo": "선민",
+        "acNameEn": "Sunmin",
+        "acOccupation": "가수, 뮤지컬배우",
+        "acDOB": "1987.06.04",
+        "acPerform": [
+            {
+                "acPerformName": "몬테크리스토",
+                "acPerformDate": "2023.11.21 ~ 2024.02.25",
+                "acPerformPlace": "충무아트센터",
+                "acPerformRole": "메르세데스 역"
+            },
+            {
+                "acPerformName": "시스터즈",
+                "acPerformDate": "2023.09.03 ~ 2023.11.12",
+                "acPerformPlace": "홍익대 대학로 아트센터 대극장",
+                "acPerformRole": "시스터 1 역"
+            },
+            {
+                "acPerformName": "모차르트!",
+                "acPerformDate": "2023.06.15 ~ 2023.08.22",
+                "acPerformPlace": "세종문화회관",
+                "acPerformRole": "콘스탄체 베버 역"
+            }
+        ]
+    }
+    ,{
+        "acNameKo": "이새나",
+        "acNameEn": "Lee Saena",
+        "acOccupation": "뮤지컬배우",
+        "acDOB": "1997.04.13",
+        "acPerform": [
+            {
+                "acPerformName": "시크릿쥬쥬 별의여신",
+                "acPerformDate": "2022.08.20 ~ 2022.08.28",
+                "acPerformPlace": "이화여자대학교 삼성홀",
+                "acPerformRole": "쥬쥬 역"
+            },
+            {
+                "acPerformName": "태권, 날아올라",
+                "acPerformDate": "2022.06.12 ~ 2022.07.03",
+                "acPerformPlace": "국립중앙박물관 극장 용",
+                "acPerformRole": "리포터 역"
+            },
+            {
+                "acPerformName": "산타와 빈양말",
+                "acPerformDate": "2021.11.27 ~ 2021.12.31",
+                "acPerformPlace": "국립중앙박물관 극장 용",
+                "acPerformRole": "메리 역"
+            }
+        ]
+    }
+    ,{
+        "acNameKo": "송수빈",
+        "acNameEn": "Song Subin",
+        "acOccupation": "뮤지컬배우",
+        "acDOB": "2000.11.23",
+        "acPerform": [
+            {
+                "acPerformName": "시크릿쥬쥬 별의여신",
+                "acPerformDate": "2022.08.20 ~ 2022.08.28",
+                "acPerformPlace": "이화여자대학교 삼성홀",
+                "acPerformRole": "마리 역"
+            }
+        ]
+    }
+    ,{
+        "acNameKo": "강지연",
+        "acNameEn": "Kang Jiyeon",
+        "acOccupation": "뮤지컬배우",
+        "acDOB": "1996.04.17",
+        "acPerform": [
+            {
+                "acPerformName": "헬로 카봇",
+                "acPerformDate": "2023.08.01 ~ 2023.08.20",
+                "acPerformPlace": "연세대학교 대강당",
+                "acPerformRole": "M라인 역"
+            },
+            {
+                "acPerformName": "시크릿쥬쥬 별의여신",
+                "acPerformDate": "2022.08.20 ~ 2022.08.28",
+                "acPerformPlace": "이화여자대학교 삼성홀",
+                "acPerformRole": "니키 역"
+            },
+            {
+                "acPerformName": "프리즌",
+                "acPerformDate": "2020.04.29 ~ 2021.03.31",
+                "acPerformPlace": "룸씨어터",
+                "acPerformRole": "교도관 역"
+            }
+        ]
+    }
+    ,{
+        "acNameKo": "김민아",
+        "acNameEn": "Kim Minah",
+        "acOccupation": "뮤지컬배우",
+        "acDOB": "1997.11.03",
+        "acPerform": [
+            {
+                "acPerformName": "신비아파트 - 서울앵콜",
+                "acPerformDate": "2023.12.23 ~ 2024.01.07",
+                "acPerformPlace": "유니버설아트센터",
+                "acPerformRole": "구하리 역"
+            },
+            {
+                "acPerformName": "시크릿쥬쥬 별의여신",
+                "acPerformDate": "2022.08.20 ~ 2022.08.28",
+                "acPerformPlace": "이화여자대학교 삼성홀",
+                "acPerformRole": "신디 역"
+            },
+            {
+                "acPerformName": "쉘터",
+                "acPerformDate": "2022.06.21 ~ 2022.06.22",
+                "acPerformPlace": "노원문화예술회관 소공연장",
+                "acPerformRole": "조이 역"
+            }
+        ]
+    }
+    ,{
+        "acNameKo": "홍광호",
+        "acNameEn": "Hong Kwang Ho",
+        "acOccupation": "뮤지컬배우",
+        "acDOB": "1982.04.06",
+        "acPerform": [
+            {
+                "acPerformName": "일 테노레",
+                "acPerformDate": "2023.12.19 ~ 2024.02.25",
+                "acPerformPlace": "예술의전당",
+                "acPerformRole": "윤이선 역"
             },
             {
                 "acPerformName": "데스노트",
                 "acPerformDate": "2023.03.28 ~ 2023.06.18",
                 "acPerformPlace": "샤롯데씨어터",
-                "acPerformRole": "렘 역"
+                "acPerformRole": "야가미 라이토 역"
+            },
+            {
+                "acPerformName": "물랑루즈",
+                "acPerformDate": "2022.12.16 ~ 2023.03.05",
+                "acPerformPlace": "블루스퀘어",
+                "acPerformRole": "크리스티안 역"
+            }
+        ]
+    }
+    ,{
+        "acNameKo": "김성철",
+        "acNameEn": "Kim Sung-Cheol",
+        "acOccupation": "뮤지컬배우",
+        "acDOB": "1991.12.31",
+        "acPerform": [
+            {
+                "acPerformName": "몬테크리스토",
+                "acPerformDate": "2023.11.21 ~ 2024.02.25",
+                "acPerformPlace": "충무아트센터",
+                "acPerformRole": "에드몬드 단테스/몬테크리스토 백작 역"
+            },
+            {
+                "acPerformName": "데스노트",
+                "acPerformDate": "2023.03.28 ~ 2023.06.18",
+                "acPerformPlace": "샤롯데씨어터",
+                "acPerformRole": "엘 역"
+            },
+            {
+                "acPerformName": "데스노트",
+                "acPerformDate": "2022.07.01 ~ 2022.08.14",
+                "acPerformPlace": "예술의전당",
+                "acPerformRole": "엘 역"
+            }
+        ]
+    }
+    ,{
+        "acNameKo": "류인아",
+        "acNameEn": "Ryu In-A",
+        "acOccupation": "뮤지컬배우",
+        "acDOB": "1996.02.18",
+        "acPerform": [
+            {
+                "acPerformName": "레미제라블",
+                "acPerformDate": "2023.11.30 ~ 2024.03.10",
+                "acPerformPlace": "블루스퀘어",
+                "acPerformRole": "코제트 역"
+            },
+            {
+                "acPerformName": "데스노트",
+                "acPerformDate": "2023.03.28 ~ 2023.06.18",
+                "acPerformPlace": "샤롯데씨어터",
+                "acPerformRole": "아마네 미사 역"
+            },
+            {
+                "acPerformName": "스위니토드",
+                "acPerformDate": "2022.12.01 ~ 2023.03.05",
+                "acPerformPlace": "샤롯데씨어터",
+                "acPerformRole": "조안나 역"
+            }
+        ]
+    }
+    ,{
+        "acNameKo": "이재환",
+        "acNameEn": "Lee Jae Hwan",
+        "acOccupation": "가수, 뮤지컬배우",
+        "acDOB": "1992.04.06",
+        "acPerform": [
+            {
+                "acPerformName": "22년 2개월",
+                "acPerformDate": "2023.08.31 ~ 2023.11.05",
+                "acPerformPlace": "링크아트센터 벅스홀",
+                "acPerformRole": "박열 역"
+            },
+            {
+                "acPerformName": "인간의 법정",
+                "acPerformDate": "2022.09.28 ~ 2022.12.04",
+                "acPerformPlace": "아트원씨어터 2관",
+                "acPerformRole": "아오 역"
+            },
+            {
+                "acPerformName": "엑스칼리버",
+                "acPerformDate": "2022.01.29 ~ 2022.03.13",
+                "acPerformPlace": "세종문화회관",
+                "acPerformRole": "아더 역"
+            }
+        ]
+    }
+    ,{
+        "acNameKo": "에녹",
+        "acNameEn": "Enoch",
+        "acOccupation": "뮤지컬배우",
+        "acDOB": "1980.02.10",
+        "acPerform": [
+            {
+                "acPerformName": "레베카",
+                "acPerformDate": "2023.08.19 ~ 2023.11.19",
+                "acPerformPlace": "블루스퀘어",
+                "acPerformRole": "막심 드 윈터 역"
+            },
+            {
+                "acPerformName": "이프덴",
+                "acPerformDate": "2022.12.08 ~ 2023.02.26",
+                "acPerformPlace": "홍익대 대학로 아트센터 대극장",
+                "acPerformRole": "루카스 역"
+            },
+            {
+                "acPerformName": "안나 차이코프스키",
+                "acPerformDate": "2022.09.03 ~ 2022.10.30",
+                "acPerformPlace": "유니플렉스 1관 (대극장)",
+                "acPerformRole": "차이코프스키 역"
+            }
+        ]
+    }
+    ,{
+        "acNameKo": "신영숙",
+        "acNameEn": "Shin Young Sook",
+        "acOccupation": "뮤지컬배우",
+        "acDOB": "1975.11.26",
+        "acPerform": [
+            {
+                "acPerformName": "컴프롬어웨이",
+                "acPerformDate": "2023.11.28 ~ 2024.02.18",
+                "acPerformPlace": "광림아트센터 BBCH홀",
+                "acPerformRole": "비벌리 역"
+            },
+            {
+                "acPerformName": "레베카",
+                "acPerformDate": "2023.08.19 ~ 2023.11.19",
+                "acPerformPlace": "블루스퀘어",
+                "acPerformRole": "댄버스 부인 역"
+            },
+            {
+                "acPerformName": "맘마미아",
+                "acPerformDate": "2023.03.24 ~ 2023.06.25",
+                "acPerformPlace": "충무아트센터",
+                "acPerformRole": "도나 역"
+            }
+        ]
+    }
+    ,{
+        "acNameKo": "",
+        "acNameEn": "",
+        "acOccupation": "뮤지컬배우",
+        "acDOB": "",
+        "acPerform": [
+            {
+                "acPerformName": "",
+                "acPerformDate": "",
+                "acPerformPlace": "",
+                "acPerformRole": ""
+            },
+            {
+                "acPerformName": "",
+                "acPerformDate": "",
+                "acPerformPlace": "",
+                "acPerformRole": ""
+            },
+            {
+                "acPerformName": "",
+                "acPerformDate": "",
+                "acPerformPlace": "",
+                "acPerformRole": ""
+            }
+        ]
+    }
+    ,{
+        "acNameKo": "",
+        "acNameEn": "",
+        "acOccupation": "뮤지컬배우",
+        "acDOB": "",
+        "acPerform": [
+            {
+                "acPerformName": "",
+                "acPerformDate": "",
+                "acPerformPlace": "",
+                "acPerformRole": ""
+            },
+            {
+                "acPerformName": "",
+                "acPerformDate": "",
+                "acPerformPlace": "",
+                "acPerformRole": ""
+            },
+            {
+                "acPerformName": "",
+                "acPerformDate": "",
+                "acPerformPlace": "",
+                "acPerformRole": ""
             }
         ]
     },
@@ -249,8 +783,8 @@ foreach ($data as $item) {
     $acPerforms = $item['acPerform'];
 
     // 이미지 파일 경로 설정
-    $acImg = "../assets/img/actor/ac_" . ($actorId+1) . ".jpg";
-    $acImgDetail = "../assets/img/actor/ac_detail_" . ($actorId+1) . ".jpg";
+    $acImg = "../assets/img/actor/ac_" . ($actorId + 1) . ".jpg";
+    $acImgDetail = "../assets/img/actor/ac_detail_" . ($actorId + 1) . ".jpg";
 
 
     // 배우 정보를 데이터베이스에 삽입 또는 업데이트
