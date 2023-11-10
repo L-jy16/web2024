@@ -91,7 +91,7 @@ if ($result->num_rows > 0) {
 
 
     <div class="dtail_fix_image">
-        <img src="../assets/img/detail_image.jpg" alt="이미지" class="intro_img">
+        <img src="../assets/img/join_bg.jpg" alt="이미지" class="intro_img">
         <div class="intro_actor">
 
             <div class="image_wrap">

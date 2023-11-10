@@ -1,6 +1,7 @@
 <?php
 include "../connect/connect.php";
 include "../connect/session.php";
+include "../connect/sessionCheck.php";
 
 // echo "<pre>";
 // var_dump($_SESSION);

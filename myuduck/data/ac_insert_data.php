@@ -719,58 +719,7 @@ $jsonData = '[
             }
         ]
     }
-    ,{
-        "acNameKo": "",
-        "acNameEn": "",
-        "acOccupation": "뮤지컬배우",
-        "acDOB": "",
-        "acPerform": [
-            {
-                "acPerformName": "",
-                "acPerformDate": "",
-                "acPerformPlace": "",
-                "acPerformRole": ""
-            },
-            {
-                "acPerformName": "",
-                "acPerformDate": "",
-                "acPerformPlace": "",
-                "acPerformRole": ""
-            },
-            {
-                "acPerformName": "",
-                "acPerformDate": "",
-                "acPerformPlace": "",
-                "acPerformRole": ""
-            }
-        ]
-    }
-    ,{
-        "acNameKo": "",
-        "acNameEn": "",
-        "acOccupation": "뮤지컬배우",
-        "acDOB": "",
-        "acPerform": [
-            {
-                "acPerformName": "",
-                "acPerformDate": "",
-                "acPerformPlace": "",
-                "acPerformRole": ""
-            },
-            {
-                "acPerformName": "",
-                "acPerformDate": "",
-                "acPerformPlace": "",
-                "acPerformRole": ""
-            },
-            {
-                "acPerformName": "",
-                "acPerformDate": "",
-                "acPerformPlace": "",
-                "acPerformRole": ""
-            }
-        ]
-    },
+    
 ]';
 
 $data = json_decode($jsonData, true);

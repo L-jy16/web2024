@@ -74,7 +74,7 @@ if ($result->num_rows > 0) {
 
 
     <div class="fix_image">
-        <img src="../assets/img/category_musical.png" alt="이미지" class="intro_img">
+        <img src="../assets/img/kategorieimg01.jpg" alt="이미지" class="intro_img">
     </div>
 
     <main id="category_wrap">
