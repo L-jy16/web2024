@@ -5,7 +5,7 @@
     <nav class="category">
         <ul>
             <li><a href="../theater/category_theater.php">Theater</a></li>
-            <li><a href="#">Musical</a></li>
+            <li><a href="../musical/category_musical.php">Musical</a></li>
             <li><a href="../actor/category_actor.php">Actor</a></li>
             <li><a href="../search/search.php">Search</a></li>
         </ul>
@@ -39,8 +39,6 @@
 
                     <li><a href="../QA/QA.php" class="m">문의하기</a>
                         <ul class="submenu">
-                            <li><a href="../QA/QAWrite.php" class="m">문의 글 쓰기</a>
-                            </li>
                             <li><a href="../QA/QA.php" class="m">문의 글 목록</a></li>
                         </ul>
                     </li>

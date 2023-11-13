@@ -1,6 +1,6 @@
 .theater__ineer {
     padding: 100px 60px 100px 60px;
-    color: var(--white);
+    color: var(--black);
 }
 
 .theater__ineer h1 {
@@ -32,8 +32,8 @@
 /* theater__info */
 .theater__info {
     margin: 0 auto;
-    /* background-color: var(--white); */
-    /* color: var(--black); */
+    background-color: var(--white);
+    color: var(--black);
     position: relative;
 }
 
@@ -81,11 +81,13 @@
     width: 25%;
     height: 14%;
     padding: 10px;
+    
 }
 
-.theater__link>ul li a img {
+/* .theater__link>ul li a img {
+    border: 1px solid var(--black300);
     border-radius: 15px;
-}
+} */
 .theater__link>ul li a:hover img {
     transform: scale(1.1);
     transition: transform 0.4s;
@@ -100,6 +102,7 @@
     width: 92%;
     margin: 0 auto;
     table-layout: fixed;
+    
 }
 
 .list__cont tr {
@@ -122,20 +125,20 @@
 
 .list__cont .rounded-left {
     /* display: block; */
-    border: 1px solid var(--white);
+    border: 1px solid var(--black);
     border-radius: 30px 0 0 0;
     width: 100%;
 }
 
 .list__cont .rounded-center {
     /* display: block;/ */
-    border: 1px solid var(--white);
+    border: 1px solid var(--black);
     width: 70%;
 }
 
 .list__cont .rounded-right {
     /* display: block; */
-    border: 1px solid var(--white);
+    border: 1px solid var(--black);
     border-radius: 0 10px 0 0;
     width: 100%;
 }
@@ -194,7 +197,7 @@
     padding: 5px;
     /* overflow: hidden; */
     border-radius: 20px;
-    box-shadow: 0 0 2px var(--white);
+    box-shadow: 0 0 2px var(--black);
     padding-left: 55px;
 }
 
@@ -228,7 +231,7 @@
 .th__detail_info {
     border: 1px solid var(--black);
     display: flex;
-    background-image: url(../img/join_bg.jpg);
+    background-image: url(../img/aaa.jpg);
     background-position: center center;
     background-size: cover;
     margin: 1.2rem 0;
@@ -264,11 +267,12 @@
     font-size: 2.4em;
     font-family: var(--mapo);
     font-weight: bold;
+    color: var(--white);
 }
 
 .theater__detail__title .logo_cont {
     font-size: 1.5rem;
-    
+    color: var(--white);
 }
 
 .theater__callnumber {
@@ -301,7 +305,7 @@
 
 .theater__detail__info h1 span {
     font-size: 1.4rem;
-    color: var(--black400);
+    color: var(--black300);
     padding-left: 10px;
 }
 
@@ -318,7 +322,7 @@
     padding: 10px 20px 10px 10px;
     border-bottom: 2px solid var(--white);
     font-family: var(--hahm);
-    color: var(--black500);
+    color: var(--black300);
 }
 .theater_transport {
     margin-bottom: 1.2rem;
@@ -339,7 +343,7 @@
     padding: 10px;
     border-bottom: 2px solid var(--white);
     font-family: var(--hahm);
-    color: var(--black500);
+    color: var(--black300);
 }
 
 .theater_seat_info .seat_img {
@@ -359,21 +363,21 @@
     
     .list__cont .rounded-left {
         /* display: block; */
-        border: 1px solid var(--white);
+        border: 1px solid var(--black);
         border-radius: 30px 0 0 0;
         width: 100%;
     }
     
     .list__cont .rounded-center {
         /* display: block;/ */
-        border: 1px solid var(--white);
+        border: 1px solid var(--black);
         width: 70%;
     }
     
     .list__cont .rounded-right {
         /* display: block; */
-        border: 1px solid var(--white);
-        border-radius: 0 10px 0 0;
+        border: 1px solid var(--black);
+        border-radius: 0 30px 0 0;
         width: 100%;
     }
 
