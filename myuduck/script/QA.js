@@ -48,35 +48,31 @@ $("#commentWriteBtn").click(function () {
         alert("댓글을 작성해주세요.");
         $("#commentWriteBtn").focus();
     } else {
-        if ("<?= $youId ?>" === "admin" || "<?= $youId ?>" === "<?= $info['youId'] ?>") {
-            $.ajax({
-                url: "QACommentWrite.php",
-                method: "POST",
-                dataType: "json",
-                data: {
-                    "boardID": <?= $boardID ?>,
-                    "youId": $("#commentName").val(),
-                    "name": $("#commentName").val(),
-                    "pass": $("#commentPass").val(),
-                    "msg": $("#commentWrite").val()
-                },
-                success: function (data) {
-                    if (data && data.success) {
-                        console.log("댓글이 성공적으로 등록되었습니다.");
-                        location.reload();
-                    } else {
-                        console.log("댓글 등록 중 오류가 발생했습니다.");
-                    }
-                },
-                error: function (request, status, error) {
-                    console.log("request: ", request);
-                    console.log("status: ", status);
-                    console.log("error: ", error);
+        $.ajax({
+            url: "QACommentWrite.php",
+            method: "POST",
+            dataType: "json",
+            data: {
+                "boardID": <?=$boardID?>,
+                "youId": $("#commentName").val(),
+                "name": $("#commentName").val(),
+                "pass": $("#commentPass").val(),
+                "msg": $("#commentWrite").val()
+            },
+            success: function (data) {
+                if (data && data.success) {
+                    console.log("댓글이 성공적으로 등록되었습니다.");
+                    location.reload();
+                } else {
+                    console.log("댓글 등록 중 오류가 발생했습니다.");
                 }
-            })
-        } else {
-            alert("댓글 작성 권한이 없습니다.");
-        }
+            },
+            error: function (request, status, error) {
+                console.log("request: ", request);
+                console.log("status: ", status);
+                console.log("error: ", error);
+            }
+        })
     }
 });
 

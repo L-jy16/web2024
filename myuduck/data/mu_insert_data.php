@@ -106,6 +106,14 @@ $jsonData = '[
         "muNameEn": "Xcalibur",
         "muPlace": "세종문화회관",
         "muDate": "2022"
+    }, 
+    {
+        "muNameKo": "맥베스",
+        "muNameEn": "MacBeth",
+        "muPlace": "세종문화회관",
+        "muDate": "2023.07.21 ~2023.11.19",
+        "muTime": "150분(인터미션 20분 포함)",
+        "muAge": "초등학생이상 관람가"  
     }
 ]';
 

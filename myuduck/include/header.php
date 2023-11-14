@@ -37,24 +37,25 @@
 
                     <li><a href="../login/logout.php" class="m">로그아웃</a></li>
 
-                    <li><a href="../QA/QA.php" class="m">문의하기</a>
+                    <li><a href="../QA/QA.php" class="m">후기 게시판</a>
                         <ul class="submenu">
-                            <li><a href="../QA/QA.php" class="m">문의 글 목록</a></li>
+                            <li><a href="../QA/QA.php" class="m">후기 목록</a></li>
+                            <li><a href="../QA/QAWrite.php" class="m">후기 쓰기</a>
+                            </li>
                         </ul>
                     </li>
-
+                    <li><a href="../notice/notice.php" class="m">공지사항</a></li>
                     <li><a href="../memberCancel/joinCancelAgree.php" class="m">회원탈퇴</a></li>
                 <?php } else { ?>
                     <li><a href="../login/login.php" class="m">로그인</a></li>
                     <li><a href="../join/joinAgree.php" class="m">회원가입</a></li>
 
-                    <li><a href="../QA/QA.php" class="m">문의하기</a>
+                    <<li><a href="../QA/QA.php" class="m">후기 게시판</a>
                         <ul class="submenu">
-                            <li><a href="../QA/QAWrite.php" class="m">문의 글 쓰기</a>
-                            </li>
-                            <li><a href="../QA/QA.php" class="m">문의 글 목록</a></li>
+                            <li><a href="../QA/QA.php" class="m">후기 목록</a></li>
                         </ul>
                     </li>
+                    <li><a href="../notice/notice.php" class="m">공지사항</a></li>
                 <?php } ?>
 
                 <!-- <li><a href="#" class="m">문의하기</a>

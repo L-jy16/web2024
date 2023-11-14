@@ -10,6 +10,12 @@
     margin-bottom: 50px;
 }
 
+.board_view_T span.en {
+    font-size: 1.2rem;
+    margin-left: 5px;
+    color: var(--black300);
+}
+
 
 .board__wrap {
     display: flex;
@@ -45,7 +51,7 @@
 }
 
 .viewbtns__wrap {
-    margin: 50px 0px 100px 0px;
+    margin: 50px 0px 0px 0px;
     display: flex;
     flex-direction: row-reverse;
 }
@@ -63,9 +69,16 @@
 }
 
 .board__viewpages {
-    margin-top: 100px;
+    margin-top: 50px;
     display: flex;
-    justify-content: space-around
+    justify-content: space-around;
+    color: var(--black300);
+}
+.board__viewpages strong {
+    color: var(--black);
+}
+.board__viewpages strong:hover {
+    color: var(--black300);
 }
 
 /* board */
@@ -156,10 +169,14 @@
 }
 
 .board__searchT1 {
-
     font-size: 1.6rem;
     text-align: left;
     color: var(--black);
+}
+.board__searchT1 span.en {
+    font-size: 1.2rem;
+    margin-left: 5px;
+    color: var(--black300);
 }
 
 
@@ -176,6 +193,12 @@
     font-size: 1.6rem;
     margin-left: 20px;
     margin-bottom: 50px;
+}
+
+.board__T1 span.en {
+    font-size: 1.2rem;
+    margin-left: 5px;
+    color: var(--black300);
 }
 
 
@@ -292,9 +315,6 @@
     border: 1px solid var(--black);
 }
 
-
-
-
 /* tableWrap */
 
 .board__table {
@@ -346,8 +366,8 @@ tbody {
 }
 
 .board__pages li a {
-    color: var(--white);
-    border: 1px solid var(--white);
+    color: var(--black);
+    border: 1px solid var(--black);
     padding: 10px 12px;
     margin-left: -1px;
 }
@@ -355,7 +375,7 @@ tbody {
 .board__pages li a:hover,
 .board__pages li.active a {
     background-color: var(--white);
-    color: var(--black);
+    color: var(--black300);
 
 }
 
@@ -398,7 +418,7 @@ tbody {
 
 /* comment__input */
 .blog__comment {
-    padding: 100px 0;
+    padding: 50px 0 100px 0;
 }
 
 .blog__comment h4 {

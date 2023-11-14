@@ -151,14 +151,14 @@
     margin-top: 35vh;
 }
 
-.navbar_menu>ul>li:nth-child(4) {
+.navbar_menu>ul>li:nth-child(5) {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     height: 70px;
 }
 
-.navbar_menu>ul>li:nth-child(4)>a {
+.navbar_menu>ul>li:nth-child(5)>a {
     display: inline;
     font-size: 0.75rem;
     font-family: none;
@@ -167,7 +167,7 @@
     width: auto;
 }
 
-.navbar_menu>ul>li:nth-child(4)>a:hover {
+.navbar_menu>ul>li:nth-child(5)>a:hover {
     color: var(--white);
     background: none;
 }

@@ -775,10 +775,10 @@ $jsonData = '[
                 "acPerformRole": "존 역"
             },
             {
-                "acPerformName": "맥베스 레퀴엠",
-                "acPerformDate": "2022.12.01 ~ 2022.12.31",
-                "acPerformPlace": "국립정동극장(서울)",
-                "acPerformRole": "맥베스 역"
+                "acPerformName": "지킬 앤 하이드",
+                "acPerformDate": "2021.10.19 ~ 2022.05.08",
+                "acPerformPlace": "샤롯데씨어터",
+                "acPerformRole": "지킬/하이드 역"
             }
         ]
     }
@@ -1051,7 +1051,7 @@ $jsonData = '[
             {
                 "acPerformName": "프리즌",
                 "acPerformDate": "2020.04.29 ~ 2021.03.31",
-                "acPerformPlace": "룸씨어터",
+                "acPerformPlace": "대학로 극장가게",
                 "acPerformRole": "교도관 역"
             }
         ]
