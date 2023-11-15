@@ -1,5 +1,10 @@
 <?php
 include "../connect/connect.php";
+include "../connect/session.php";
+
+// echo "<pre>";
+// var_dump($_SESSION);
+// echo "</pre>";
 
 $theaterId = $_GET['theaterId'];
 
@@ -37,6 +42,29 @@ if ($result->num_rows > 0) {
     }
 }
 
+$loggedIn = isset($_SESSION['youId']) ? true : false;
+
+
+
+if ($loggedIn) {
+    $youId = $_SESSION['youId'];
+
+    $theaterId = $_GET['theaterId'];
+
+    // 사용자의 초기 찜 상태를 가져오는 로직 추가
+    $initialLikeStatusQuery = "SELECT * FROM likeTheater WHERE youId = $youId AND theaterId = $theaterId";
+    $initialLikeStatusResult = $connect->query($initialLikeStatusQuery);
+
+    if ($initialLikeStatusResult && $initialLikeStatusResult->num_rows > 0) {
+        $initialLikeStatus = $initialLikeStatusResult->fetch_assoc();
+        echo json_encode(['status' => 'success', 'initialLikeStatus' => $initialLikeStatus]);
+    } else {
+        // 초기 찜 상태가 비어 있는 경우 빈 값을 반환
+        echo json_encode(['status' => 'success', 'initialLikeStatus' => null]);
+    }
+} else {
+    echo json_encode(['status' => 'error', 'message' => '로그인이 필요합니다.']);
+}
 ?>
 <!DOCTYPE html>
 <html lang="ko">
@@ -128,10 +156,56 @@ if ($result->num_rows > 0) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="../script/commons.js"></script>
-    <script src="../script/checkBox.js"></script>
-    <script src="../script/star.js"></script>
 
     <script>
+        //별점기능
+        // const ratingStars = [...document.getElementsByClassName("rating_star")];
+        // const ratingResult = document.querySelector(".rating_result");
+
+        // printRatingResult(ratingResult);
+
+        // function executeRating(stars, result) {
+        //     const starClassActive = "rating_star fas fa-star";
+        //     const starClassUnactive = "rating_star far fa-star";
+        //     const starsLength = stars.length;
+        //     let i;
+        //     stars.map((star) => {
+        //         star.onclick = () => {
+        //             i = stars.indexOf(star);
+
+        //             if (star.className.indexOf(starClassUnactive) !== -1) {
+        //                 printRatingResult(result, i + 1);
+        //                 for (i; i >= 0; --i) stars[i].className = starClassActive;
+        //             } else {
+        //                 printRatingResult(result, i);
+        //                 for (i; i < starsLength; ++i) stars[i].className = starClassUnactive;
+        //             }
+        //         };
+        //     });
+        // }
+
+        // function printRatingResult(result, num = 0) {
+        //     result.textContent = `${num}/5`;
+        // }
+
+        // executeRating(ratingStars, ratingResult);
+
+        // //찜버튼
+        // const likeButton = document.querySelector('.like-button');
+
+        // likeButton.addEventListener('click', function() {
+        //     this.classList.toggle('clicked');
+
+        //     if (this.classList.contains('clicked')) {
+        //         this.innerHTML = '★ 찜버튼';
+        //     } else {
+        //         this.innerHTML = '☆ 찜버튼';
+        //     }
+        // });
+    </script>
+    <script>
+         window.addEventListener('load', getInitialLikeStatus);
+
         //별점기능
         const ratingStars = [...document.getElementsByClassName("rating_star")];
         const ratingResult = document.querySelector(".rating_result");
@@ -164,19 +238,125 @@ if ($result->num_rows > 0) {
 
         executeRating(ratingStars, ratingResult);
 
-        //찜버튼
-        const likeButton = document.querySelector('.like-button');
+        // 찜버튼
+        // const likeButton = document.querySelector('.like-button');
+
+        // likeButton.addEventListener('click', function() {
+        //     this.classList.toggle('clicked');
+
+        //     if (this.classList.contains('clicked')) {
+        //         this.innerHTML = '★ 찜버튼';
+        //     } else {
+        //         this.innerHTML = '☆ 찜버튼';
+        //     }
+        // });
+
+        
+       // 찜 버튼과 관련된 코드
+        const likeButton = document.querySelector(".logo_img .like-button");
 
         likeButton.addEventListener('click', function() {
-            this.classList.toggle('clicked');
+            if (!likeButton.disabled) {
+                likeButton.disabled = true;
 
-            if (this.classList.contains('clicked')) {
-                this.innerHTML = '★ 찜버튼';
-            } else {
-                this.innerHTML = '☆ 찜버튼';
+                console.log('버튼이 클릭되었습니다.');
+
+                const isClicked = likeButton.classList.contains('clicked');
+
+                if (!isClicked) {
+                    likeButton.classList.add('clicked');
+                    console.log('찜 추가');
+
+                    // 찜 추가 로직
+                    if (<?= $loggedIn ? 'true' : 'false' ?>) {
+                        // 새로운 코드: 찜 추가 함수 호출
+                        sendLikeData(true);
+                    } else {
+                        alert("로그인을 해주세요.");
+                        window.location.href = '../login/login.php';
+                    }
+                } else {
+                    likeButton.classList.remove('clicked');
+                    console.log('찜 취소');
+
+                    // 찜 취소 로직
+                    if (<?= $loggedIn ? 'true' : 'false' ?>) {
+                        // 새로운 코드: 찜 취소 함수 호출
+                        sendLikeData(false);
+                    } else {
+                        alert("로그인을 해주세요.");
+                        window.location.href = '../login/login.php';
+                    }
+                }
+
+                // 초기 찜 상태 가져오기
+                getInitialLikeStatus();
             }
         });
-    </script>
+
+        // AJAX를 사용하여 liketh.php로 데이터 전송하는 함수
+        function sendLikeData(isClicked) {
+            const liketheaterId = <?= $theaterId ?>;
+            const likethLogo = '<?= $thLogo ?>';
+            const likethName = '<?= $thName ?>';
+
+            $.ajax({
+                type: 'POST',
+                url: '../like/likeTh.php',
+                data: {
+                    liketheaterId: liketheaterId,
+                    likethLogo: likethLogo,
+                    likethName: likethName,
+                    isClicked: isClicked
+                },
+                success: function(response) {
+                    console.log(response);  // 응답 확인을 위한 로그
+
+                    if (response.status === 'success') {
+                        // 성공적인 응답 처리
+                    } else {
+                        // 에러 응답 처리
+                    }
+
+                    // 버튼 활성화
+                    likeButton.disabled = false;
+                },
+                error: function(xhr, status, error) {
+                    console.error('AJAX 요청 실패:', error);
+
+                    // 버튼 활성화
+                    likeButton.disabled = false;
+                }
+            });
+        }
+
+        // 초기 찜 상태를 가져오는 함수
+        function getInitialLikeStatus() {
+            $.ajax({
+                type: 'GET',
+                url: '../like/likeThStatus.php',
+                success: function(response) {
+                    console.log(response);  // 응답 확인을 위한 로그
+                    if (response.status === 'success') {
+                        const initialLikeStatus = response.initialLikeStatus;
+
+                        if (initialLikeStatus && initialLikeStatus.likeStatus === 1) {
+                            likeButton.classList.add('clicked');
+                            likeButton.innerHTML = '★ 찜버튼';
+                        } else {
+                            likeButton.classList.remove('clicked');
+                            likeButton.innerHTML = '☆ 찜버튼';
+                        }
+                    } else {
+                        // 에러 응답 처리
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error('AJAX 요청 실패:', error);
+                }
+            });
+        }
+</script>
 
 </body>
 

@@ -7,7 +7,7 @@
             <li><a href="../theater/category_theater.php">Theater</a></li>
             <li><a href="../musical/category_musical.php">Musical</a></li>
             <li><a href="../actor/category_actor.php">Actor</a></li>
-            <li><a href="../search/search.php">Search</a></li>
+            <li><a href="../search/search.php"><img src="../assets/img/search.svg" alt=""> Search</a></li>
         </ul>
     </nav>
 
@@ -20,12 +20,6 @@
         </div>
         <div class="navbar_menu">
             <ul>
-                <!-- <li><a href="#" class="m">마이페이지</a>
-                    <ul class="submenu">
-                        <li><a href="#" class="m">나의 찜 목록</a></li>
-                        <li><a href="#" class="m">회원 정보 수정</a></li>
-                    </ul>
-                </li> -->
 
                 <?php if (isset($_SESSION['myuduckId'])) { ?>
                     <li><a href="../mypage/mypage.php" class="m">마이페이지</a>
@@ -50,11 +44,7 @@
                     <li><a href="../login/login.php" class="m">로그인</a></li>
                     <li><a href="../join/joinAgree.php" class="m">회원가입</a></li>
 
-                    <<li><a href="../QA/QA.php" class="m">후기 게시판</a>
-                        <ul class="submenu">
-                            <li><a href="../QA/QA.php" class="m">후기 목록</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="../QA/QA.php" class="m">후기 게시판</a></li>
                     <li><a href="../notice/notice.php" class="m">공지사항</a></li>
                 <?php } ?>
 

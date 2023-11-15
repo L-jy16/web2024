@@ -91,24 +91,24 @@ $nextQAInfo = $nextQAResult->fetch_array(MYSQLI_ASSOC);
                     </div>
                 </div>
                 <div class="viewbtns__wrap">
-                <?php if (($_SESSION['youName']) ==  $info['youName'] ) { ?>
-                    <div class="board__btns viewbtns">
-                        <a href="notice.php" class="viewbtn">목록</a>
-                        <a href="notice_Remove.php?noticeID=<?= $_GET['noticeID'] ?>" class="viewbtn" onclick="return confirm('정말 삭제하시겠습니까?')">삭제</a>
-                    </div>
+                    <?php if (($_SESSION['youName']) ==  $info['youName']) { ?>
+                        <div class="board__btns viewbtns">
+                            <a href="notice.php" class="viewbtn">목록</a>
+                            <a href="notice_Remove.php?noticeID=<?= $_GET['noticeID'] ?>" class="viewbtn" onclick="return confirm('정말 삭제하시겠습니까?')">삭제</a>
+                        </div>
                     <?php } else { ?>
                         <div class="board__btns viewbtns">
-                            <a href="QA.php" class="viewbtn">목록</a>
+                            <a href="notice.php" class="viewbtn">목록</a>
                         </div>
                     <?php } ?>
                 </div>
-                <div class="board__viewpages">
+                <div class="board__viewpages2">
                     <h4 class="blind">이전글/다음글 가기</h4>
                     <!-- <a href="#" class="prev">이전글</a>
                     <a href="#" class="next">다음글</a> -->
                     <?php if (!empty($prevQAInfo)) { ?>
                         <a href="notice_View.php?noticeID=<?= $prevQAInfo['noticeID']; ?>" class="prev">
-                            이전글 <?= substr($prevQAInfo['noticeTitle'], 0, 20); ?>...
+                        <strong>이전글</strong> <?= substr($prevQAInfo['noticeTitle'], 0, 20); ?>...
                         </a>
                     <?php } else { ?>
                         <span class="prev">이전글이 없습니다.</span>
@@ -116,14 +116,14 @@ $nextQAInfo = $nextQAResult->fetch_array(MYSQLI_ASSOC);
 
                     <?php if (!empty($nextQAInfo)) { ?>
                         <a href="notice_View.php?noticeID=<?= $nextQAInfo['noticeID']; ?>" class="next">
-                            다음글 <?= substr($nextQAInfo['noticeTitle'], 0, 20); ?>...
+                        <strong>다음글</strong> <?= substr($nextQAInfo['noticeTitle'], 0, 20); ?>...
                         </a>
                     <?php } else { ?>
                         <span class="next">다음글이 없습니다.</span>
                     <?php } ?>
                 </div>
-                
-                
+
+
             </section>
 
         </div>
@@ -135,7 +135,7 @@ $nextQAInfo = $nextQAResult->fetch_array(MYSQLI_ASSOC);
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="../script/commons.js"></script>
-    
+
 
 </body>
 
