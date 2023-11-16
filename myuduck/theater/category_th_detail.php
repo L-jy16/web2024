@@ -1,7 +1,13 @@
 <?php
 include "../connect/connect.php";
+include "../connect/session.php";
+
+// echo "<pre>";
+// var_dump($_SESSION);
+// echo "</pre>";
 
 $theaterId = $_GET['theaterId'];
+$youId = $_SESSION['youId'];
 
 $sql = "SELECT * FROM theater WHERE theaterId = $theaterId";
 $result = $connect->query($sql);
@@ -37,6 +43,13 @@ if ($result->num_rows > 0) {
     }
 }
 
+$loggedIn = isset($_SESSION['youId']) ? true : false;
+
+// db 같은 내용이 있는 경우 확인하기 위함
+$likeSql = "SELECT * FROM likeTheater WHERE likeTheaterIdNum = '$theaterId' AND youId = '$youId' AND likeStatus = 1 ";
+$likeResult = $connect->query($likeSql);
+$count = $likeResult->num_rows;
+// echo $count;
 ?>
 <!DOCTYPE html>
 <html lang="ko">
@@ -67,9 +80,7 @@ if ($result->num_rows > 0) {
                 <div class="th__detail_info">
                     <div class="theater_detail">
                         <div class="logo_img">
-                            <div>
-                                <button class="like-button">☆ 찜버튼</button>
-                            </div>
+                            
                             <img src=<?= $thLogo ?> alt="<?= $thName ?>">
                         </div>
                         <div class="theater__detail__title">
@@ -79,15 +90,6 @@ if ($result->num_rows > 0) {
                                 <div class="theater__callnumber">전 화 : <span><?= $thCall ?></span></div>
                                 <div class="theater__homepage"><a href="<?= $thHomepage ?>">공식 홈페이지 바로가기</a>
                                 </div>
-                            </div>
-                            <div class="rating mt20">
-                                <span class="rating_result">
-                                </span>
-                                <i class="rating_star far fa-star"></i>
-                                <i class="rating_star far fa-star"></i>
-                                <i class="rating_star far fa-star"></i>
-                                <i class="rating_star far fa-star"></i>
-                                <i class="rating_star far fa-star"></i>
                             </div>
                         </div>
                     </div>
@@ -127,55 +129,109 @@ if ($result->num_rows > 0) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.min.js"></script>
     <script src="../script/commons.js"></script>
-    <script src="../script/checkBox.js"></script>
-    <script src="../script/star.js"></script>
 
     <script>
-        //별점기능
-        const ratingStars = [...document.getElementsByClassName("rating_star")];
-        const ratingResult = document.querySelector(".rating_result");
+    </script>
+    <script>
+        window.addEventListener('load', getInitialLikeStatus);
 
-        printRatingResult(ratingResult);
+        const likeButton = document.querySelector(".logo_img .like-button");
+        let checkcount = <?= $count ?>;
 
-        function executeRating(stars, result) {
-            const starClassActive = "rating_star fas fa-star";
-            const starClassUnactive = "rating_star far fa-star";
-            const starsLength = stars.length;
-            let i;
-            stars.map((star) => {
-                star.onclick = () => {
-                    i = stars.indexOf(star);
+        likeButton.addEventListener('click', function () {
+            if(<?= $loggedIn ? 'true' : 'false' ?>){
+                if (!likeButton.disabled) {
+                    likeButton.disabled = true;
 
-                    if (star.className.indexOf(starClassUnactive) !== -1) {
-                        printRatingResult(result, i + 1);
-                        for (i; i >= 0; --i) stars[i].className = starClassActive;
+                    const isClicked = likeButton.classList.contains('clicked');
+
+                    if (checkcount > 0) {
+                        likeButton.classList.remove('clicked');
+                        this.innerHTML = '☆ 찜버튼';
+                        sendLikeData(true);
+                        checkcount = 0;
                     } else {
-                        printRatingResult(result, i);
-                        for (i; i < starsLength; ++i) stars[i].className = starClassUnactive;
+                        likeButton.classList.add('clicked');
+                        this.innerHTML = '★ 찜버튼';
+                        sendLikeData(true);
+                        checkcount = 1;
                     }
-                };
+
+                    // 이미 AJAX 요청 이후에 getInitialLikeStatus를 호출하므로 여기서는 호출하지 않아도 됩니다.
+                } 
+            } else {
+                    alert("로그인을 해주세요.");
+                    window.location.href = '../login/login.php';
+                }
+        });
+
+        function sendLikeData(isClicked) {
+            const likeTheaterIdNum = <?= $theaterId ?>;
+            const likethLogo = '<?= $thLogo ?>';
+            const likethName = '<?= $thName ?>';
+
+            $.ajax({
+                type: 'POST',
+                url: '../like/likeTh.php',
+                data: {
+                    likeTheaterIdNum: likeTheaterIdNum,
+                    likethLogo: likethLogo,
+                    likethName: likethName,
+                    isClicked: isClicked
+                },
+                success: function (response) {
+                    console.log(response);
+
+                    if (response.status === 'success') {
+                        // AJAX 응답을 성공적으로 처리
+                    } else {
+                        // 에러 응답을 처리
+                    }
+
+                    likeButton.disabled = false;
+                    getInitialLikeStatus();  // like 상태를 업데이트한 후에 getInitialLikeStatus를 호출합니다.
+                },
+                error: function (xhr, status, error) {
+                    console.error('AJAX 요청 실패:', error);
+                    likeButton.disabled = false;
+                }
             });
         }
 
-        function printRatingResult(result, num = 0) {
-            result.textContent = `${num}/5`;
+        function getInitialLikeStatus() {
+            $.ajax({
+                type: 'POST',
+                url: '../like/likeThStatus.php',
+                data: {
+                    likeTheaterId: <?= $theaterId ?>
+                },
+                success: function (response) {
+                    console.log(response);
+
+                    if (response.status === 'success') {
+                        const initialLikeStatus = response.initialLikeStatus;
+
+                        if (initialLikeStatus && initialLikeStatus.likeStatus === '1') {
+                            likeButton.classList.add('clicked');
+                            likeButton.innerHTML = '★ 찜버튼';
+                            checkcount = 1;
+                        } else {
+                            likeButton.classList.remove('clicked');
+                            likeButton.innerHTML = '☆ 찜버튼';
+                            checkcount = 0;
+                        }
+                    } else {
+                        // 에러 응답을 처리
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.error('AJAX 요청 실패:', error);
+                }
+            });
         }
-
-        executeRating(ratingStars, ratingResult);
-
-        //찜버튼
-        const likeButton = document.querySelector('.like-button');
-
-        likeButton.addEventListener('click', function() {
-            this.classList.toggle('clicked');
-
-            if (this.classList.contains('clicked')) {
-                this.innerHTML = '★ 찜버튼';
-            } else {
-                this.innerHTML = '☆ 찜버튼';
-            }
-        });
+        
     </script>
 
 </body>

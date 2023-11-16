@@ -690,3 +690,21 @@ tbody {
     background-color: var(--black999);
     color: var(--white);
 }
+
+/* notice */
+.board__viewpages2 .prev,
+.board__viewpages2 .next {
+    border-bottom: 1px solid var(--black);
+}
+.board__viewpages2 {
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-around;
+    color: var(--black300);
+}
+.board__viewpages2 strong {
+    color: var(--black);
+}
+.board__viewpages2 strong:hover {
+    color: var(--black300);
+}

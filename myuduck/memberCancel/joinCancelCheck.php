@@ -22,9 +22,9 @@
             $cancleUpdate = "UPDATE myuduck SET youDelete=0 WHERE youDelete=1 AND youPass='$youPass' AND myuduckId ='$myuduckId'";
             $cancleUpdateResult = $connect -> query($cancleUpdate);
 
-            echo $cancleUpdate;
+            // echo $cancleUpdate;
             
-            echo "<script>window.location.href='../login/logout.php';</script>";
+            // echo "<script>window.location.href='../login/logout.php';</script>";
 
             if ($cancleUpdateResult) {
                 echo "<script>alert('회원 탈퇴가 정상적으로 처리되었습니다.');</script>";

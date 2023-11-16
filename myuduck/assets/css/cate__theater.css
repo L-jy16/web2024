@@ -71,10 +71,11 @@
     display: flex;
     flex-wrap: wrap;
     border: 1px solid var(--black200);
-    /* background-color: var(--black500); */
+    background-color: var(--black700);
     padding: 1.1rem;
     box-sizing: border-box;
     justify-content: flex-start;
+    border-radius: 5px;
 }
 
 .theater__link>ul li {
@@ -170,6 +171,7 @@
 .list__cont .img_name>a>span {
     width: 100%;
     font-size: 0.9rem;
+    font-weight: bold;
     /* margin-left: 1.2rem; */
 }
 

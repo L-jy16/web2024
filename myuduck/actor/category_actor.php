@@ -1,5 +1,6 @@
 <?php
 include "../connect/connect.php";
+include "../connect/session.php";
 
 // 배우와 연극 정보를 저장할 배열 초기화
 $actorsWithPerformances = array();
@@ -74,7 +75,7 @@ if ($result->num_rows > 0) {
 
 
     <div class="fix_image">
-        <img src="../assets/img/kategorieimg01.jpg" alt="이미지" class="intro_img">
+        <img src="../assets/img/category_musical.png" alt="이미지" class="intro_img">
     </div>
 
     <main id="category_wrap">
@@ -110,6 +111,7 @@ if ($result->num_rows > 0) {
     <!-- //footer -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>

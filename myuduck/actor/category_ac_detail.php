@@ -1,5 +1,6 @@
 <?php
 include "../connect/connect.php";
+include "../connect/session.php";
 
 // URL에서 actorId를 가져옴
 $actorId = $_GET['actorId'];
@@ -91,7 +92,7 @@ if ($result->num_rows > 0) {
 
 
     <div class="dtail_fix_image">
-        <img src="../assets/img/join_bg.jpg" alt="이미지" class="intro_img">
+        <img src="../assets/img/aaa.jpg" alt="이미지" class="intro_img">
         <div class="intro_actor">
 
             <div class="image_wrap">
@@ -108,7 +109,7 @@ if ($result->num_rows > 0) {
                 <p class="occupation">직업 : <?= $acOccupation ?></p>
                 <p class="birthdate">생년월일 : <?= $acDOB ?></p>
 
-                <div class="rating">
+                <!-- <div class="rating">
                     <span class="rating_result">
                     </span>
                     <i class="rating_star far fa-star"></i>
@@ -116,7 +117,7 @@ if ($result->num_rows > 0) {
                     <i class="rating_star far fa-star"></i>
                     <i class="rating_star far fa-star"></i>
                     <i class="rating_star far fa-star"></i>
-                </div>
+                </div> -->
                 <!-- <a href="https://www.instagram.com/actor.zooooo/" class="sns"><img src="../assets/img/instar.svg" alt="">배우 인스타 바로가기</a> -->
             </div>
         </div>
@@ -156,6 +157,7 @@ if ($result->num_rows > 0) {
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="../script/star.js"></script>

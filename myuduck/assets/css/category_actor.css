@@ -3,7 +3,7 @@
 }
 
 #category_wrap {
-    margin-top: 200px;
+    margin-top: 286px;
     width: 100%;
     padding-bottom: 70px;
     display: flex;
@@ -45,10 +45,11 @@
 
 .actor_header span {
     border: 1px solid var(--black300);
-    padding: 10px 135px;
+    padding: 1vw 9.6vw;
     font-size: 1.1rem;
     display: inline-block;
     margin-right: -1px;
+    font-weight: bold;
 }
 
 .actor_header span:first-child {
@@ -89,6 +90,7 @@
 
 .info_actor h2 {
     width: 100px;
+    font-weight: bold;
 }
 
 .info_occupation {

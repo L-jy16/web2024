@@ -1,5 +1,10 @@
 <?php
 include "../connect/connect.php";
+include "../connect/session.php";
+
+// echo "<pre>";
+// var_dump($_SESSION);
+// echo "</pre>";
 
 $theaterId = $_GET['theaterId'];
 
@@ -124,10 +129,13 @@ if ($result->num_rows > 0) {
     <!-- //footer -->
 
     <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=26ea183644b36a994e2477529c136a22"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.min.js"></script>
     <script src="../script/commons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
     <script src="../script/map.js"></script>
     <script>
         function handleLinkClick(thName) {
