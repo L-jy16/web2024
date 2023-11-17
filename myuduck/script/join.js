@@ -153,17 +153,16 @@ function joinChecks() {
         }
     }
 
-    //연락처 
-    let getYouPhone = RegExp(/^[0-9]{10,11}$/);
+    // 연락처 
+    let getYouPhonePattern = /^[0-9]{10,11}$/;
+    let youPhoneValue = $("#youPhone").val();
 
-    if (!getYouPhone.test($("#youPhone").val())) {
-        $("#youPhoneComment").text("➟ 휴대폰 번호가 정확하지 않습니다.(하이픈 없이 숫자만 적어주세요!)");
+    // 휴대폰 번호가 비어있지 않고, 패턴에 맞지 않을 경우에만 처리
+    if (youPhoneValue.trim() !== "" && !getYouPhonePattern.test(youPhoneValue)) {
+        $("#youPhoneComment").text("➟ 휴대폰 번호가 정확하지 않습니다. (하이픈 없이 숫자만 적어주세요!)");
         $("#youPhone").val('');
         $("#youPhone").focus();
-    }
 
-    if (!isIdCheck) {
-        alert("아이디 중복 검사를 진행해주세요");
         return false;
     }
 }

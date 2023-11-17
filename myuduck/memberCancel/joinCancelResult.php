@@ -26,9 +26,8 @@
 <body>
     <?php include "../include/header.php"?>
     <!-- //header -->
-
-
-
+    
+    
     <main class="bg">
         <div class="joinResultWrap container2">
             <div class="message1">회원 탈퇴가 완료되었습니다!</div>
@@ -43,7 +42,6 @@
 
     <?php include "../include/footer.php"?>
     <!-- //footer -->
-
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="../script/commons.js"></script>

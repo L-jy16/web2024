@@ -1,6 +1,6 @@
 <?php
 include "../connect/connect.php";
-
+include "../connect/session.php";
 
 $sql = "SELECT * FROM musical ORDER BY musicalId DESC";
 $result = $connect->query($sql);
@@ -142,42 +142,39 @@ if ($result->num_rows > 0) {
             </div>
         </section>
 
-        <section id="pointUp">
-            <div class="up_inner">
+        <section id="mainboardinfo">
+            <div class="mainboardinfo_inner">
                 <div class="container3">
-                    <div class="up_title">
-                        <h3>포인트 <em>쌓기</em> <span>즐거움이 매일매일 쌓이는 포인트 플레이</span></h3>
-                    </div>
-                    <div class="up_slider">
-                        <div class="img">
-                            <div>
-                                <span>H.설문</span>
-                                <em>간단한 설문에 혜택이 빵빵!</em>
+                    <div class="mainboardinfo_content">
+                        <div class="mainreviewboard">
+                            <h3 class="tilte"><a href="../QA/QA.php">후기</a></h3>
+                            <div class="mainReview_link">
+                                <h4><a href="#">후기 제목</a></h4>
+                                <span>후기 내용</span>
                             </div>
-                            <div>
-                                <span>오늘의 퀴즈</span>
-                                <em>간단히 포인트 받자!</em>
-                            </div>
-                            <div class="active">
-                                <span>알파벳</span>
-                                <em>조합하고 완성하는 재미</em>
-                            </div>
-                            <div>
-                                <span>출석룰렛</span>
-                                <em>매일 돌리면 포인트</em>
-                            </div>
-                            <div>
-                                <span>포인트 워크</span>
-                                <em>걸으면서 받는 포인트</em>
+                            <div class="mainReview_link">
+                                <h4><a href="#">후기 제목</a></h4>
+                                <span>후기 내용</span>
                             </div>
                         </div>
-                        <div class="btn">
-                            <a href="#" class="left"><span class="ir">왼쪽 이미지</span></a>
-                            <a href="#" class="right"><span class="ir">오른쪽 이미지</span></a>
+                        <div class="mainnoticeboard">
+                            <h3 class="tilte"><a href="../notice/notice.php">공지사항</a></h3>
+                            <div class="mainNotice_link">
+                                <h4><a href="#">후기 제목</a></h4>
+                                <span>후기 내용</span>
+                            </div>
+                            <div class="mainNotice_link">
+                                <h4><a href="#">후기 제목</a></h4>
+                                <span>후기 내용</span>
+                            </div>
                         </div>
                     </div>
-
+                    <div class="btn">
+                        <a href="#" class="left"><span class="ir">왼쪽 이미지</span></a>
+                        <a href="#" class="right"><span class="ir">오른쪽 이미지</span></a>
+                    </div>
                 </div>
+            </div>
             </div>
         </section>
         <!-- //pointUp -->

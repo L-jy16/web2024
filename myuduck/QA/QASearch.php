@@ -118,7 +118,7 @@
 
                 echo "<tr>";
                 echo "<td>".$info['boardID']."</td>";
-                echo "<td><a href='QAboard.php?boardID={$info['boardID']}'>".$info['boardTitle']."</a></td>";
+                echo "<td><a href='QAView.php?boardID={$info['boardID']}'>".$info['boardTitle']."</a></td>";
                 echo "<td>".$info['youId']."</td>";
                 echo "<td>".date('Y-m-d', $info['regTime'])."</td>";
                 echo "<td>".$info['boardView']."</td>";

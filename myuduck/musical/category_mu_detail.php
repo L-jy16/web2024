@@ -75,16 +75,16 @@ $count = $likeResult->num_rows;
                 <div class="mu__container">
                     <div class="poster">
                         <div>
-                            
-                            <?php if ($count > 0){ ?>
+
+                            <?php if ($count > 0) { ?>
                                 <button class="like-button clicked">
                                     ★ 찜버튼
                                 </button>
-                                <?php } else { ?>
-                                    <button class="like-button clicked">
-                                        ☆ 찜버튼
-                                    </button>
-                                <?php } ?>
+                            <?php } else { ?>
+                                <button class="like-button clicked">
+                                    ☆ 찜버튼
+                                </button>
+                            <?php } ?>
 
                         </div>
                         <img src="<?= $muImg ?>" alt="<?= $muNameKo ?> 포스터">
@@ -96,14 +96,6 @@ $count = $likeResult->num_rows;
                             공연기간 : <?= $muDate ?><br>
                             공연시간 : <?= $muTime ?><br>
                             관람연령 : <?= $muAge ?>
-                        </div>
-                        <div class="rating mt20">
-                            <span class="rating_result"></span>
-                            <i class="rating_star far fa-star"></i>
-                            <i class="rating_star far fa-star"></i>
-                            <i class="rating_star far fa-star"></i>
-                            <i class="rating_star far fa-star"></i>
-                            <i class="rating_star far fa-star"></i>
                         </div>
                     </div>
                 </div>
@@ -154,15 +146,23 @@ $count = $likeResult->num_rows;
             const starsLength = stars.length;
             let i;
             stars.map((star) => {
-                star.onclick = () => {
-                    i = stars.indexOf(star);
+                star.onclick = (event) => {
+                    const mouseX = event.clientX - star.getBoundingClientRect().left;
+                    const starWidth = star.offsetWidth;
+                    const starIndex = stars.indexOf(star);
 
-                    if (star.className.indexOf(starClassUnactive) !== -1) {
-                        printRatingResult(result, i + 1);
-                        for (i; i >= 0; --i) stars[i].className = starClassActive;
+                    if (mouseX < starWidth / 2) {
+                        printRatingResult(result, starIndex + 0.5);
                     } else {
-                        printRatingResult(result, i);
-                        for (i; i < starsLength; ++i) stars[i].className = starClassUnactive;
+                        printRatingResult(result, starIndex + 1);
+                    }
+
+                    for (i = starIndex; i >= 0; --i) {
+                        stars[i].className = starClassActive;
+                    }
+
+                    for (i = starIndex + 1; i < starsLength; ++i) {
+                        stars[i].className = starClassUnactive;
                     }
                 };
             });
@@ -180,27 +180,27 @@ $count = $likeResult->num_rows;
         const likeButton = document.querySelector(".like-button");
         let checkcount = <?= $count ?>;
 
-        likeButton.addEventListener('click', function () {
+        likeButton.addEventListener('click', function() {
             // if(<?= $loggedIn ? 'true' : 'false' ?>){
-                if (!likeButton.disabled) {
-                    likeButton.disabled = true;
+            if (!likeButton.disabled) {
+                likeButton.disabled = true;
 
-                    const isClicked = likeButton.classList.contains('clicked');
+                const isClicked = likeButton.classList.contains('clicked');
 
-                    if (checkcount > 0) {
-                        likeButton.classList.remove('clicked');
-                        this.innerHTML = '☆ 찜버튼';
-                        sendLikeData(true);
-                        checkcount = 0;
-                    } else {
-                        likeButton.classList.add('clicked');
-                        this.innerHTML = '★ 찜버튼';
-                        sendLikeData(true);
-                        checkcount = 1;
-                    }
-
-                    // 이미 AJAX 요청 이후에 getInitialLikeStatus를 호출하므로 여기서는 호출하지 않아도 됩니다.
+                if (checkcount > 0) {
+                    likeButton.classList.remove('clicked');
+                    this.innerHTML = '☆ 찜버튼';
+                    sendLikeData(true);
+                    checkcount = 0;
+                } else {
+                    likeButton.classList.add('clicked');
+                    this.innerHTML = '★ 찜버튼';
+                    sendLikeData(true);
+                    checkcount = 1;
                 }
+
+                // 이미 AJAX 요청 이후에 getInitialLikeStatus를 호출하므로 여기서는 호출하지 않아도 됩니다.
+            }
             // } else {
             //     alert("로그인을 해주세요.");
             //     window.location.href = '../login/login.php';
@@ -223,7 +223,7 @@ $count = $likeResult->num_rows;
                     likemuPlace: likemuPlace,
                     isClicked: isClicked
                 },
-                success: function (response) {
+                success: function(response) {
                     console.log(response);
 
                     if (response.status === 'success') {
@@ -233,9 +233,9 @@ $count = $likeResult->num_rows;
                     }
 
                     likeButton.disabled = false;
-                    getInitialLikeStatus();  // like 상태를 업데이트한 후에 getInitialLikeStatus를 호출합니다.
+                    getInitialLikeStatus(); // like 상태를 업데이트한 후에 getInitialLikeStatus를 호출합니다.
                 },
-                error: function (xhr, status, error) {
+                error: function(xhr, status, error) {
                     console.error('AJAX 요청 실패:', error);
                     likeButton.disabled = false;
                 }
@@ -249,7 +249,7 @@ $count = $likeResult->num_rows;
                 data: {
                     likeMusicalIdNum: <?= $musicalId ?>
                 },
-                success: function (response) {
+                success: function(response) {
                     console.log(response);
 
                     if (response.status === 'success') {
@@ -268,12 +268,11 @@ $count = $likeResult->num_rows;
                         // 에러 응답을 처리
                     }
                 },
-                error: function (xhr, status, error) {
+                error: function(xhr, status, error) {
                     console.error('AJAX 요청 실패:', error);
                 }
             });
         }
-
     </script>
 </body>
 

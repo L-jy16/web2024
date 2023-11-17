@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/commons.css">
 
-    <title>문의하기</title>
+    <title>MYUDUCK</title>
 </head>
 
 <body>
@@ -31,7 +31,7 @@
             <div class="board__write container">
                 <div class="board__search">
                     <div class="board__T1">
-                        <span>문의작성</span><span class="en">Q&A</span>
+                        <span>후기작성</span><span class="en">Review</span>
                     </div>
                 </div>
                 <form action="QAWriteSave.php" name="QAWriteSave" method="post">

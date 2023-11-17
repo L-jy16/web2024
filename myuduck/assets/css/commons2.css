@@ -4,12 +4,21 @@
 
 
 .container {
-    width: 1280px;
+    max-width: 1280px;
+    width: 96%;
     min-height: 100vh;
     height: auto;
     margin: 0 auto;
     position: relative;
+
 }
+
+@media (max-width: 1280px) {
+    .container {
+        transform: scale(0.95);
+    }
+}
+
 
 /* 지영님 */
 .container2 {
@@ -83,6 +92,7 @@
     border-radius: 10px;
     color: var(--white);
     cursor: pointer;
+    border-radius: 5px;
 }
 
 .btn-style2 {
@@ -94,6 +104,7 @@
     border-radius: 10px;
     color: var(--black);
     cursor: pointer;
+    border-radius: 5px;
 }
 
 .btn-style3 {
@@ -104,6 +115,7 @@
     color: var(--black);
     padding: 0.8rem 2.5rem;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 .btn-style4 {

@@ -1,13 +1,13 @@
 .theater__ineer {
-    padding: 100px 60px 100px 60px;
+    padding: 150px 60px 100px 60px;
     color: var(--black);
 }
 
 .theater__ineer h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-family: var(--primary-Hahmlet);
-    font-weight: bold;
-    margin-bottom: 10px;
+    color: var(--primary-color);
+    margin-bottom: 50px;
 }
 
 .theater__ineer h1 span {
@@ -21,19 +21,20 @@
     display: flex;
     justify-content: space-around
 }
+
 #map {
     width: 90%;
     height: 550px;
     border-radius: 20px;
     margin: 20px;
-    
+
 }
 
 /* theater__info */
 .theater__info {
     margin: 0 auto;
-    background-color: var(--white);
-    color: var(--black);
+    /* background-color: var(--black); */
+    /* color: var(--black); */
     position: relative;
 }
 
@@ -71,24 +72,22 @@
     display: flex;
     flex-wrap: wrap;
     border: 1px solid var(--black200);
-    background-color: var(--black700);
+    background-color: var(--black500);
     padding: 1.1rem;
     box-sizing: border-box;
     justify-content: flex-start;
-    border-radius: 5px;
 }
 
 .theater__link>ul li {
     width: 25%;
     height: 14%;
     padding: 10px;
-    
 }
 
-/* .theater__link>ul li a img {
-    border: 1px solid var(--black300);
+.theater__link>ul li a img {
     border-radius: 15px;
-} */
+}
+
 .theater__link>ul li a:hover img {
     transform: scale(1.1);
     transition: transform 0.4s;
@@ -103,7 +102,6 @@
     width: 92%;
     margin: 0 auto;
     table-layout: fixed;
-    
 }
 
 .list__cont tr {
@@ -154,10 +152,11 @@
     align-items: center;
 }
 
-.list__cont .img_name > a:nth-child(1) {
+.list__cont .img_name>a:nth-child(1) {
     width: 60%;
 }
-.list__cont .img_name > a:nth-child(2) {
+
+.list__cont .img_name>a:nth-child(2) {
     width: 39%;
     text-align: center;
 }
@@ -171,7 +170,6 @@
 .list__cont .img_name>a>span {
     width: 100%;
     font-size: 0.9rem;
-    font-weight: bold;
     /* margin-left: 1.2rem; */
 }
 
@@ -186,52 +184,10 @@
 }
 
 
-/* star_rating */
-.rating {
-    margin-top: 80px;
-    position: relative;
-    width: 210px;
-    background: transparent;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.3em;
-    padding: 5px;
-    /* overflow: hidden; */
-    border-radius: 20px;
-    box-shadow: 0 0 2px var(--black);
-    padding-left: 55px;
-}
-
-.rating_result {
-    position: absolute;
-    top: 8px;
-    left: 10px;
-    transform: translateY(-10px) translateX(2px);
-    z-index: 10000;
-    font: 2em Arial, Helvetica, sans-serif;
-    color: #ffffffad;
-    pointer-events: none;
-}
-
-.rating_star {
-    font-size: 1.3em;
-    cursor: pointer;
-    color: yellow;
-    transition: filter linear .3s;
-}
-
-.rating_star:hover {
-    filter: drop-shadow(1px 1px 4px gold);
-}
-
-
-
 
 /* theater__detail */
 
 .th__detail_info {
-    border: 1px solid var(--black);
     display: flex;
     background-image: url(../img/aaa.jpg);
     background-position: center center;
@@ -248,7 +204,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+
 }
 
 .theater_detail .logo_img {
@@ -262,6 +218,7 @@
 
 .theater__detail__title {
     width: 49%;
+    color: var(--black);
 }
 
 .theater__detail__title h2 {
@@ -280,14 +237,17 @@
 .theater__callnumber {
     padding-top: 20px;
 }
+
 .theater__detail__title.rating {
     margin-top: 20px;
 }
+
 .theater__homepage a {
     padding-top: 40px;
     color: var(--black400);
     display: inline-block;
 }
+
 .theater__homepage a:hover {
     color: var(--black500);
     text-decoration: underline;
@@ -295,7 +255,7 @@
 
 .theater__detail__info {
     padding: 10px auto;
-    /* color: var(--white); */
+    /* color: var(--black); */
 }
 
 .theater__detail__info h1 {
@@ -307,7 +267,7 @@
 
 .theater__detail__info h1 span {
     font-size: 1.4rem;
-    color: var(--black300);
+    color: var(--black400);
     padding-left: 10px;
 }
 
@@ -315,23 +275,26 @@
 
     padding: 10px;
 }
+
 .theater__detail__cont .main_theater_title {
-    border-bottom: 1px solid var(--white);
+    border-bottom: 1px solid var(--black);
 }
+
 .theater__detail__cont .main_theater_title h3 {
     display: inline-block;
     font-size: 24px;
     padding: 10px 20px 10px 10px;
-    border-bottom: 2px solid var(--white);
+    border-bottom: 2px solid var(--black);
     font-family: var(--hahm);
-    color: var(--black300);
+    color: var(--black200);
 }
+
 .theater_transport {
     margin-bottom: 1.2rem;
 }
 
 .theater_transport .transport_info {
-    white-space: pre-line;
+    black-space: pre-line;
     font-size: 0.9rem;
     padding: 10px;
 }
@@ -343,9 +306,9 @@
 .theater_seat_info h3 {
     font-size: 24px;
     padding: 10px;
-    border-bottom: 2px solid var(--white);
+    border-bottom: 2px solid var(--black);
     font-family: var(--hahm);
-    color: var(--black300);
+    color: var(--black200);
 }
 
 .theater_seat_info .seat_img {
@@ -354,57 +317,60 @@
 }
 
 /* theater */
-@media (max-width: 1210px){
+@media (max-width: 1210px) {
     .list__cont th {
         padding: 0.8rem;
         /* background-color: var(--black500); */
         font-size: 1rem;
         font-weight: bold;
     }
-    
-    
+
+
     .list__cont .rounded-left {
         /* display: block; */
         border: 1px solid var(--black);
         border-radius: 30px 0 0 0;
         width: 100%;
     }
-    
+
     .list__cont .rounded-center {
         /* display: block;/ */
         border: 1px solid var(--black);
         width: 70%;
     }
-    
+
     .list__cont .rounded-right {
         /* display: block; */
         border: 1px solid var(--black);
-        border-radius: 0 30px 0 0;
+        border-radius: 0 10px 0 0;
         width: 100%;
     }
 
-    .list__cont .img_name > a:nth-child(1) {
+    .list__cont .img_name>a:nth-child(1) {
         width: 50%;
     }
-    .list__cont .img_name > a:nth-child(2) {
+
+    .list__cont .img_name>a:nth-child(2) {
         width: 49%;
         text-align: center;
     }
-    
-    .list__cont .img_name > a > span {
+
+    .list__cont .img_name>a>span {
         font-size: 0.7rem;
     }
 
     .theater__location span {
         font-size: 0.7rem;
     }
+
     .theater__musical ul {
         font-size: 0.7rem;
         padding: 1rem;
     }
 }
-@media (max-width: 1060px){
-    
+
+@media (max-width: 1060px) {
+
     .theater__link>ul {
         padding: 0.5rem;
     }

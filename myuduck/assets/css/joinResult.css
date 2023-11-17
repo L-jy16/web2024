@@ -1,13 +1,16 @@
 .joinResultWrap {
     text-align: center;
     color: #ffffff;
-
+    background-color: rgba(0, 0, 0, 0.8);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    /* 화면 전체 높이로 설정 */
+    height: 80%;
+}
+
+.bg {
+    background-image: url(../img/dddd.jpg);
 }
 
 .message1 {
@@ -22,14 +25,6 @@
     width: 266px;
     height: 250px;
     background-image: url(../img/redduck.jpg);
-}
-
-.img.blue {
-    display: block;
-    margin: 0 auto;
-    width: 266px;
-    height: 250px;
-    background-image: url(../img/blueduck.png);
 }
 
 .message2 {

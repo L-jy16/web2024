@@ -87,7 +87,7 @@ $jsonData = '[
         "acDOB": "1997.11.03",
         "acPerform": [
             {
-                "acPerformName": "신비아파트 〈붉은 눈의 저주〉",
+                "acPerformName": "신비아파트 <붉은 눈의 저주>",
                 "acPerformDate": "2023.12.23 ~ 2024.01.07",
                 "acPerformPlace": "유니버설아트센터",
                 "acPerformRole": "구하리 역"
@@ -107,7 +107,7 @@ $jsonData = '[
         ]
     },
     {
-        "acNameKo": "김준수 ",
+        "acNameKo": "김준수",
         "acNameEn": "Kim Junsu",
         "acOccupation": "가수, 뮤지컬배우",
         "acDOB": "1987.01.01",
@@ -145,10 +145,10 @@ $jsonData = '[
                 "acPerformRole": "미나 역"
             },
             {
-                "acPerformName": "82년생 김지영",
-                "acPerformDate": "2022.09.01 ~ 2022.11.13",
-                "acPerformPlace": "백암아트홀",
-                "acPerformRole": "김지영 역"
+                "acPerformName": "사랑의 불시착",
+                "acPerformDate": "2022.09.16 ~ 2022.11.13",
+                "acPerformPlace": "코엑스 신한카드 아티움",
+                "acPerformRole": "윤세리 역"
             },
             {
                 "acPerformName": "레베카",
@@ -158,7 +158,6 @@ $jsonData = '[
             }
         ]
     },
-
     {
         "acNameKo": "한일경",
         "acNameEn": "Han Il kyung",
@@ -672,12 +671,13 @@ $jsonData = '[
                 "acPerformRole": "아라미스 역"
             },
             {
-                "acPerformName": "여신님이 보고계셔",
+                "acPerformName": "여신님이 보고 계셔",
                 "acPerformDate": "2018/05/12 ~ 2018/05/12",
                 "acPerformPlace": "의정부예술의전당 대극장",
                 "acPerformRole": "한영범 역"
-            },
-
+            }
+        ]
+    },
     {
         "acNameKo": "오만석",
         "acNameEn": "Oh Man Seok",
@@ -757,7 +757,7 @@ $jsonData = '[
         ]
     },
     {
-        "acNameKo": "류정한 ",
+        "acNameKo": "류정한",
         "acNameEn": "Ryu Jung-han",
         "acOccupation": "뮤지컬배우",
         "acDOB": "1971.01.10",
@@ -774,11 +774,11 @@ $jsonData = '[
                 "acPerformPlace": "한전아트센터",
                 "acPerformRole": "존 역"
             },
-            {
-                "acPerformName": "지킬 앤 하이드",
-                "acPerformDate": "2021.10.19 ~ 2022.05.08",
+	{
+                "acPerformName": "맨 오브 라만차",
+                "acPerformDate": "2021.02.02 ~ 2021.03.01",
                 "acPerformPlace": "샤롯데씨어터",
-                "acPerformRole": "지킬/하이드 역"
+                "acPerformRole": "세르반테스 / 돈키호테 역"
             }
         ]
     }
@@ -809,7 +809,7 @@ $jsonData = '[
         ]
     }
     ,{
-        "acNameKo": "윤공주 ",
+        "acNameKo": "윤공주",
         "acNameEn": "Yoon Gong Joo",
         "acOccupation": "뮤지컬배우",
         "acDOB": "1981.05.20",
@@ -1051,34 +1051,8 @@ $jsonData = '[
             {
                 "acPerformName": "프리즌",
                 "acPerformDate": "2020.04.29 ~ 2021.03.31",
-                "acPerformPlace": "대학로 극장가게",
+                "acPerformPlace": "룸씨어터",
                 "acPerformRole": "교도관 역"
-            }
-        ]
-    }
-    ,{
-        "acNameKo": "김민아",
-        "acNameEn": "Kim Minah",
-        "acOccupation": "뮤지컬배우",
-        "acDOB": "1997.11.03",
-        "acPerform": [
-            {
-                "acPerformName": "신비아파트 - 서울앵콜",
-                "acPerformDate": "2023.12.23 ~ 2024.01.07",
-                "acPerformPlace": "유니버설아트센터",
-                "acPerformRole": "구하리 역"
-            },
-            {
-                "acPerformName": "시크릿쥬쥬 별의여신",
-                "acPerformDate": "2022.08.20 ~ 2022.08.28",
-                "acPerformPlace": "이화여자대학교 삼성홀",
-                "acPerformRole": "신디 역"
-            },
-            {
-                "acPerformName": "쉘터",
-                "acPerformDate": "2022.06.21 ~ 2022.06.22",
-                "acPerformPlace": "노원문화예술회관 소공연장",
-                "acPerformRole": "조이 역"
             }
         ]
     }
@@ -1238,7 +1212,8 @@ $jsonData = '[
             }
         ]
     }
-    
+
+
 ]';
 
 $data = json_decode($jsonData, true);
@@ -1251,8 +1226,8 @@ foreach ($data as $item) {
     $acPerforms = $item['acPerform'];
 
     // 이미지 파일 경로 설정
-    $acImg = "../assets/img/actor/ac_" . ($actorId + 1) . ".jpg";
-    $acImgDetail = "../assets/img/actor/ac_detail_" . ($actorId + 1) . ".jpg";
+    $acImg = "../assets/img/actor/ac_" . ($acNameKo) . ".jpg";
+    $acImgDetail = "../assets/img/actor/ac_detail_" . ($acNameKo) . ".jpg";
 
 
     // 배우 정보를 데이터베이스에 삽입 또는 업데이트
