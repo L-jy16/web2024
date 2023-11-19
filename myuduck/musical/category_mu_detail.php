@@ -134,46 +134,6 @@ $count = $likeResult->num_rows;
     <!-- <script src="../script/star.js"></script> -->
 
     <script>
-        //별점기능
-        const ratingStars = [...document.getElementsByClassName("rating_star")];
-        const ratingResult = document.querySelector(".rating_result");
-
-        printRatingResult(ratingResult);
-
-        function executeRating(stars, result) {
-            const starClassActive = "rating_star fas fa-star";
-            const starClassUnactive = "rating_star far fa-star";
-            const starsLength = stars.length;
-            let i;
-            stars.map((star) => {
-                star.onclick = (event) => {
-                    const mouseX = event.clientX - star.getBoundingClientRect().left;
-                    const starWidth = star.offsetWidth;
-                    const starIndex = stars.indexOf(star);
-
-                    if (mouseX < starWidth / 2) {
-                        printRatingResult(result, starIndex + 0.5);
-                    } else {
-                        printRatingResult(result, starIndex + 1);
-                    }
-
-                    for (i = starIndex; i >= 0; --i) {
-                        stars[i].className = starClassActive;
-                    }
-
-                    for (i = starIndex + 1; i < starsLength; ++i) {
-                        stars[i].className = starClassUnactive;
-                    }
-                };
-            });
-        }
-
-        function printRatingResult(result, num = 0) {
-            result.textContent = `${num}/5`;
-        }
-
-        executeRating(ratingStars, ratingResult);
-
         // 찜하기
         window.addEventListener('load', getInitialLikeStatus);
 

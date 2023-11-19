@@ -205,7 +205,7 @@ $count = $likeResult->num_rows;
 
         function sendLikeData(isClicked) {
             const likeActorIdNum = <?= $actorId ?>;
-            const likeACImg = '<?= $acImg ?>';
+            const likeACImg = '<?= $acImgDetail ?>';
             const likeACName = '<?= $acNameKo ?>';
 
             $.ajax({

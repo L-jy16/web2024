@@ -24,7 +24,8 @@
                 <?php if (isset($_SESSION['myuduckId'])) { ?>
                     <li><a href="../mypage/mypage.php" class="m">마이페이지</a>
                         <ul class="submenu">
-                            <li><a href="#" class="m">나의 찜 목록</a></li>
+                            <li><a href="../mypage/favorites_actor.php" class="m">나의 배우찜 목록</a></li>
+                            <li><a href="../mypage/favorites_music.php" class="m">나의 뮤지컬찜 목록</a></li>
                             <li><a href="../mypage/mypage_info.php" class="m">회원 정보 수정</a></li>
                         </ul>
                     </li>
